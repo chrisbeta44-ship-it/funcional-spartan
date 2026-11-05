@@ -174,3 +174,14 @@ label{font-size:15px!important;line-height:1.5}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* Corrige quadro do GIF: altura acompanha a própria animação, sem faixa vazia. */
+.media-frame.media-gif{display:block!important;aspect-ratio:auto!important;height:auto!important;min-height:0!important}
+.media-frame.media-gif>img{display:block!important;position:relative!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:16/10!important;object-fit:cover!important;flex:none!important;background:#080808}
+.media-frame.media-gif .media-label{top:0}
+.media-frame.media-gif .media-bottom{bottom:0}
+@media(max-width:760px){
+ .media-frame.media-gif{aspect-ratio:auto!important}
+ .media-frame.media-gif>img{aspect-ratio:16/10!important;max-height:none!important}
+}
