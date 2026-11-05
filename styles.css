@@ -348,3 +348,15 @@ label{font-size:15px!important;line-height:1.5}
  .portal-tabs .btn{font-size:12px!important;line-height:1.2;min-height:58px;padding:9px 5px!important}
  .portal-tabs .btn:nth-child(2){font-size:11px!important}
 }
+
+
+/* Atalhos do mobile também disponíveis no desktop */
+@media(min-width:761px){
+ .bottom-nav{position:fixed;display:flex;align-items:center;justify-content:center;gap:8px;left:50%;right:auto;bottom:18px;z-index:35;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 40px);padding:9px 12px;background:rgba(10,10,10,.96);border:1px solid #59351f;border-radius:16px;box-shadow:0 12px 38px #000b,0 0 22px #ff65001a;backdrop-filter:blur(16px)}
+ .bottom-nav a{display:flex;flex:0 0 auto;min-width:112px;min-height:48px;flex-direction:row;align-items:center;justify-content:center;gap:9px;padding:8px 13px;border-radius:10px;color:#ddd;font-size:12px;font-weight:900;transition:background .2s,color .2s}
+ .bottom-nav a:hover{background:#28170d;color:#ff9b51}
+ .bottom-nav .nav-icon,.bottom-nav .nav-icon svg{width:21px;height:21px;color:#ff8a28}
+ body{padding-bottom:92px}
+ .whatsapp-float{bottom:24px}
+}
+@media(min-width:761px) and (max-width:900px){.bottom-nav a{min-width:94px;padding-inline:9px;font-size:11px}}
