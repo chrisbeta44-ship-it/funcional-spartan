@@ -1,1 +1,60 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | Funcional Spartan</title><link rel="stylesheet" href="../styles.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="../index.html">FUNCIONAL <span>SPARTAN</span></a><a href="../index.html">Voltar ao site</a></div></header><main class="wrap" style="padding:55px 0;max-width:650px"><p class="eyebrow">Área restrita</p><h1 style="font:800 48px 'Barlow Condensed'">PAINEL ADMINISTRATIVO</h1><p style="color:#aaa;line-height:1.7">A estrutura visual do painel está criada. A autenticação e a conexão com o Supabase serão ativadas após configurar a chave pública do projeto e validar o usuário administrador.</p><div class="card"><label for="email">E-mail</label><input id="email" type="email" placeholder="seu@email.com" style="display:block;width:100%;padding:14px;margin:8px 0 18px;background:#090909;border:1px solid #444;color:white;border-radius:4px"><label for="password">Senha</label><input id="password" type="password" placeholder="Sua senha" style="display:block;width:100%;padding:14px;margin:8px 0 18px;background:#090909;border:1px solid #444;color:white;border-radius:4px"><button class="btn" type="button" disabled style="opacity:.5">Login será ativado na integração Supabase</button></div><p style="color:#888;font-size:12px;margin-top:18px">Não compartilhe senhas ou chaves privadas. Nunca coloque a service_role key no navegador.</p></main></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909"><title>Admin | Funcional Spartan</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+.admin-wrap{max-width:720px;padding:54px 0}.login-card{max-width:480px;margin:24px auto}.field{display:block;width:100%;padding:14px;margin:8px 0 18px;background:#090909;border:1px solid #444;color:#fff;border-radius:4px;font:inherit}.status{padding:13px;border-radius:5px;background:#1a1a1a;color:#ddd;margin:14px 0}.error{color:#ff9b78}.dashboard{display:none}.dashboard-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}.dashboard-grid .card{min-height:130px}@media(max-width:560px){.dashboard-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><a class="brand" href="../index.html">FUNCIONAL <span>SPARTAN</span></a><a href="../index.html">Voltar ao site</a></div></header>
+<main class="wrap admin-wrap">
+<div class="eyebrow">Acesso protegido</div><h1 style="font:800 48px 'Barlow Condensed';margin:10px 0">PAINEL ADMINISTRATIVO</h1>
+<section id="loginView" class="card login-card">
+<h2 style="font:700 28px 'Barlow Condensed';margin-top:0">Entrar na administração</h2>
+<p style="color:#aaa;line-height:1.6">Use o e-mail autorizado no sistema e sua senha do Supabase Auth.</p>
+<form id="loginForm">
+<label for="email">E-mail</label><input class="field" id="email" type="email" autocomplete="username" value="academiaspartan0408@gmail.com" required>
+<label for="password">Senha</label><input class="field" id="password" type="password" autocomplete="current-password" placeholder="Sua senha" required>
+<button class="btn" id="loginButton" type="submit">Entrar</button>
+</form><div id="loginMessage" class="status" role="status" hidden></div>
+</section>
+<section id="dashboardView" class="dashboard">
+<div class="status">Sessão autenticada e e-mail autorizado como administrador.</div>
+<div class="dashboard-grid">
+<article class="card"><div class="big">01</div><h3>Alunos</h3><p>Cadastro e acompanhamento de participantes. Módulo de gestão em integração.</p></article>
+<article class="card"><div class="big">02</div><h3>Presenças</h3><p>Controle de presença nas aulas. Módulo de gestão em integração.</p></article>
+<article class="card"><div class="big">03</div><h3>Planos e pagamentos</h3><p>Mensalidades e situação financeira. Módulo de gestão em integração.</p></article>
+<article class="card"><div class="big">04</div><h3>Configurações do site</h3><p>Textos, horários, imagens e vídeo. Editor em integração.</p></article>
+</div>
+<button class="btn" id="logoutButton" style="margin-top:22px">Sair</button>
+</section>
+<p style="color:#888;font-size:12px;line-height:1.6;margin-top:24px">A chave pública do Supabase usada nesta página é própria para aplicações no navegador. Senhas são verificadas pelo Supabase Auth e não são armazenadas neste site. A chave secreta service_role nunca é enviada ao navegador.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL='https://jdbpfrmjbwhtxrtcxjur.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_49p9HbBO99ZQPh28tN3d0g_pmXPIWH0';
+const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const loginView=document.getElementById('loginView'),dashboardView=document.getElementById('dashboardView');
+const message=document.getElementById('loginMessage'),loginButton=document.getElementById('loginButton');
+function showMessage(text,isError=false){message.hidden=false;message.textContent=text;message.className='status'+(isError?' error':'')}
+async function verifyAdmin(){
+ const {data,error}=await supabase.rpc('is_funcional_spartan_admin');
+ if(error||data!==true){await supabase.auth.signOut();loginView.style.display='block';dashboardView.style.display='none';showMessage('Este usuário não está autorizado a acessar a administração.',true);return false}
+ loginView.style.display='none';dashboardView.style.display='block';message.hidden=true;return true;
+}
+document.getElementById('loginForm').addEventListener('submit',async e=>{
+ e.preventDefault();loginButton.disabled=true;loginButton.textContent='Verificando...';message.hidden=true;
+ const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;
+ const {error}=await supabase.auth.signInWithPassword({email,password});
+ if(error){showMessage('Não foi possível entrar. Confira o e-mail e a senha.',true)}
+ else{await verifyAdmin()}
+ loginButton.disabled=false;loginButton.textContent='Entrar';
+});
+document.getElementById('logoutButton').addEventListener('click',async()=>{await supabase.auth.signOut();dashboardView.style.display='none';loginView.style.display='block';document.getElementById('password').value=''});
+supabase.auth.getSession().then(({data})=>{if(data.session)verifyAdmin()});
+</script>
+</body></html>
