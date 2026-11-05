@@ -14,8 +14,9 @@
 const sb=window.supabase.createClient('https://jdbpfrmjbwhtxrtcxjur.supabase.co','sb_publishable_49p9HbBO99ZQPh28tN3d0g_pmXPIWH0');
 const form=document.getElementById('signupForm'),result=document.getElementById('result'),btn=document.getElementById('submitBtn'),wa=document.getElementById('whatsBtn');
 form.addEventListener('submit',async e=>{e.preventDefault();btn.disabled=true;btn.textContent='Enviando cadastro...';result.classList.add('hidden');wa.classList.add('hidden');
-const cpf=document.getElementById('cpf').value.replace(/\\D/g,''),full_name=document.getElementById('fullName').value.trim(),phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),password=document.getElementById('password').value,enrollment_type='external';
-if(cpf.length!==11){result.textContent='Informe um CPF com 11 números.';result.classList.remove('hidden');btn.disabled=false;btn.textContent='Criar meu cadastro';return;}\nconst {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+'/aluno/?confirmado=1',data:{full_name,phone,enrollment_type,cpf,whatsapp_opt_in:true}}});
+const cpf=document.getElementById('cpf').value.replace(/\D/g,''),full_name=document.getElementById('fullName').value.trim(),phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),password=document.getElementById('password').value,enrollment_type='external';
+if(cpf.length!==11){result.textContent='Informe um CPF com 11 números.';result.classList.remove('hidden');btn.disabled=false;btn.textContent='Criar meu cadastro';return;}
+const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+'/aluno/?confirmado=1',data:{full_name,phone,enrollment_type,cpf,whatsapp_opt_in:true}}});
 if(error){result.textContent='Não foi possível concluir: '+error.message;result.classList.remove('hidden');btn.disabled=false;btn.textContent='Tentar novamente';return;}
 result.textContent='Cadastro recebido! O CPF informado neste formulário será conferido automaticamente com a lista oficial para definir sua condição e seu plano. Você não precisará digitar o CPF novamente na Área do Aluno. Se o e-mail precisar de confirmação, confirme a mensagem enviada e depois entre na Área do Aluno.';
 result.classList.remove('hidden');
