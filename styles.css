@@ -339,3 +339,12 @@ label{font-size:15px!important;line-height:1.5}
  .combined-benefit{min-height:84px}
  .bottom-nav a{font-size:9px}
 }
+
+.plan-assigned-note{margin-top:18px;padding:14px 16px;border:1px solid #57331d;border-radius:12px;background:#17100b}
+.plan-assigned-note .eyebrow{font-size:11px;letter-spacing:1.8px}
+.plan-assigned-note p{margin:8px 0 0}
+#planCategory{color:#ff9b4a;font-weight:700}
+@media(max-width:760px){
+ .portal-tabs .btn{font-size:12px!important;line-height:1.2;min-height:58px;padding:9px 5px!important}
+ .portal-tabs .btn:nth-child(2){font-size:11px!important}
+}
