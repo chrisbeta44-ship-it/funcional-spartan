@@ -57,3 +57,120 @@
  .bottom-nav .nav-icon svg{width:19px;height:19px}
 }
 @media(min-width:761px){.media-frame{aspect-ratio:4/4.7}}
+
+
+/* EXPERIENCIA ACESSIVEL — FUNCIONAL SPARTAN
+   Padrao visual unificado para inicio, cadastro, aluna e administracao. */
+:root{--orange:#ff6a00;--orange2:#ff8a28;--focus:#ffd0ad}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{font-size:16px;-webkit-text-size-adjust:100%;text-rendering:optimizeLegibility}
+p{line-height:1.75}
+a,button,input,select,textarea{touch-action:manipulation}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #ffb36e!important;outline-offset:3px!important}
+.btn{min-height:50px;padding:14px 22px;border-radius:10px;font-size:14px;letter-spacing:.25px}
+.btn-small{min-height:46px;font-size:13px}
+.card,.panel,.kpi,.schedule-card,.difference-item{border-radius:16px}
+.field,input,select,textarea{font-size:16px!important;min-height:50px;border-radius:10px!important}
+label{font-size:15px!important;line-height:1.5}
+.section-head p,.hero-copy>p,.card p,.difference-copy p{font-size:16px;line-height:1.8}
+.section-head h2,.difference-copy h2,.cta h2{letter-spacing:-.4px}
+.top{border-bottom-color:#38251a}
+.brand{gap:9px}
+.brand img{border-radius:12px}
+.btn,.admin-tab,.portal-tabs .btn{transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.btn:active,button:active{transform:scale(.98)}
+/* Cadastro e formulários: leitura clara e áreas de toque generosas */
+.form-shell{max-width:700px!important;margin:34px auto 70px!important}
+.form-shell .card{padding:clamp(20px,4vw,34px)!important}
+.form-shell input,.form-shell select{min-height:54px;padding:14px 16px!important}
+.form-shell #submitBtn,.form-shell #whatsBtn{width:100%;min-height:56px;font-size:15px}
+.note,.status,.auth-message{font-size:15px;line-height:1.7}
+/* Area da aluna: navegação simples, cards e botoes bem visiveis */
+.portal{width:min(980px,92%)!important}
+.portal .panel{margin:16px 0;padding:clamp(18px,3.5vw,30px)!important}
+.portal-tabs{gap:10px;scrollbar-width:thin}
+.portal-tabs .btn{min-height:50px;font-size:14px}
+.portal .field{min-height:54px;padding:14px 16px!important}
+.portal .btn{min-height:50px;font-size:14px}
+.portal .muted{font-size:14px;line-height:1.7}
+.portal label{display:block;margin:12px 0 6px}
+.portal #classConfirmList button,.portal #copyPix,.portal #copyPixKey{min-height:50px}
+/* Painel administrativo: controles confortaveis sem alterar funcoes */
+.admin-wrap .field,.admin-wrap .inline-edit{min-height:48px;font-size:15px!important}
+.admin-wrap .admin-tab{min-height:48px;font-size:13px}
+.admin-wrap .toolbar .btn{min-height:48px}
+.admin-wrap .students th,.admin-wrap .students td{font-size:14px;padding:14px 12px}
+.admin-wrap .muted{font-size:13px;line-height:1.65}
+/* Mobile: layout em coluna, menu e atalhos com area de toque ampla */
+@media(max-width:760px){
+  html{scroll-padding-top:82px}
+  .wrap{width:min(100% - 32px,620px)}
+  .nav{height:72px;gap:10px}
+  .brand{font-size:22px}
+  .brand img{width:46px;height:46px}
+  .hero{min-height:0}
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding:54px 0 72px}
+  .hero-copy{max-width:620px}
+  .hero h1{font-size:clamp(46px,12vw,68px);line-height:.96;margin:18px 0}
+  .hero-copy>p{font-size:16px;max-width:100%}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:12px}
+  .hero-actions .btn{width:100%;min-height:56px;font-size:14px}
+  .hero-proof{font-size:13px;line-height:1.5}
+  .hero-media{width:100%;max-width:520px;margin:0 auto}
+  .media-frame{border-radius:16px}
+  .media-frame video,.media-frame>img{aspect-ratio:16/10!important;max-height:none!important;object-fit:cover}
+  .orbit{display:none}
+  .hero-scroll{bottom:14px;font-size:10px}
+  .benefit-strip{padding:18px 0}
+  .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .benefit{padding:10px 6px;gap:10px;align-items:center}
+  .benefit-icon{width:44px;height:44px;font-size:21px}
+  .benefit strong{font-size:13px;line-height:1.3}
+  .benefit small{font-size:11px;line-height:1.4}
+  .section{padding:66px 0}
+  .section-head{margin-bottom:30px}
+  .section-head h2{font-size:clamp(40px,10vw,56px)}
+  .section-head p{font-size:15px}
+  .cards{grid-template-columns:1fr;gap:14px}
+  .card{padding:22px!important}
+  .card h3{font-size:23px}
+  .card p{font-size:15px}
+  .schedule-card{padding:16px!important;gap:14px}
+  .difference-grid{grid-template-columns:1fr;gap:26px}
+  .difference-copy h2{font-size:clamp(42px,11vw,58px)}
+  .cta{padding:68px 0}
+  .cta-actions{display:grid;grid-template-columns:1fr}
+  .cta-actions .btn{width:100%;min-height:56px}
+  .footer-main{gap:22px}
+  .footer-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .bottom-nav{display:flex;position:fixed;left:10px;right:10px;bottom:calc(10px + var(--safe-bottom));z-index:60;justify-content:space-around;gap:4px;padding:9px 5px;background:#14110ff2;border:1px solid #5a351f;border-radius:16px;box-shadow:0 8px 32px #000b;backdrop-filter:blur(14px)}
+  .bottom-nav a{display:flex;flex:1;min-width:0;min-height:52px;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#ddd;font-size:10px;font-weight:800}
+  .bottom-nav a:active,.bottom-nav a:focus-visible{color:#ff9b4a}
+  .bottom-nav .nav-icon{width:22px;height:22px}
+  .bottom-nav .nav-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  body{padding-bottom:calc(82px + var(--safe-bottom))}
+  .form-shell{margin:24px auto 45px!important}
+  .form-shell .card{padding:20px!important}
+  .form-shell h1{font-size:clamp(38px,10vw,50px)!important}
+  .portal{margin:22px auto 45px!important}
+  .portal-tabs{top:72px;border-radius:12px}
+  .portal-tabs .btn{padding:12px 15px}
+  .admin-wrap{padding:22px 0 45px!important}
+  .admin-tabs{top:72px;gap:7px;overflow-x:auto}
+  .admin-tab{min-height:48px;padding:11px 14px!important;font-size:13px!important}
+  .kpi-grid{gap:9px}
+  .kpi{padding:14px!important}
+  .filterbar{grid-template-columns:1fr!important}
+  .table-wrap{border:1px solid #38302a;border-radius:12px}
+}
+@media(max-width:390px){
+  .wrap{width:calc(100% - 26px)}
+  .brand{font-size:19px}
+  .brand img{width:42px;height:42px}
+  .benefit-grid{grid-template-columns:1fr}
+  .benefit{padding:9px 4px}
+  .bottom-nav a{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
