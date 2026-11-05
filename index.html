@@ -6,15 +6,20 @@
 <title>Funcional Spartan | Supere seus limites</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="styles.css">
-</head>
+<style>
+.nav-admin{display:inline-flex;align-items:center;justify-content:center;padding:10px 15px;border:1px solid #70401f;border-radius:6px;color:#ff8a28;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;background:#17100b}
+.nav-admin:hover,.menu-admin:hover{background:#ff6500;color:#111}
+.mobile-menu .menu-admin{border:1px solid #70401f;border-radius:7px;margin-top:12px;padding:15px;color:#ff8a28}
+@media(max-width:760px){.nav-admin{display:none}}
+</style></head>
 <body>
 <header class="top" id="top"><div class="wrap nav">
 <a class="brand" href="#inicio" aria-label="Funcional Spartan - início"><img class="brand-image" src="assets/file_00000000e6ec820ebe3595590444cd78.png" alt="Logo oficial Funcional Spartan"><span>FUNCIONAL <b>SPARTAN</b></span></a>
 <nav class="links" aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#horarios">Horários</a><a href="#planos">Planos</a><a href="#beneficios">Benefícios</a><a href="#contato">Contato</a></nav>
-<div class="nav-actions"><a class="btn btn-small" href="cadastro/">Cadastrar</a><a class="nav-login" href="aluno/">Área do aluno</a></div>
+<div class="nav-actions"><a class="btn btn-small" href="cadastro/">Cadastrar</a><a class="nav-login" href="aluno/">Área do aluno</a><a class="nav-admin" href="admin/">Admin</a></div>
 <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></header>
-<div class="menu-backdrop" id="menuBackdrop"></div><nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile"><button class="menu-close" id="menuClose" aria-label="Fechar menu">×</button><a href="#sobre">Sobre</a><a href="#horarios">Horários</a><a href="#planos">Planos</a><a href="#beneficios">Benefícios</a><a href="#contato">Contato</a><a href="cadastro/" class="menu-cta">Fazer cadastro</a><a href="aluno/">Área do aluno</a></nav>
+<div class="menu-backdrop" id="menuBackdrop"></div><nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile"><button class="menu-close" id="menuClose" aria-label="Fechar menu">×</button><a href="#sobre">Sobre</a><a href="#horarios">Horários</a><a href="#planos">Planos</a><a href="#beneficios">Benefícios</a><a href="#contato">Contato</a><a href="cadastro/" class="menu-cta">Fazer cadastro</a><a href="aluno/">Área do aluno</a><a href="admin/" class="menu-admin">Painel administrativo</a></nav>
 <main>
 <section class="hero" id="inicio"><div class="hero-glow"></div><div class="wrap hero-grid"><div class="hero-copy reveal"><div class="eyebrow"><span class="eyebrow-line"></span> Força • Energia • Superação</div><h1>Supere seus limites.<br><em>Fortaleça sua rotina.</em></h1><p>Treinamento funcional para desenvolver força, resistência, mobilidade e confiança. Venha fazer parte da equipe Funcional Spartan.</p><div class="hero-actions"><a class="btn" href="#contato">Quero me cadastrar <span>↗</span></a><a class="btn btn-outline" href="#sobre">Conhecer o funcional</a></div><div class="hero-proof"><span class="proof-dot"></span> Treine no seu ritmo. Evolua com a equipe.</div></div>
 <div class="hero-media reveal"><div class="media-frame"><div class="media-label">FUNCIONAL SPARTAN <span>● AO VIVO</span></div><video data-hero-video autoplay muted loop playsinline preload="metadata" poster="assets/file_00000000e6ec820ebe3595590444cd78.png"><source src="assets/funcional_spartan_chibi_10s.mp4" type="video/mp4">Seu navegador não reproduz vídeos.</video><div class="media-bottom"><span>FORÇA</span><i></i><span>SUPERAÇÃO</span><i></i><span>EVOLUÇÃO</span></div></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div></div><div class="hero-scroll">ROLE PARA DESCOBRIR <span>↓</span></div></section>
