@@ -1,0 +1,1 @@
+document.getElementById('year').textContent=new Date().getFullYear();const video=document.querySelector('[data-hero-video]');if(video){video.addEventListener('error',()=>{const f=document.querySelector('.video-fallback');if(f)f.hidden=false;});}
