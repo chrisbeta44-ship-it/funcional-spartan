@@ -5,7 +5,7 @@
 <label for="fullName">Nome completo</label><input id="fullName" required autocomplete="name" maxlength="100">
 <label for="cpf">CPF (para validar o desconto de funcionário)</label><input id="cpf" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00" autocomplete="off"><label for="phone">WhatsApp</label><input id="phone" required type="tel" autocomplete="tel" placeholder="(31) 99999-9999">
 <label for="email">E-mail</label><input id="email" required type="email" autocomplete="email">
-<label for="plan">Plano</label><select id="plan" required><option value="">Selecione seu plano</option><option value="school_staff">Funcionário — R$ 59,90/mês</option><option value="external">Público geral — R$ 69,90/mês</option></select>
+<p class="muted">Todos os cadastros começam no plano Público geral. O desconto de funcionário é liberado após validar o CPF na lista oficial.</p>
 <label for="password">Crie uma senha (mínimo 8 caracteres)</label><input id="password" type="password" minlength="8" required autocomplete="new-password">
 <label class="check"><input id="optin" type="checkbox" required><span>Autorizo receber mensagens da Funcional Spartan pelo WhatsApp sobre cadastro, pagamentos e vencimentos.</span></label>
 <button class="btn" id="submitBtn" type="submit">Criar meu cadastro</button>
@@ -14,11 +14,10 @@
 const sb=window.supabase.createClient('https://jdbpfrmjbwhtxrtcxjur.supabase.co','sb_publishable_49p9HbBO99ZQPh28tN3d0g_pmXPIWH0');
 const form=document.getElementById('signupForm'),result=document.getElementById('result'),btn=document.getElementById('submitBtn'),wa=document.getElementById('whatsBtn');
 form.addEventListener('submit',async e=>{e.preventDefault();btn.disabled=true;btn.textContent='Enviando cadastro...';result.classList.add('hidden');wa.classList.add('hidden');
-const cpf=document.getElementById('cpf').value.trim(),full_name=document.getElementById('fullName').value.trim(),phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),password=document.getElementById('password').value,enrollment_type=document.getElementById('plan').value;
+const cpf=document.getElementById('cpf').value.trim(),full_name=document.getElementById('fullName').value.trim(),phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),password=document.getElementById('password').value,enrollment_type='external';
 const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+'/aluno/',data:{full_name,phone,enrollment_type,whatsapp_opt_in:true}}});
 if(error){result.textContent='Não foi possível concluir: '+error.message;result.classList.remove('hidden');btn.disabled=false;btn.textContent='Tentar novamente';return;}
-if(data.session){const {data:cpfResult,error:cpfError}=await sb.rpc('check_funcional_spartan_cpf',{p_cpf:cpf});result.textContent=cpfError?'Conta criada. Conclua a validação do CPF na Área do Aluno.':(cpfResult.employee?'CPF localizado na lista: desconto de funcionário aplicado.':'CPF não localizado: valor integral aplicado.');}
-else{result.textContent='Cadastro iniciado! Enviamos um e-mail para confirmar seu endereço. Depois de confirmar, entre na Área do Aluno com sua senha. Sua inscrição ficará pendente até a equipe validar os dados.';}
+if(data.session){const {data:cpfResult,error:cpfError}=await sb.rpc('check_funcional_spartan_cpf',{p_cpf:cpf});result.textContent=cpfError?'Conta criada. Valide seu CPF na aba Meu plano.':(cpfResult.employee?'CPF localizado na lista oficial: condição de funcionário validada.':'CPF não localizado na lista oficial. Seu cadastro permanece no plano geral.');}else{result.textContent='Cadastro iniciado! Confirme seu e-mail e entre na Área do Aluno. Todos os cadastros começam no plano geral; para validar o desconto de funcionário, informe seu CPF na aba Meu plano.';}
 result.classList.remove('hidden');
 const message='Olá! Acabei de preencher meu cadastro na Funcional Spartan.\nNome: '+full_name+'\nWhatsApp: '+phone+'\nE-mail: '+email+'\nPlano: '+(enrollment_type==='school_staff'?'Funcionário':'Público geral')+'. Gostaria de confirmar minha inscrição.';
 wa.href='https://wa.me/5531987374386?text='+encodeURIComponent(message);wa.classList.remove('hidden');btn.textContent='Cadastro enviado';btn.disabled=true;
