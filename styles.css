@@ -17,3 +17,43 @@
 .bottom-nav{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:0;right:0;bottom:0;z-index:35;padding:8px 5px calc(8px + var(--safe-bottom));background:rgba(10,10,10,.96);border-top:1px solid #39302a;backdrop-filter:blur(14px)}.bottom-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#aaa;font-size:9px;font-weight:800}.bottom-nav a span{font-size:18px;color:var(--orange)}.whatsapp-float{right:14px;bottom:calc(76px + var(--safe-bottom));width:47px;height:47px}.footer{padding-bottom:calc(95px + var(--safe-bottom))}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* Ajustes de acabamento solicitados após teste em celular */
+.hero-media{width:100%;max-width:540px;margin-inline:auto}
+.media-frame{width:100%;aspect-ratio:4/5;display:flex;flex-direction:column}
+.media-label,.media-bottom{position:absolute;flex:none}
+.media-frame video{width:100%;height:100%;min-height:0;max-height:none;aspect-ratio:auto;object-fit:contain;flex:1;background:#080808}
+.registration{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#6b2b0d38,transparent 55%),linear-gradient(180deg,#0b0b0b,#100a07 65%,#090909)}
+.registration:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 20%,#ff650008 50%,transparent 80%)}
+.registration .wrap{position:relative;z-index:1}
+.registration .section-head h2{ text-shadow:0 8px 30px #000}
+.registration-form{position:relative;background:linear-gradient(145deg,#191919,#0d0d0d);border:1px solid #623719;box-shadow:0 24px 70px #0009,0 0 35px #ff650012,inset 0 1px #ffffff08;padding:clamp(22px,4vw,38px);border-radius:12px}
+.registration-form label{font-size:13px;letter-spacing:.1px}
+.registration-form input,.registration-form select{min-height:54px;background:#080808;border:1px solid #414141;border-radius:8px}
+.registration-form input::placeholder{color:#737373}
+.registration-form .consent{font-size:12px}
+.registration-form .consent input{min-height:18px;accent-color:var(--orange)}
+.registration-form button{min-height:56px}
+.cta-emblem{width:78px;height:78px;border:0;box-shadow:0 0 34px #ff650033;overflow:hidden;background:#080808;border-radius:50%}
+.cta-emblem img{width:100%;height:100%;object-fit:cover}
+.cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.footer-copy a{color:var(--orange);margin-left:10px}
+.bottom-nav a{min-width:0}
+.bottom-nav .nav-icon{width:24px;height:24px;display:grid;place-items:center;flex:none;color:var(--orange)}
+.bottom-nav .nav-icon svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bottom-nav a{gap:4px;font-size:10px;line-height:1.1}
+@media(max-width:760px){
+ .hero-media{width:min(100%,490px)}
+ .media-frame{aspect-ratio:4/5}
+ .media-frame video{object-fit:contain}
+ .registration-form{margin-inline:auto;width:100%;max-width:560px;padding:22px 18px}
+ .registration-form label{font-size:13px}
+ .registration-form input,.registration-form select{font-size:16px;min-height:54px}
+ .registration-form button{font-size:11px;padding-inline:12px}
+ .cta-actions{display:grid;grid-template-columns:1fr;max-width:420px;margin:auto}
+ .cta-actions .btn{width:100%}
+ .bottom-nav a{font-size:9px}
+ .bottom-nav .nav-icon{width:24px;height:24px}
+ .bottom-nav .nav-icon svg{width:19px;height:19px}
+}
+@media(min-width:761px){.media-frame{aspect-ratio:4/4.7}}
