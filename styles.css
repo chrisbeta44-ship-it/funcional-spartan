@@ -185,3 +185,80 @@ label{font-size:15px!important;line-height:1.5}
  .media-frame.media-gif{aspect-ratio:auto!important}
  .media-frame.media-gif>img{aspect-ratio:16/10!important;max-height:none!important}
 }
+
+
+/* HOME NOVA — composição inspirada no protótipo Spartan */
+.hero-showcase{min-height:0;padding:0;background:radial-gradient(ellipse at 55% 35%,#4a1d0d66,transparent 55%),linear-gradient(135deg,#080808,#120904 70%,#080808)}
+.hero-showcase .hero-grid{grid-template-columns:1.15fr .85fr;gap:34px;padding:38px 0 54px;align-items:center}
+.hero-showcase .hero-media{width:100%;max-width:none;margin:0}
+.hero-showcase .media-frame{width:100%;aspect-ratio:1.38/1;height:auto;display:block;border:2px solid #ff7200;border-radius:24px;box-shadow:0 0 22px #ff690066,0 18px 55px #000}
+.hero-showcase .media-frame video,.hero-showcase .media-frame>img{display:block;width:100%;height:100%;aspect-ratio:auto!important;max-height:none!important;object-fit:cover!important;background:#090909}
+.hero-showcase .media-frame.media-gif{aspect-ratio:1.38/1!important}
+.hero-showcase .media-frame.media-gif>img{height:100%!important;aspect-ratio:auto!important;object-fit:cover!important}
+.hero-art-copy{position:absolute;z-index:4;right:0;top:0;bottom:0;width:37%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px 14px;background:linear-gradient(90deg,transparent,#080808e8 18%,#080808f5);pointer-events:none}
+.hero-art-copy img{width:min(76%,150px);height:auto;max-height:43%;object-fit:contain;filter:drop-shadow(0 0 14px #ff760055);margin-bottom:12px}
+.hero-art-copy small{display:inline-block;background:#ff7200;color:#111;font-size:10px;font-weight:1000;letter-spacing:1.5px;padding:6px 10px;transform:skew(-7deg)}
+.hero-art-copy strong{display:block;margin-top:12px;color:#fff;font:900 clamp(24px,3.2vw,42px)/.98 'Barlow Condensed',sans-serif;font-style:italic;text-transform:uppercase}
+.hero-art-copy strong em{color:#ff7900;font-style:normal}
+.hero-art-copy span{display:block;color:#ddd;font-size:12px;margin-top:12px;line-height:1.4}
+.hero-showcase .media-label{left:0;top:0;padding:15px 18px;background:linear-gradient(#080808c9,transparent);font-size:10px}
+.hero-showcase .media-bottom{left:0;bottom:0;padding:14px 18px;background:linear-gradient(transparent,#080808d9);font-size:10px}
+.hero-showcase .hero-copy{padding:18px 0}
+.hero-showcase .hero-copy h1{font-size:clamp(48px,5.3vw,72px);line-height:.95}
+.hero-showcase .hero-copy>p{font-size:16px;line-height:1.75}
+.hero-showcase .hero-actions{display:grid;grid-template-columns:1fr;max-width:340px}
+.hero-showcase .hero-actions .btn{min-height:58px;font-size:14px;border-radius:12px}
+.hero-showcase .hero-register{box-shadow:0 0 26px #ff690055,0 8px 28px #ff650026}
+.benefit-strip{background:linear-gradient(180deg,#100b08,#0c0c0c);padding:24px 0}
+.benefit-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.benefit{border:1px solid #713a18;border-radius:16px;background:linear-gradient(145deg,#21130b,#0c0c0c);padding:16px 12px;min-height:96px;box-shadow:inset 0 0 18px #ff650010}
+.benefit-icon{width:48px;height:48px;border-radius:13px;border-color:#a64b16;background:#1b100a;font-size:24px;box-shadow:0 0 15px #ff650022}
+.benefit strong{font-size:13px;line-height:1.35}
+.benefit small{font-size:11px;line-height:1.4}
+#horarios.section{background:linear-gradient(180deg,#0b0b0b,#100a06)}
+#planos.section{background:radial-gradient(ellipse at 50% 0,#31160566,transparent 60%),#090909}
+.plan-card{border-radius:18px}
+.plan-card .plan-button{width:100%;min-height:54px}
+.cta{background:radial-gradient(ellipse at 50% 0,#69290966,transparent 70%),#090909}
+.bottom-nav{border:1px solid #743b1c;background:#100d0bf2;box-shadow:0 8px 35px #000b,0 0 18px #ff650022}
+.bottom-nav a{font-size:11px}
+.bottom-nav a:first-child{color:#ff8a28}
+@media(max-width:900px){
+ .hero-showcase .hero-grid{grid-template-columns:1fr;gap:18px;padding:22px 0 42px}
+ .hero-showcase .hero-media{order:0}
+ .hero-showcase .hero-copy{order:1;padding:12px 4px}
+ .hero-showcase .media-frame{aspect-ratio:1.2/1}
+ .hero-showcase .media-frame.media-gif{aspect-ratio:1.2/1!important}
+ .hero-art-copy{width:39%;padding:12px 10px}
+ .hero-art-copy img{width:min(75%,112px);margin-bottom:8px}
+ .hero-art-copy strong{font-size:clamp(25px,6vw,38px)}
+ .hero-art-copy span{font-size:11px}
+ .hero-showcase .hero-copy h1{font-size:clamp(48px,10vw,66px)}
+ .hero-showcase .hero-actions{max-width:none;grid-template-columns:1.2fr .8fr}
+ .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .hero-showcase .hero-grid{width:calc(100% - 24px);padding:14px 0 34px;gap:15px}
+ .hero-showcase .media-frame,.hero-showcase .media-frame.media-gif{aspect-ratio:1/1.04!important;border-radius:18px}
+ .hero-showcase .media-frame video,.hero-showcase .media-frame>img,.hero-showcase .media-frame.media-gif>img{height:100%!important;object-fit:cover!important}
+ .hero-art-copy{width:43%;padding:10px 8px;background:linear-gradient(90deg,transparent,#080808e8 10%,#080808f5)}
+ .hero-art-copy img{width:min(78%,100px);max-height:34%;margin-bottom:7px}
+ .hero-art-copy small{font-size:8px;padding:5px 7px;letter-spacing:1px}
+ .hero-art-copy strong{font-size:clamp(22px,6.2vw,31px);margin-top:8px}
+ .hero-art-copy span{font-size:10px;margin-top:8px}
+ .hero-showcase .media-label{padding:11px 12px;font-size:9px;letter-spacing:1.3px}
+ .hero-showcase .media-bottom{padding:10px 12px;font-size:8px;letter-spacing:1.3px}
+ .hero-showcase .hero-copy{padding:8px 4px}
+ .hero-showcase .hero-copy h1{font-size:clamp(43px,12vw,58px);margin:10px 0}
+ .hero-showcase .hero-copy>p{font-size:15px}
+ .hero-showcase .hero-actions{grid-template-columns:1fr}
+ .hero-showcase .hero-actions .btn{width:100%;min-height:58px}
+ .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .benefit{min-height:105px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:13px;border-radius:14px}
+ .benefit-icon{width:42px;height:42px}
+ .benefit strong{font-size:13px}
+ .benefit small{font-size:11px}
+ .bottom-nav{left:9px;right:9px;bottom:calc(8px + var(--safe-bottom));padding:7px 3px;border-radius:15px}
+ .bottom-nav a{font-size:9px;gap:3px}
+ .bottom-nav .nav-icon,.bottom-nav .nav-icon svg{width:20px;height:20px}
+}
