@@ -8,5 +8,12 @@
   },
   "android": {
     "allowMixedContent": false
+  },
+  "server": {
+    "url": "https://funcional-spartan.pages.dev",
+    "cleartext": false,
+    "allowNavigation": [
+      "funcional-spartan.pages.dev"
+    ]
   }
 }
