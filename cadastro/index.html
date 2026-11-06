@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Cadastro | Funcional Spartan</title><link rel="stylesheet" href="../styles.css"><style>.form-shell{max-width:650px;margin:50px auto}.form-shell .card{padding:26px}.form-shell label{display:block;color:#ddd;font-size:13px;font-weight:700;margin:14px 0 7px}.form-shell input,.form-shell select{display:block;width:100%;padding:14px;background:#090909;border:1px solid #444;border-radius:5px;color:#fff;font:inherit}.form-shell .check{display:flex;gap:10px;align-items:flex-start;font-weight:500;line-height:1.5}.form-shell .check input{width:auto;margin-top:3px}.note{padding:14px;background:#1c140e;border:1px solid #613716;border-radius:6px;color:#eee;line-height:1.6;margin-top:16px}.hidden{display:none}</style></head><body>
+<!doctype html><html lang="pt-BR"><head><link rel="manifest" href="/manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Funcional Spartan"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="/assets/file_00000000e6ec820ebe3595590444cd78.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><title>Cadastro | Funcional Spartan</title><link rel="stylesheet" href="../styles.css"><style>.form-shell{max-width:650px;margin:50px auto}.form-shell .card{padding:26px}.form-shell label{display:block;color:#ddd;font-size:13px;font-weight:700;margin:14px 0 7px}.form-shell input,.form-shell select{display:block;width:100%;padding:14px;background:#090909;border:1px solid #444;border-radius:5px;color:#fff;font:inherit}.form-shell .check{display:flex;gap:10px;align-items:flex-start;font-weight:500;line-height:1.5}.form-shell .check input{width:auto;margin-top:3px}.note{padding:14px;background:#1c140e;border:1px solid #613716;border-radius:6px;color:#eee;line-height:1.6;margin-top:16px}.hidden{display:none}</style></head><body>
 <header class="top"><div class="wrap nav"><a class="brand" href="../"><img class="brand-image" src="../assets/file_00000000e6ec820ebe3595590444cd78.png" alt="Funcional Spartan"><span>FUNCIONAL <b>SPARTAN</b></span></a><a href="../">Voltar ao site</a></div></header>
 <main class="wrap form-shell"><div class="eyebrow">Faça parte da equipe</div><h1 style="font:800 48px 'Barlow Condensed';margin:8px 0 20px">CADASTRO DE ALUNO</h1><section class="card"><p style="color:#aaa;line-height:1.6">Preencha seus dados para criar seu acesso à Área do Aluno. Após o envio, confirme sua inscrição pelo WhatsApp.</p>
 <form id="signupForm">
@@ -23,4 +23,12 @@ result.classList.remove('hidden');
 const message='Olá! Acabei de preencher meu cadastro na Funcional Spartan.\nNome: '+full_name+'\nWhatsApp: '+phone+'\nE-mail: '+email+'\nPlano: '+(enrollment_type==='school_staff'?'Funcionário':'Público geral')+'. Gostaria de confirmar minha inscrição.';
 wa.href='https://wa.me/5531987374386?text='+encodeURIComponent(message);wa.classList.remove('hidden');btn.textContent='Cadastro enviado';btn.disabled=true;
 });
+</script><script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(error => {
+      console.warn('Não foi possível ativar o modo instalável:', error);
+    });
+  });
+}
 </script></body></html>
