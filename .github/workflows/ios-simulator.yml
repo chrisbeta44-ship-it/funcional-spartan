@@ -1,0 +1,57 @@
+name: iOS simulator build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'styles.css'
+      - 'app.js'
+      - 'assets/**'
+      - 'admin/**'
+      - 'aluno/**'
+      - 'cadastro/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'capacitor.config.ts'
+      - 'scripts/**'
+      - '.github/workflows/ios-simulator.yml'
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Prepare web assets
+        run: npm run build:web
+      - name: Add iOS platform
+        run: npx cap add ios
+      - name: Sync Capacitor
+        run: npx cap sync ios
+      - name: Build iOS simulator app
+        run: |
+          xcodebuild -workspace ios/App/App.xcworkspace \
+            -scheme App \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            -derivedDataPath build/ios \
+            CODE_SIGNING_ALLOWED=NO
+      - name: Package simulator app
+        run: |
+          cd build/ios/Build/Products/Debug-iphonesimulator
+          zip -r "$GITHUB_WORKSPACE/Funcional-Spartan-iOS-Simulator.zip" App.app
+      - name: Upload simulator build
+        uses: actions/upload-artifact@v4
+        with:
+          name: funcional-spartan-ios-simulator
+          path: Funcional-Spartan-iOS-Simulator.zip
+          if-no-files-found: error
