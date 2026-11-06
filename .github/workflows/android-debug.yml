@@ -34,6 +34,11 @@ jobs:
         run: npm run build:web
       - name: Add Android platform
         run: npx cap add android
+      - name: Generate Spartan Android app icon
+        run: |
+          mkdir -p assets
+          cp assets/file_00000000e6ec820ebe3595590444cd78.png assets/icon.png
+          npx capacitor-assets generate --android
       - name: Sync Capacitor
         run: npx cap sync android
       - name: Setup Java 21
