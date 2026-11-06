@@ -14,7 +14,7 @@ on:
       - 'cadastro/**'
       - 'package.json'
       - 'package-lock.json'
-      - 'capacitor.config.ts'
+      - 'capacitor.config.json'
       - 'scripts/**'
       - '.github/workflows/android-debug.yml'
 
