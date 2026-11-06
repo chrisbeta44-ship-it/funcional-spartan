@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
+<head><link rel="manifest" href="/manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Funcional Spartan"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="/assets/file_00000000e6ec820ebe3595590444cd78.png">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080808"><meta name="description" content="Funcional Spartan: força, energia e superação. Treinamento funcional com orientação e motivação em equipe.">
 <title>Funcional Spartan | Supere seus limites</title>
@@ -62,4 +62,12 @@ try{const {data,error}=await client.from('classes').select('id,class_date,starts
 try{const {data,error}=await client.from('pricing_rules').select('enrollment_type,monthly_amount_cents,active').eq('active',true);if(error)throw error;const plans={};(data||[]).forEach(p=>plans[p.enrollment_type]=Number(p.monthly_amount_cents));const format=v=>(v/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});const cards=document.querySelectorAll('.plan-card');if(plans.school_staff){cards[0].querySelector('.price').innerHTML=format(plans.school_staff)+' <small>/ mês</small>';cards[0].dataset.plan='Funcionário';}if(plans.external){cards[1].querySelector('.price').innerHTML=format(plans.external)+' <small>/ mês</small>';cards[1].dataset.plan='Público geral';}const select=document.getElementById('registrationPlan');if(select){select.innerHTML='<option value="">Selecione seu plano</option>'+(plans.school_staff?'<option value="Funcionário - '+format(plans.school_staff)+'">Funcionário - '+format(plans.school_staff)+'/mês</option>':'')+(plans.external?'<option value="Público geral - '+format(plans.external)+'">Público geral - '+format(plans.external)+'/mês</option>':'')+'<option value="Quero fazer aula experimental">Quero fazer aula experimental</option>';}}catch(e){console.warn('Planos usando valores de referência do site',e);}
 })();
 </script>
-</body></html>
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(error => {
+      console.warn('Não foi possível ativar o modo instalável:', error);
+    });
+  });
+}
+</script></body></html>
