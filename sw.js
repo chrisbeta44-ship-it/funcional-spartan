@@ -1,7 +1,9 @@
-const CACHE_NAME = 'funcional-spartan-shell-v1';
+const CACHE_NAME = 'funcional-spartan-shell-v2';
 const APP_SHELL = [
   '/',
-  '/aluno/',
+  '/admin/index.html',
+  '/aluno/index.html',
+  '/cadastro/index.html',
   '/styles.css',
   '/assets/file_00000000e6ec820ebe3595590444cd78.png'
 ];
@@ -30,12 +32,19 @@ self.addEventListener('fetch', event => {
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request).then(response => {
-        if (response.ok && url.pathname !== '/admin/' && url.pathname !== '/aluno/' && url.pathname !== '/cadastro/') {
+        if (response.ok) {
           const copy = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
         }
         return response;
-      }).catch(() => caches.match(request).then(cached => cached || caches.match('/')))
+      }).catch(() => caches.match(request).then(cached => {
+        if (cached) return cached;
+        if (url.pathname === '/' || url.pathname === '/index.html') return caches.match('/');
+        return new Response(
+          '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sem conexão</title><body style="background:#080808;color:#fff;font:16px Arial;padding:32px"><h1>Sem conexão</h1><p>Não foi possível abrir esta tela agora. Verifique sua internet e tente novamente.</p><a style="color:#ff7900" href="/">Voltar ao início</a></body></html>',
+          {headers:{'Content-Type':'text/html; charset=utf-8'}}
+        );
+      }))
     );
     return;
   }
