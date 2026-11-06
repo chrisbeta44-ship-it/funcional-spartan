@@ -412,3 +412,49 @@ label{font-size:15px!important;line-height:1.5}
   body.menu-open .menu-backdrop { opacity:1 !important; visibility:visible !important; pointer-events:auto !important; }
   body.menu-open .mobile-menu { transform:translate3d(0,0,0) !important; visibility:visible !important; }
 }
+
+
+/* Ajustes de safe-area e acessos do menu mobile */
+@media (max-width: 1024px) {
+  .mobile-menu {
+    padding-top: calc(88px + env(safe-area-inset-top, 0px)) !important;
+    padding-bottom: calc(42px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  .mobile-menu .menu-close {
+    top: calc(14px + env(safe-area-inset-top, 0px)) !important;
+    right: 18px !important;
+  }
+  .mobile-menu a.menu-student {
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:12px !important;
+    min-height:68px !important;
+    margin:18px 0 0 !important;
+    padding:15px 18px !important;
+    border:1px solid #75401f !important;
+    border-radius:10px !important;
+    color:#ff9a45 !important;
+    background:linear-gradient(110deg,#1d120b,#111) !important;
+    font-size:16px !important;
+    font-weight:900 !important;
+  }
+  .mobile-menu a.menu-student svg {
+    width:24px !important;height:24px !important;flex:none;
+    fill:none;stroke:currentColor;stroke-width:1.8;
+  }
+  .mobile-menu a.menu-student::after {
+    content:"";display:block;width:7px;height:7px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg);margin-left:auto;
+  }
+}
+@media (max-width: 600px) {
+  .bottom-nav { bottom:calc(12px + var(--safe-bottom) + 6px) !important; }
+  body { padding-bottom:calc(104px + var(--safe-bottom)) !important; }
+}
+.admin-secret {
+  display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;margin-left:10px;vertical-align:middle;
+  color:#75401f;opacity:.38;transition:opacity .2s,color .2s;
+}
+.admin-secret svg {width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
+.admin-secret:hover,.admin-secret:focus-visible {opacity:1;color:#ff8a28}
