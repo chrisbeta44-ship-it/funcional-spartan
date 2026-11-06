@@ -12,7 +12,8 @@ const entries = [
   'aluno',
   'cadastro',
   'manifest.webmanifest',
-  'sw.js'
+  'sw.js',
+  'back-button.js'
 ];
 
 await rm(output, { recursive: true, force: true });
