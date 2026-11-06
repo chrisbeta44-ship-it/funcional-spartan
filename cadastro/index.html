@@ -3,7 +3,7 @@
 <main class="wrap form-shell"><div class="eyebrow">Faça parte da equipe</div><h1 style="font:800 48px 'Barlow Condensed';margin:8px 0 20px">CADASTRO DE ALUNO</h1><section class="card"><p style="color:#aaa;line-height:1.6">Preencha seus dados para criar seu acesso à Área do Aluno. Após o envio, confirme sua inscrição pelo WhatsApp.</p>
 <form id="signupForm">
 <label for="fullName">Nome completo</label><input id="fullName" required autocomplete="name" maxlength="100">
-<label for="cpf">CPF</label><input id="cpf" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00" autocomplete="off"><label for="phone">WhatsApp</label><input id="phone" required type="tel" autocomplete="tel" placeholder="(31) 99999-9999">
+<label for="cpf">CPF</label><input id="cpf" required inputmode="numeric" maxlength="14" placeholder="000.000.000-00" autocomplete="off"><label for="birthDate">Data de nascimento</label><input id="birthDate" required type="date" autocomplete="bday"><label for="phone">WhatsApp</label><input id="phone" required type="tel" autocomplete="tel" placeholder="(31) 99999-9999">
 <label for="email">E-mail</label><input id="email" required type="email" autocomplete="email">
 
 <label for="password">Crie uma senha (mínimo 8 caracteres)</label><input id="password" type="password" minlength="8" required autocomplete="new-password">
@@ -16,7 +16,7 @@ const form=document.getElementById('signupForm'),result=document.getElementById(
 form.addEventListener('submit',async e=>{e.preventDefault();btn.disabled=true;btn.textContent='Enviando cadastro...';result.classList.add('hidden');wa.classList.add('hidden');
 const cpf=document.getElementById('cpf').value.replace(/\D/g,''),full_name=document.getElementById('fullName').value.trim(),phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),password=document.getElementById('password').value,enrollment_type='external';
 if(cpf.length!==11){result.textContent='Informe um CPF com 11 números.';result.classList.remove('hidden');btn.disabled=false;btn.textContent='Criar meu cadastro';return;}
-const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+'/aluno/?confirmado=1',data:{full_name,phone,enrollment_type,cpf,whatsapp_opt_in:true}}});
+const {data,error}=await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+'/aluno/?confirmado=1',data:{full_name,phone,birth_date,enrollment_type,cpf,whatsapp_opt_in:true}}});
 if(error){result.textContent='Não foi possível concluir: '+error.message;result.classList.remove('hidden');btn.disabled=false;btn.textContent='Tentar novamente';return;}
 result.textContent='Cadastro recebido! O CPF informado neste formulário será conferido automaticamente com a lista oficial para definir sua condição e seu plano. Você não precisará digitar o CPF novamente na Área do Aluno. Se o e-mail precisar de confirmação, confirme a mensagem enviada e depois entre na Área do Aluno.';
 result.classList.remove('hidden');
