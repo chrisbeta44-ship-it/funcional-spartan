@@ -1,0 +1,22 @@
+{
+  "id": "/",
+  "name": "Funcional Spartan",
+  "short_name": "Spartan",
+  "description": "Aplicativo oficial Funcional Spartan: aulas, presença, pagamentos e evolução.",
+  "lang": "pt-BR",
+  "start_url": "/aluno/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "categories": ["health", "fitness", "lifestyle"],
+  "icons": [
+    {
+      "src": "/assets/file_00000000e6ec820ebe3595590444cd78.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
