@@ -56,6 +56,9 @@ function startAdminLiveSync(){
  .on('postgres_changes',{event:'*',schema:'public',table:'pricing_rules'},scheduleAdminLiveRefresh)
  .on('postgres_changes',{event:'*',schema:'public',table:'funcional_site_settings'},scheduleAdminLiveRefresh)
  .on('postgres_changes',{event:'*',schema:'public',table:'funcional_announcements'},scheduleAdminLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_assessments'},scheduleAdminLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_workouts'},scheduleAdminLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_workout_exercises'},scheduleAdminLiveRefresh)
  .on('postgres_changes',{event:'*',schema:'public',table:'funcional_pix_config'},scheduleAdminLiveRefresh)
  .subscribe();
 }
