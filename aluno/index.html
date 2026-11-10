@@ -101,6 +101,10 @@ function startStudentLiveSync(){
  .on('postgres_changes',{event:'*',schema:'public',table:'class_attendance_confirmations'},scheduleStudentLiveRefresh)
  .on('postgres_changes',{event:'*',schema:'public',table:'classes'},scheduleStudentLiveRefresh)
  .on('postgres_changes',{event:'*',schema:'public',table:'funcional_announcements'},scheduleStudentLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_assessments'},scheduleStudentLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_workouts'},scheduleStudentLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_workout_exercises'},scheduleStudentLiveRefresh)
+ .on('postgres_changes',{event:'*',schema:'public',table:'funcional_workout_completions'},scheduleStudentLiveRefresh)
  .on('postgres_changes',{event:'*',schema:'public',table:'funcional_pix_config'},scheduleStudentLiveRefresh)
  .subscribe();
 }
