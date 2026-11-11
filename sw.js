@@ -1,4 +1,4 @@
-const CACHE_NAME = 'funcional-spartan-shell-v19';
+const CACHE_NAME = 'funcional-spartan-shell-v20';
 const APP_SHELL = [
   '/',
   '/admin/index.html',
@@ -28,6 +28,12 @@ self.addEventListener('fetch', event => {
   const request = event.request;
   const url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
+
+  // Área do aluno: sempre buscar HTML novo; nunca servir uma tela de login/painel antiga do cache.
+  if (request.mode === 'navigate' && (url.pathname === '/aluno' || url.pathname === '/aluno/' || url.pathname === '/aluno/index.html')) {
+    event.respondWith(fetch(new Request(request, {cache: 'no-store'})));
+    return;
+  }
 
   if (request.mode === 'navigate') {
     event.respondWith(
