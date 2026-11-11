@@ -189,7 +189,7 @@ function readWorkoutSetState(exerciseId){try{return Number(localStorage.getItem(
 function workoutButtonLabel(step,total=3){return step>=total?'Exercício concluído':step===total-1?'Finalizar exercício':'Finalizar série '+(step+1);}
 async function loadHomeWorkouts(){
  const box=document.getElementById('homeWorkoutList');
- const {data:ws,error}=await sb.from('funcional_workouts').select('*').or('student_id.eq.'+currentStudentId+',student_id.is.null).eq('active',true).order('created_at',{ascending:false});
+ const {data:ws,error}=await sb.from('funcional_workouts').select('*').or('student_id.eq.'+currentStudentId+',student_id.is.null').eq('active',true).order('created_at',{ascending:false});
  if(error){box.textContent='Não foi possível carregar treinos: '+error.message;return;}
  if(!ws?.length){box.innerHTML='<div class="assessment-empty">A equipe ainda não disponibilizou um treino em casa para você.</div>';return;}
  const ids=ws.map(w=>w.id),ex=await sb.from('funcional_workout_exercises').select('*').in('workout_id',ids).order('sort_order');
