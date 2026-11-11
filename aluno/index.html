@@ -387,21 +387,6 @@ function renderAssessmentHistory(){
  }).join('');
  box.querySelectorAll('[data-assessment-id]').forEach(b=>b.addEventListener('click',()=>{selectedAssessmentId=b.dataset.assessmentId;renderAssessmentHistory();}));
 }
-document.getElementById('assessmentDateFilter')?.value||'';
- const dateSelect=document.getElementById('assessmentDateFilter');
- if(dateSelect){const keep=dateSelect.value;dateSelect.innerHTML='<option value="">Todas as datas</option>'+assessmentRows.map(a=>'<option value="'+a.assessment_date+'">'+new Date(a.assessment_date+'T12:00:00').toLocaleDateString('pt-BR')+'</option>').join('');dateSelect.value=keep;}
- const ca=document.getElementById('assessmentCompareA'),cb=document.getElementById('assessmentCompareB');
- if(ca&&cb){const options=assessmentRows.map(a=>'<option value="'+a.assessment_date+'">'+new Date(a.assessment_date+'T12:00:00').toLocaleDateString('pt-BR')+'</option>').join('');const prevA=ca.value,prevB=cb.value;ca.innerHTML=options;cb.innerHTML=options;ca.value=assessmentRows.some(a=>a.assessment_date===prevA)?prevA:(assessmentRows.at(-1)?.assessment_date||'');cb.value=assessmentRows.some(a=>a.assessment_date===prevB)?prevB:(assessmentRows[0]?.assessment_date||'');}
- const rows=assessmentRows.filter(a=>!filter||a.assessment_date===filter);
- if(!rows.length){box.innerHTML='<div class="assessment-history-empty">Nenhuma avaliação encontrada'+(filter?' nesta data.':' ainda.')+'</div>';return;}
- box.innerHTML=rows.map(a=>{
-  const chosen=selectedAssessmentId===a.id;
-  const vals=Object.entries(a.measurements||{}).filter(([k,v])=>v!==null&&v!=='').map(([k,v])=>escF(k.replace(/_/g,' '))+': <b>'+escF(v)+'</b>').join(' · ');
-  const image=a.fitdays_image_url?'<a href="'+escF(a.fitdays_image_url)+'" target="_blank" rel="noopener"><img src="'+escF(a.fitdays_image_url)+'" alt="Relatório de bioimpedância de '+new Date(a.assessment_date+'T12:00:00').toLocaleDateString('pt-BR')+'"></a>':'';
-  return '<article class="assessment-history-item '+(chosen?'is-selected':'')+'"><button type="button" data-assessment-id="'+escF(a.id)+'"><span>AVALIAÇÃO · '+new Date(a.assessment_date+'T12:00:00').toLocaleDateString('pt-BR')+'</span><span>'+(chosen?'Selecionada':'Ver relatório')+'</span></button>'+(vals?'<div class="assessment-values">'+vals+'</div>':(image?'<div class="assessment-values">Relatório anexado. Os dados numéricos ainda não foram gravados na ficha.</div>':'<div class="assessment-values">Sem imagem ou medidas cadastradas.</div>'))+image+(a.notes?'<p class="muted">'+escF(a.notes)+'</p>':'')+'</article>';
- }).join('');
- box.querySelectorAll('[data-assessment-id]').forEach(b=>b.addEventListener('click',()=>{selectedAssessmentId=b.dataset.assessmentId;renderAssessmentHistory();}));
-}
 document.getElementById('assessmentDateFilter')?.addEventListener('change',()=>{renderAssessmentHistory();});
 ['assessmentCompareA','assessmentCompareB'].forEach(id=>document.getElementById(id)?.addEventListener('change',()=>drawAssessmentRows()));
 document.querySelectorAll('[data-assessment-tab]').forEach(b=>b.addEventListener('click',()=>{
