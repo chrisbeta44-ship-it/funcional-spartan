@@ -564,3 +564,31 @@ body:not(.sp-home) .exercise-demo-dialog{border:1px solid #78441f;border-radius:
  .sp-home .sp-poster-whatsapp{grid-template-columns:30px minmax(0,1fr) 13px!important}
  .sp-home .sp-poster-whatsapp strong{font-size:9px!important}
 }
+
+
+/* v60 — leve aumento de legibilidade em horários e planos */
+.sp-home .sp-poster-schedule h2{font-size:clamp(22px,2.75vw,31px)!important}
+.sp-home #publicSchedule .schedule-detail strong{font-size:clamp(17px,2.1vw,23px)!important}
+.sp-home #publicSchedule .schedule-detail span{font-size:clamp(14px,1.7vw,19px)!important}
+.sp-home .sp-poster-section-title h2{font-size:clamp(30px,3.95vw,39px)!important}
+.sp-home .sp-poster-plans .sp-plan-card h3{font-size:clamp(18px,2.3vw,24px)!important}
+.sp-home .sp-poster-plans .sp-plan-card p{font-size:clamp(16px,1.9vw,20px)!important}
+.sp-home .sp-poster-plans .sp-plan-card .price{font-size:clamp(32px,4.35vw,46px)!important}
+@media(max-width:760px){
+ .sp-home .sp-poster-schedule h2{font-size:clamp(14px,3.2vw,19px)!important}
+ .sp-home #publicSchedule .schedule-detail strong{font-size:clamp(11px,2.6vw,15px)!important}
+ .sp-home #publicSchedule .schedule-detail span{font-size:clamp(10px,2.2vw,13px)!important}
+ .sp-home .sp-poster-section-title h2{font-size:clamp(20px,4.2vw,29px)!important}
+ .sp-home .sp-poster-plans .sp-plan-card h3{font-size:clamp(10px,2.6vw,15px)!important}
+ .sp-home .sp-poster-plans .sp-plan-card p{font-size:clamp(9px,2.2vw,13px)!important}
+ .sp-home .sp-poster-plans .sp-plan-card .price{font-size:clamp(16px,4.2vw,24px)!important}
+}
+@media(max-width:560px){
+ .sp-home .sp-poster-schedule h2{font-size:clamp(15px,4.2vw,19px)!important}
+ .sp-home #publicSchedule .schedule-detail strong{font-size:clamp(12px,3.6vw,16px)!important}
+ .sp-home #publicSchedule .schedule-detail span{font-size:clamp(11px,3.2vw,14px)!important}
+ .sp-home .sp-poster-plans .sp-plan-card h3{font-size:clamp(15px,4.3vw,19px)!important}
+ .sp-home .sp-poster-plans .sp-plan-card p{font-size:clamp(12px,3.5vw,15px)!important}
+ .sp-home .sp-poster-plans .sp-plan-card .price{font-size:clamp(21px,5.6vw,29px)!important}
+ .sp-home .sp-poster-plans .sp-trial-price{font-size:clamp(17px,4.4vw,22px)!important}
+}
