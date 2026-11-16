@@ -883,3 +883,122 @@ label{font-size:15px!important;line-height:1.5}
  .sp-home .sp-footer-inner>span{font-size:8px}
  .sp-home .sp-admin-mascot{width:42px;height:34px;right:7px;bottom:6px}
 }
+
+
+/* Página inicial fiel à referência visual enviada — full bleed, sem margens laterais */
+.sp-home{margin:0!important;background:#050302!important;color:#fff;overflow-x:hidden}
+.sp-home .sp-top{width:100%;margin:0;padding:0 1.2vw;background:rgba(5,4,3,.97);border:2px solid #9a4a0c;border-radius:0 0 28px 28px;box-shadow:0 4px 22px #ff680025;position:relative}
+.sp-home .sp-top-inner{width:100%;max-width:none;min-height:104px;padding:5px 1vw;gap:20px}
+.sp-home .sp-brand{flex:0 0 29%;min-width:0;gap:10px}
+.sp-home .sp-brand .brand-image{width:76px;height:76px;object-fit:contain}
+.sp-home .sp-brand span{font-size:clamp(19px,2.5vw,32px);line-height:.95;letter-spacing:1.5px;font-weight:900}
+.sp-home .sp-brand span b{display:block;font-size:1.2em;font-style:italic}
+.sp-home .sp-guide{flex:1;justify-content:space-around;gap:6px;border-left:2px solid #ff7900;border-right:2px solid #754018;padding:0 10px}
+.sp-home .sp-guide a{min-width:82px;padding:9px 12px;border-radius:50px;font-size:clamp(12px,1.8vw,21px);font-weight:900;gap:4px}
+.sp-home .sp-guide a span{width:42px;height:42px}
+.sp-home .sp-guide a span svg{width:30px;height:30px}
+.sp-home .sp-guide a.active{background:radial-gradient(circle,#ff7900,#9f2d00);box-shadow:0 0 25px #ff650066}
+.sp-home .sp-menu-toggle{width:100px;height:72px;border-radius:40px;background:#090604;border:1px solid #5b321a}
+.sp-home .sp-menu-toggle span{width:40px;height:5px;background:#ff8a00;border-radius:5px}
+.sp-home main{width:100%;max-width:none;margin:0;padding:0}
+.sp-poster-home{width:100%;max-width:none;margin:0;padding:0 0 22px;background:radial-gradient(ellipse at 50% 25%,#3c1808 0%,#080402 54%,#020202 100%)}
+.sp-poster-hero{width:100%;margin:0;padding:0;background:transparent;overflow:hidden}
+.sp-poster-stage{position:relative;width:100%;height:clamp(430px,49vw,610px);overflow:hidden;background:#080402}
+.sp-poster-characters{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 39%;border:0!important;border-radius:0!important;box-shadow:none!important}
+.sp-poster-stage:after{content:"";position:absolute;inset:48% 0 0;background:linear-gradient(transparent,#050302 93%);pointer-events:none}
+.sp-poster-copy{position:absolute;z-index:2;left:3%;right:3%;bottom:12px;text-align:center;padding:0 1vw}
+.sp-poster-copy h1{margin:0;font:italic 900 clamp(38px,6.5vw,76px)/.91 'Barlow Condensed',sans-serif;letter-spacing:-1px;color:#fff;text-shadow:0 4px 16px #000}
+.sp-poster-copy h1 em{display:block;color:#ff7900;font-style:italic;text-shadow:0 0 18px #ff5e00aa,0 4px 12px #000}
+.sp-poster-copy p{margin:12px 0 0;font-size:clamp(10px,1.65vw,19px);font-weight:900;letter-spacing:clamp(1px,.35vw,4px);color:#fff}
+.sp-poster-copy p i{font-style:normal;color:#ff7900;padding:0 5px}
+.sp-poster-actions{display:grid;gap:14px;width:min(82%,850px);margin:18px auto 22px}
+.sp-poster-button{display:grid;grid-template-columns:110px 1fr 72px;align-items:center;min-height:100px;padding:8px 22px;border:5px solid #ff7900;border-radius:70px;color:#fff;text-decoration:none;font-size:clamp(23px,4vw,46px);font-weight:900;line-height:1.05;text-align:center;box-shadow:0 0 18px #ff650044,inset 0 0 15px #ff65001c}
+.sp-poster-button.primary{background:linear-gradient(100deg,#ff7900,#e93d00);border-color:#ff9a00}
+.sp-poster-button.secondary{background:linear-gradient(100deg,#15100c,#030303);border-color:#ff7900}
+.sp-poster-person{font-size:clamp(40px,5vw,64px);border-right:2px solid #ff9a00;padding-right:12px;position:relative}
+.sp-poster-person sup{font-size:.45em;vertical-align:top}
+.sp-poster-button>b{font-size:1.05em}
+.sp-poster-info{width:92%;max-width:1200px;margin:0 auto 22px;display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
+.sp-poster-schedule,.sp-poster-whatsapp{min-height:142px;border:2px solid #a64d08;border-radius:32px;background:linear-gradient(110deg,#1b0d05,#050505);box-shadow:0 0 18px #ff650022;display:flex;align-items:center;gap:18px;padding:14px 22px;color:#fff;text-decoration:none;min-width:0}
+.sp-poster-calendar{font-size:clamp(48px,7vw,76px);color:#ff7900;line-height:1}
+.sp-poster-schedule h2{font-size:clamp(19px,3vw,32px);color:#ff7900;margin:0 0 4px;font-weight:900}
+.sp-poster-schedule .sp-schedule-list{font-size:clamp(13px,2vw,22px);font-weight:800;line-height:1.3}
+.sp-poster-schedule .sp-schedule-list small{font-size:.78em;font-weight:500}
+.sp-poster-whatsapp{background:linear-gradient(110deg,#087b13,#00420a);border:3px solid #22db16;justify-content:space-around;gap:10px}
+.sp-poster-whatsapp-icon{font-size:clamp(45px,6vw,72px);font-weight:900}
+.sp-poster-whatsapp strong{font-size:clamp(15px,2.5vw,26px);line-height:1.15}
+.sp-poster-whatsapp>b{font-size:clamp(25px,4vw,42px)}
+.sp-poster-plans{width:92%;max-width:1200px;margin:0 auto 18px;padding:16px 18px 20px;border:2px solid #a64d08;border-radius:30px;background:linear-gradient(145deg,#160b05,#050505);box-shadow:0 0 18px #ff650022}
+.sp-poster-section-title{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 14px}
+.sp-poster-section-title span{height:4px;flex:1;max-width:140px;background:linear-gradient(90deg,transparent,#ff7900);border-radius:5px}
+.sp-poster-section-title span:last-child{transform:rotate(180deg)}
+.sp-poster-section-title h2{margin:0;font-size:clamp(20px,3vw,32px);font-weight:900;white-space:nowrap}
+.sp-poster-plans .sp-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sp-poster-plans .sp-plan-card{min-width:0;min-height:200px;padding:14px 10px;border:3px solid #ff7900;border-radius:28px;background:linear-gradient(145deg,#291407,#090604);box-shadow:0 0 15px #ff650033;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.sp-poster-plans .sp-plan-icon{font-size:clamp(28px,4vw,45px);color:#ff8a00;line-height:1;margin:0 0 5px}
+.sp-poster-plans .sp-plan-card h3{font-size:clamp(12px,1.9vw,21px);line-height:1.05;margin:0 0 8px;font-weight:1000}
+.sp-poster-plans .sp-plan-card p{font-size:clamp(10px,1.5vw,17px);line-height:1.2;margin:5px 0 12px}
+.sp-poster-plans .sp-plan-card .price{font-size:clamp(23px,4vw,42px);font-weight:1000;color:#ff7900;line-height:1;margin-top:auto}
+.sp-poster-plans .sp-plan-card .price small{font-size:.42em;color:#fff;font-weight:500}
+.sp-poster-plans .sp-plan-link{display:none}
+.sp-poster-plans .sp-trial-price{background:#ff8a00;color:#090400;border-radius:30px;padding:6px 22px;font-size:clamp(16px,2.5vw,27px);font-weight:1000;margin-top:auto}
+.sp-poster-admin{width:100%;display:flex;justify-content:center;padding:12px 0 20px;background:radial-gradient(ellipse at 50% 80%,#65260555,transparent 65%)}
+.sp-poster-admin-link{position:relative;display:flex;align-items:center;justify-content:center;gap:14px;width:min(58%,650px);min-height:112px;padding:12px 18px 12px 130px;border:5px solid #ff7900;border-radius:70px;color:#fff;text-decoration:none;background:linear-gradient(100deg,#1c0e06,#050403);box-shadow:0 0 24px #ff650055}
+.sp-poster-admin-link img{position:absolute;left:8px;bottom:-12px;width:140px;height:140px;object-fit:contain}
+.sp-poster-lock{font-size:42px;color:#ff7900}
+.sp-poster-admin-link strong{font-size:clamp(17px,2.5vw,28px);line-height:1.1}
+.sp-poster-admin-link b{font-size:36px;color:#ff7900}
+.sp-home .sp-footer,.sp-home .sp-bottom-cta,.sp-home .sp-admin-mascot{display:none!important}
+@media(max-width:700px){
+ .sp-home .sp-top{padding:0 5px;border-radius:0 0 18px 18px}
+ .sp-home .sp-top-inner{min-height:70px;padding:4px;gap:5px}
+ .sp-home .sp-brand{flex-basis:25%;gap:3px}
+ .sp-home .sp-brand .brand-image{width:40px;height:40px}
+ .sp-home .sp-brand span{font-size:10px;letter-spacing:.3px}
+ .sp-home .sp-guide{padding:0 3px;gap:0}
+ .sp-home .sp-guide a{min-width:0;padding:4px 3px;font-size:9px;gap:2px}
+ .sp-home .sp-guide a span{width:23px;height:23px}
+ .sp-home .sp-guide a span svg{width:20px;height:20px}
+ .sp-home .sp-menu-toggle{width:40px;height:44px;flex:0 0 40px}
+ .sp-home .sp-menu-toggle span{width:22px;height:3px}
+ .sp-poster-stage{height:clamp(300px,105vw,470px)}
+ .sp-poster-characters{object-position:center 36%}
+ .sp-poster-copy{bottom:9px}
+ .sp-poster-copy h1{font-size:clamp(34px,9.4vw,49px)}
+ .sp-poster-copy p{font-size:clamp(8px,2.15vw,11px);letter-spacing:1px;margin-top:7px}
+ .sp-poster-actions{width:82%;gap:9px;margin:12px auto 15px}
+ .sp-poster-button{grid-template-columns:54px 1fr 30px;min-height:66px;padding:5px 9px;border-width:3px;font-size:clamp(17px,4.4vw,22px)}
+ .sp-poster-person{font-size:33px;padding-right:6px}
+ .sp-poster-info{width:92%;grid-template-columns:1.05fr .95fr;gap:7px;margin-bottom:12px}
+ .sp-poster-schedule,.sp-poster-whatsapp{min-height:95px;padding:8px 7px;gap:6px;border-radius:18px}
+ .sp-poster-calendar{font-size:35px}
+ .sp-poster-schedule h2{font-size:clamp(12px,3.2vw,16px)}
+ .sp-poster-schedule .sp-schedule-list{font-size:clamp(9px,2.4vw,12px)}
+ .sp-poster-whatsapp-icon{font-size:36px}
+ .sp-poster-whatsapp strong{font-size:clamp(9px,2.5vw,13px)}
+ .sp-poster-whatsapp>b{font-size:20px}
+ .sp-poster-plans{width:92%;padding:10px 8px 12px;border-radius:20px;margin-bottom:8px}
+ .sp-poster-section-title{gap:7px;margin-bottom:9px}
+ .sp-poster-section-title h2{font-size:clamp(14px,3.7vw,19px)}
+ .sp-poster-section-title span{height:3px}
+ .sp-poster-plans .sp-plan-grid{gap:6px}
+ .sp-poster-plans .sp-plan-card{min-height:142px;padding:9px 4px;border-width:2px;border-radius:17px}
+ .sp-poster-plans .sp-plan-icon{font-size:25px}
+ .sp-poster-plans .sp-plan-card h3{font-size:clamp(9px,2.4vw,12px);margin-bottom:4px}
+ .sp-poster-plans .sp-plan-card p{font-size:clamp(8px,2vw,10px);margin:4px 0 7px}
+ .sp-poster-plans .sp-plan-card .price{font-size:clamp(16px,4.1vw,22px)}
+ .sp-poster-plans .sp-trial-price{font-size:clamp(11px,3vw,16px);padding:5px 10px}
+ .sp-poster-admin{padding:8px 0 14px}
+ .sp-poster-admin-link{width:72%;min-height:74px;padding:8px 8px 8px 76px;gap:6px;border-width:3px}
+ .sp-poster-admin-link img{width:82px;height:82px;left:0;bottom:-7px}
+ .sp-poster-lock{font-size:26px}
+ .sp-poster-admin-link strong{font-size:clamp(11px,3vw,15px)}
+ .sp-poster-admin-link b{font-size:24px}
+}
+@media(max-width:370px){
+ .sp-home .sp-brand .brand-image{width:34px;height:34px}
+ .sp-home .sp-brand span{font-size:9px}
+ .sp-home .sp-guide a{font-size:8px}
+ .sp-poster-info{width:95%}
+ .sp-poster-plans{width:95%}
+}
