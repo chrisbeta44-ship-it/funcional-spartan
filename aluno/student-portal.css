@@ -1,0 +1,133 @@
+/* Funcional Spartan — Área do Aluno v63 */
+:root{--student-orange:#ff7a00;--student-gold:#ffb000;--student-green:#00c853;--student-bg:#0d0d0d}
+html{scroll-padding-top:88px}
+body:has(.portal){margin:0;padding-top:78px;background:radial-gradient(ellipse at 50% -18%,#6b2b0b2b,transparent 45%),var(--student-bg);color:#fff;font-family:Arial,Helvetica,sans-serif}
+.student-app-header{position:fixed;z-index:100;inset:0 0 auto;height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 clamp(14px,3vw,30px);background:rgba(7,7,7,.97);border-bottom:1px solid #75401f;box-shadow:0 5px 24px #0008}
+.student-app-brand{display:flex;align-items:center;gap:9px;min-width:0;color:#fff;text-decoration:none;font-weight:950;font-size:clamp(15px,2.5vw,22px);white-space:nowrap}
+.student-app-brand img{width:42px;height:48px;object-fit:contain}
+.student-app-brand b{color:var(--student-orange)}
+.student-app-area{margin-left:auto;color:#ffb16a;font-size:clamp(12px,1.7vw,16px);font-weight:900;letter-spacing:1px;white-space:nowrap}
+.student-app-actions{display:flex;gap:7px}
+.student-app-actions button{width:42px;height:42px;border:1px solid #654023;border-radius:12px;background:#17100b;color:#ff9b42;font-size:21px;font-weight:900}
+.portal{width:min(940px,94%)!important;max-width:940px!important;margin:20px auto 0!important;padding:0 0 calc(118px + env(safe-area-inset-bottom,0px))!important;box-sizing:border-box}
+.portal .panel,.student-home-next{background:linear-gradient(145deg,#19130f,#0c0c0c)!important;border:1px solid #75401f!important;border-radius:18px!important;padding:clamp(17px,3vw,25px)!important;box-shadow:0 10px 28px #0008,0 0 15px #ff790012!important}
+.portal h1,.portal h2,.portal h3{color:#fff!important}
+.portal h2{font-size:clamp(25px,5vw,32px)!important;line-height:1.15!important;margin:7px 0 13px!important}
+.portal h3{font-size:clamp(20px,4vw,25px)!important}
+.portal .eyebrow{color:#ff9a3d!important;font-size:12px!important;font-weight:900;letter-spacing:1.5px}
+.portal .muted{color:#ddd!important;font-size:16px!important;line-height:1.55!important}
+.portal label{font-size:16px!important;color:#fff!important;font-weight:800}
+.portal .field{min-height:56px!important;padding:14px 15px!important;border:1px solid #654023!important;border-radius:12px!important;background:#080808!important;color:#fff!important;font-size:17px!important}
+.portal .btn{min-height:52px!important;padding:13px 18px!important;border:1px solid #ff9b38!important;border-radius:13px!important;background:linear-gradient(110deg,#ff8a12,#ed4d00)!important;color:#160b04!important;font-size:16px!important;font-weight:950!important}
+.portal .btn-outline{background:#17110c!important;color:#ffb36b!important;border-color:#8b4a20!important}
+.portal .btn:focus-visible,.portal-tabs button:focus-visible,.student-app-actions button:focus-visible{outline:3px solid #fff!important;outline-offset:3px}
+.portal-dashboard-grid{display:none!important}
+.portal-dashboard-welcome{display:flex!important;align-items:center;gap:16px;padding:18px!important;margin:0 0 14px!important;border:1px solid #75401f!important;border-radius:18px!important;background:radial-gradient(ellipse at 100% 0%,#ff790022,transparent 55%),linear-gradient(135deg,#191919,#0b0b0b)!important}
+.portal-dashboard-welcome .welcome-icon{width:82px!important;height:82px!important;flex:0 0 82px!important;border:2px solid #ff7900!important;background:#21140d!important;box-shadow:0 0 20px #ff790022}
+.portal-dashboard-welcome .welcome-copy{display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-width:0}
+.portal-dashboard-welcome h2{margin:0!important;font-size:clamp(25px,5vw,34px)!important}
+.portal-dashboard-welcome .welcome-photo-actions{margin-top:4px!important}
+.portal-dashboard-welcome .welcome-photo-actions button{min-height:38px!important;padding:8px 12px!important;font-size:13px!important}
+.student-status-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:30px;background:#0d351b;border:1px solid #00c853;color:#8affae;font-size:14px;font-weight:900;text-transform:uppercase}
+.student-status-pill.is-pending{background:#3a260b;border-color:#ff9800;color:#ffd28b}
+.student-status-pill.is-inactive{background:#3c1111;border-color:#ef4444;color:#ff9c9c}
+.student-home-next{margin:0 0 14px!important}
+.student-card-heading{display:flex;align-items:center;gap:13px;margin-bottom:12px}
+.student-large-icon{display:grid;place-items:center;width:54px;height:54px;flex:0 0 54px;border-radius:14px;background:#241408;color:#ff8b19;font-size:35px}
+.student-card-heading h2{margin:0 0 3px!important;color:#ff9b3e!important}
+.student-card-heading p{margin:0;color:#ddd;font-size:15px}
+.next-class-summary{display:flex;flex-direction:column;gap:5px;padding:14px;border:1px solid #55341e;border-radius:13px;background:#0d0d0d;font-size:17px}
+.next-class-summary strong{font-size:19px;color:#fff}
+.next-class-summary span{color:#ddd}
+.student-whatsapp-cta{display:flex;align-items:center;gap:13px;width:100%;box-sizing:border-box;min-height:68px;margin:0 0 18px;padding:13px 17px;border:1px solid #00c853;border-radius:15px;background:linear-gradient(110deg,#087d32,#075321);box-shadow:0 0 18px #00c85322;color:#fff;text-decoration:none;font-size:clamp(15px,3.5vw,19px);font-weight:950}
+.student-whatsapp-cta .whatsapp-mark{font-size:31px}
+.student-whatsapp-cta b{margin-left:auto;font-size:25px}
+#memberView>.panel[data-portal-section="home"],#memberAttendancePanel,#rankingPanel{display:none!important}
+#memberView.profile-open #memberProfilePanel{display:block!important}
+.student-back-button{min-height:45px;margin:0 0 12px;padding:9px 13px;border:1px solid #8b4a20;border-radius:11px;background:#17110c;color:#ffb36b;font-size:15px;font-weight:850}
+.profile-editor{grid-template-columns:1fr!important;gap:12px!important}
+.profile-editor>.panel{padding:12px!important}
+.profile-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:2px 12px!important}
+.profile-email-field{grid-column:1/-1!important}
+.profile-plan{border:1px solid #75401f!important;border-radius:14px!important;background:#130d08!important}
+.schedule-class-item{display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;align-items:start;padding:15px 0;border-bottom:1px solid #38291e}
+.schedule-date-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#241408;color:#ff941e;font-size:28px}
+.schedule-class-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+.schedule-class-info strong{font-size:17px;line-height:1.35}
+.schedule-class-info>span:not(.schedule-status){font-size:15px;color:#ddd}
+.schedule-class-action{grid-column:2}
+.schedule-class-action .btn{width:100%;max-width:280px}
+.schedule-status{font-size:14px;font-weight:800;color:#ffc36f}
+.schedule-status.is-confirmed{color:#75f29a}
+.schedule-history-title{margin-top:25px!important;padding-top:16px;border-top:1px solid #4b3323}
+.schedule-history-item{display:flex;flex-direction:column;gap:5px;padding:13px;margin:10px 0;border:1px solid #3e3025;border-radius:12px;background:#111}
+.schedule-history-item span{font-size:14px;color:#ccc}
+.schedule-history-item b{color:#76f39a;font-size:14px}
+.payment-summary-card .subscription-summary{display:flex;flex-direction:column;gap:10px}
+.subscription-amount{font-size:clamp(30px,6vw,42px);font-weight:950;color:#fff}
+.subscription-amount small{font-size:16px;color:#ddd}
+.subscription-meta{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #403024;border-bottom:1px solid #403024;font-size:15px}
+.payment-status{display:inline-flex;align-self:flex-start;padding:8px 13px;border-radius:30px;font-size:14px;font-weight:950;border:1px solid}
+.payment-status.is-active{color:#7aff9d;background:#0d351b;border-color:#00c853}
+.payment-status.is-pending{color:#ffd28b;background:#3a260b;border-color:#ff9800}
+.payment-status.is-late{color:#ff9c9c;background:#3c1111;border-color:#ef4444}
+.payment-quick-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.payment-quick-actions .btn{flex:1 1 180px}
+#memberPixPanel #pixQr{margin:14px auto!important;max-width:280px}
+#paymentHistoryPanel .payment-history-item{padding:13px!important;border-bottom:1px solid #3c2d22!important}
+.evolution-highlights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.evolution-metric-card{display:flex;flex-direction:column;gap:5px;min-width:0;padding:14px;border:1px solid #6d421f;border-radius:14px;background:linear-gradient(145deg,#1c140e,#0d0d0d)}
+.evolution-metric-card span{font-size:14px;color:#ddd}
+.evolution-metric-card strong{font-size:clamp(20px,4vw,26px);color:#ff9a36;overflow-wrap:anywhere}
+.evolution-metric-card small{font-size:12px;color:#c7c7c7;line-height:1.35}
+.workout-category-filters{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:thin}
+.workout-category-filters button{flex:0 0 auto;min-height:42px;padding:9px 13px;border:1px solid #70401f;border-radius:25px;background:#17110c;color:#eee;font-size:14px;font-weight:800}
+.workout-category-filters button.active{background:#ff7a00;color:#160b04;border-color:#ffb000}
+.workout-card[hidden]{display:none!important}
+#homeWorkoutList .workout-card{padding:15px!important;border:1px solid #75401f!important;border-radius:16px!important;background:linear-gradient(145deg,#19130f,#0d0d0d)!important}
+#homeWorkoutList .home-exercise-card{padding:12px!important;margin:10px 0!important;border:1px solid #49301f!important;border-radius:13px!important;background:#12100e!important}
+#homeWorkoutList .home-exercise-head b{font-size:17px!important}
+#homeWorkoutList .home-exercise-meta{font-size:14px!important;color:#ddd!important}
+#homeWorkoutList .home-exercise-card>p{font-size:14px!important;color:#ddd!important;line-height:1.5!important}
+#homeWorkoutList .home-finish-set{min-height:48px!important;font-size:15px!important}
+.demo-instructions{color:#eee;font-size:16px;line-height:1.55}
+.portal-tabs{position:fixed!important;z-index:110!important;left:50%!important;right:auto!important;top:auto!important;bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;transform:translateX(-50%)!important;width:min(620px,calc(100vw - 18px))!important;display:flex!important;align-items:stretch!important;justify-content:space-around!important;gap:4px!important;margin:0!important;padding:8px 6px!important;border:1px solid #75401f!important;border-radius:19px!important;background:rgba(10,10,10,.97)!important;box-shadow:0 10px 34px #000c,0 0 18px #ff790022!important;backdrop-filter:blur(16px)}
+.portal-tabs .btn{display:flex!important;flex:1 1 0!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px!important;min-width:0!important;min-height:62px!important;padding:6px 2px!important;border:1px solid transparent!important;border-radius:12px!important;background:transparent!important;color:#d2d2d2!important;font-size:clamp(10px,2.4vw,13px)!important;font-weight:900!important;line-height:1.1!important;white-space:nowrap!important}
+.portal-tabs .btn.active{background:linear-gradient(145deg,#ff9a16,#f45a00)!important;color:#160b04!important;border-color:#ffb14c!important;box-shadow:0 0 16px #ff790044!important}
+.portal-tabs .nav-icon{height:26px!important}
+.portal-tabs .nav-icon svg{width:25px!important;height:25px!important;stroke:currentColor!important}
+.portal{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))!important}
+#memberView [data-portal-section][hidden]{display:none!important}
+@media(min-width:760px){.portal-tabs{width:min(760px,calc(100vw - 60px))!important}.portal-tabs .btn{min-height:66px!important}.portal{padding-bottom:120px!important}.profile-fields{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:560px){
+ body:has(.portal){padding-top:68px}
+ .student-app-header{height:68px;padding:0 10px;gap:7px}
+ .student-app-brand{font-size:clamp(13px,4vw,17px);gap:5px}
+ .student-app-brand img{width:31px;height:40px}
+ .student-app-area{font-size:10px;letter-spacing:.5px}
+ .student-app-actions{gap:4px}
+ .student-app-actions button{width:35px;height:38px;font-size:18px}
+ .portal{width:calc(100% - 24px)!important;margin-top:13px!important}
+ .portal-dashboard-welcome{padding:13px!important;gap:11px}
+ .portal-dashboard-welcome .welcome-icon{width:65px!important;height:65px!important;flex-basis:65px!important}
+ .portal-dashboard-welcome h2{font-size:24px!important}
+ .portal .panel,.student-home-next{padding:15px!important}
+ .student-card-heading .student-large-icon{width:47px;height:47px;flex-basis:47px;font-size:30px}
+ .student-whatsapp-cta{min-height:62px;padding:12px;font-size:14px}
+ .portal-tabs{width:calc(100vw - 12px)!important;gap:2px!important;padding:6px 4px!important}
+ .portal-tabs .btn{min-height:58px!important;font-size:clamp(9px,2.5vw,11px)!important;gap:4px!important}
+ .portal-tabs .nav-icon{height:22px!important}
+ .portal-tabs .nav-icon svg{width:21px!important;height:21px!important}
+ .profile-fields{grid-template-columns:1fr!important}
+ .profile-email-field{grid-column:auto!important}
+ .payment-quick-actions{flex-direction:column}
+ .payment-quick-actions .btn{width:100%}
+ .schedule-class-item{grid-template-columns:40px minmax(0,1fr);gap:9px}
+ .schedule-date-icon{width:40px;height:40px;font-size:25px}
+ .evolution-highlights{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .evolution-metric-card{padding:11px}
+ .evolution-metric-card span{font-size:12px}
+ .evolution-metric-card strong{font-size:19px}
+ .evolution-metric-card small{font-size:11px}
+}
+@media(max-width:360px){.student-app-brand{font-size:12px}.student-app-brand img{width:27px}.student-app-area{font-size:9px}.portal-tabs .btn{font-size:8.5px!important}.portal-tabs .nav-icon svg{width:19px!important;height:19px!important}.portal-dashboard-welcome .welcome-icon{width:58px!important;height:58px!important;flex-basis:58px!important}.student-whatsapp-cta{font-size:13px}}
