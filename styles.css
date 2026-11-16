@@ -1012,3 +1012,64 @@ label{font-size:15px!important;line-height:1.5}
 .sp-poster-plans .sp-plan-icon svg{display:block;width:100%;height:100%;max-width:48px;max-height:48px;margin:auto;fill:none;stroke:#ff8a00;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
 .sp-poster-lock svg{display:block;width:100%;height:100%;max-width:48px;max-height:48px;fill:none;stroke:#ff7900;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:700px){.sp-poster-stage{height:clamp(190px,58vw,340px)}}
+
+
+/* Final approved reference: full-width image and top navigation */
+.sp-home{margin:0!important;padding:0!important;overflow-x:hidden;background:#030303}
+.sp-home .sp-top{width:100%;margin:0;padding:0!important;border:2px solid #6b3215;border-top:0;border-radius:0 0 42px 42px;background:linear-gradient(180deg,#080706,#030303);box-shadow:0 4px 22px #ff650022;position:relative;z-index:20}
+.sp-home .sp-top-inner{width:100%;max-width:none;min-height:110px;margin:0;padding:6px 18px;display:flex;align-items:center;gap:18px}
+.sp-home .sp-brand{flex:0 0 29%;display:flex;align-items:center;gap:12px;min-width:0;font-size:clamp(20px,2.6vw,34px);line-height:.95}
+.sp-home .sp-brand .brand-image{width:88px;height:88px;flex:0 0 88px;object-fit:contain}
+.sp-home .sp-guide{display:flex!important;flex:1;align-items:stretch;justify-content:space-evenly;gap:4px;margin:0;padding:0;min-width:0}
+.sp-home .sp-guide a{flex:1 1 0;min-width:0;min-height:88px;padding:7px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:0;border-radius:42px;color:#fff;font-size:clamp(12px,1.45vw,19px);font-weight:850;white-space:nowrap}
+.sp-home .sp-guide a span{width:44px;height:44px;display:grid;place-items:center;color:#fff;font-size:0}
+.sp-home .sp-guide a span svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.sp-home .sp-guide a:hover,.sp-home .sp-guide a.active{color:#fff;background:radial-gradient(circle at 50% 35%,#ff7b00,#b83b00 70%,#3a1000);box-shadow:0 0 25px #ff680077}
+.sp-home .sp-menu-toggle{display:flex!important;flex:0 0 92px;width:92px;height:76px;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px;border:1px solid #5b321a;border-radius:40px;background:#090604}
+.sp-home .sp-menu-toggle span{display:block;width:42px;height:5px;border-radius:5px;background:#ff8a00}
+.sp-home main,.sp-home .sp-poster-home{width:100%;max-width:none;margin:0;padding-left:0;padding-right:0}
+.sp-home .sp-poster-home{padding-bottom:20px}
+.sp-home .sp-poster-hero{width:100%;margin:0;padding:0}
+.sp-home .sp-poster-stage{width:100%;height:auto;aspect-ratio:16/9;min-height:0;max-height:720px;overflow:hidden;background:#080402;position:relative}
+.sp-home .sp-poster-characters{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%;border:0!important;border-radius:0!important;box-shadow:none!important}
+.sp-home .sp-poster-stage:after{content:"";position:absolute;inset:53% 0 0;background:linear-gradient(180deg,transparent 0%,#050302aa 48%,#050302f5 100%);pointer-events:none}
+.sp-home .sp-poster-copy{position:absolute;z-index:2;left:2%;right:2%;bottom:12px;text-align:center;padding:0 1vw}
+.sp-home .sp-poster-copy h1{margin:0;font:italic 900 clamp(38px,6.5vw,78px)/.9 'Barlow Condensed',sans-serif;letter-spacing:-1px;color:#fff;text-shadow:0 4px 16px #000}
+.sp-home .sp-poster-copy h1 em{display:block;color:#ff7900;font-style:italic;text-shadow:0 0 18px #ff5e00aa,0 4px 12px #000}
+.sp-home .sp-poster-copy p{margin:8px 0 0;font-size:clamp(10px,1.55vw,18px);font-weight:900;letter-spacing:clamp(1px,.32vw,4px);color:#fff}
+.sp-home .sp-poster-copy p i{font-style:normal;color:#ff7900;padding:0 5px}
+.sp-home .sp-poster-actions{display:grid;gap:14px;width:min(82%,900px);margin:18px auto 22px}
+.sp-home .sp-poster-button{grid-template-columns:100px 1fr 68px;min-height:92px;padding:8px 22px;border:4px solid #ff7900;border-radius:70px;font-size:clamp(23px,3.6vw,44px)}
+.sp-home .sp-poster-button.primary{background:linear-gradient(100deg,#ff7900,#e93d00);border-color:#ff9a00}
+.sp-home .sp-poster-button.secondary{background:linear-gradient(100deg,#15100c,#030303);border-color:#ff7900}
+@media(max-width:700px){
+ .sp-home .sp-top{border-radius:0 0 26px 26px}
+ .sp-home .sp-top-inner{min-height:78px;padding:4px 7px;gap:5px}
+ .sp-home .sp-brand{flex:0 0 27%;gap:4px;font-size:clamp(10px,2.8vw,14px);letter-spacing:0}
+ .sp-home .sp-brand .brand-image{width:44px;height:44px;flex:0 0 44px}
+ .sp-home .sp-guide{display:flex!important;flex:1;overflow:visible;gap:0;padding:0}
+ .sp-home .sp-guide a{flex:1 1 0;min-width:0;min-height:66px;padding:3px 1px;gap:1px;border-radius:28px;font-size:clamp(7px,2.1vw,10px);white-space:nowrap}
+ .sp-home .sp-guide a span{width:24px;height:24px}
+ .sp-home .sp-guide a span svg{width:24px;height:24px}
+ .sp-home .sp-menu-toggle{display:flex!important;flex:0 0 39px;width:39px;height:43px;gap:5px;padding:7px;border-radius:12px}
+ .sp-home .sp-menu-toggle span{width:23px;height:3px}
+ .sp-home .sp-poster-stage{height:auto;aspect-ratio:1.36/1;max-height:440px}
+ .sp-home .sp-poster-characters{object-fit:cover;object-position:center 24%}
+ .sp-home .sp-poster-stage:after{inset:59% 0 0;background:linear-gradient(180deg,transparent,#050302f5 100%)}
+ .sp-home .sp-poster-copy{bottom:9px;left:2%;right:2%}
+ .sp-home .sp-poster-copy h1{font-size:clamp(32px,8.5vw,48px);line-height:.92}
+ .sp-home .sp-poster-copy p{font-size:clamp(7px,2.05vw,10px);letter-spacing:.8px;margin-top:6px}
+ .sp-home .sp-poster-actions{width:90%;gap:9px;margin:12px auto 15px}
+ .sp-home .sp-poster-button{grid-template-columns:52px 1fr 28px;min-height:65px;padding:5px 9px;border-width:3px;font-size:clamp(16px,4.4vw,21px)}
+ .sp-home .sp-poster-person{font-size:32px;padding-right:6px}
+ .sp-home .sp-poster-button>b{font-size:1em}
+}
+@media(max-width:380px){
+ .sp-home .sp-top-inner{gap:3px;padding-inline:5px}
+ .sp-home .sp-brand{flex-basis:25%;font-size:9px}
+ .sp-home .sp-brand .brand-image{width:37px;height:37px;flex-basis:37px}
+ .sp-home .sp-guide a{font-size:7px}
+ .sp-home .sp-guide a span,.sp-home .sp-guide a span svg{width:21px;height:21px}
+ .sp-home .sp-menu-toggle{flex-basis:35px;width:35px;height:40px}
+ .sp-home .sp-poster-stage{aspect-ratio:1.24/1}
+}
