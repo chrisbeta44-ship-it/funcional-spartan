@@ -49,11 +49,7 @@
     <div class="sp-hero-shell">
       <div class="sp-hero-art">
         <div class="sp-hero-video media-frame">
-          <div class="media-label">FUNCIONAL SPARTAN <span>● FORÇA • ENERGIA • SUPERAÇÃO</span></div>
-          <video data-hero-video autoplay muted loop playsinline preload="metadata" poster="/assets/file_00000000e6ec820ebe3595590444cd78.png">
-            <source src="/assets/funcional_spartan_chibi_10s.mp4" type="video/mp4">
-          </video>
-          <div class="media-bottom"><span>SAÚDE</span><i></i><span>FORÇA</span><i></i><span>QUALIDADE DE VIDA</span></div>
+          <img src="/assets/spartan-chibi-group.webp" alt="Equipe Funcional Spartan com treinador e alunas de diferentes idades" fetchpriority="high">
         </div>
       </div>
       <div class="sp-hero-copy hero-copy">
@@ -132,19 +128,7 @@
   </div>
 </footer>
 
-<a class="sp-admin-mascot" href="/admin/index.html" aria-label="Acesso administrativo" title="Acesso administrativo">
-  <svg viewBox="0 0 64 64" aria-hidden="true">
-    <circle cx="29" cy="17" r="10" fill="#f0b48a" stroke="#6d351b" stroke-width="2"/>
-    <path d="M19 15c1-11 19-15 22 0-6-4-13-5-22 0" fill="#2a1a14"/>
-    <path d="M17 29h25l5 19H12z" fill="#171717" stroke="#ff7900" stroke-width="2"/>
-    <path d="M23 31l7 6 7-6" fill="none" stroke="#ff7900" stroke-width="3"/>
-    <rect x="5" y="44" width="45" height="13" rx="3" fill="#28201b" stroke="#ff7900" stroke-width="1.5"/>
-    <path d="M21 47h14l4 8H17z" fill="#ff7900"/>
-    <circle cx="52" cy="47" r="10" fill="#111" stroke="#ff9a24" stroke-width="2"/>
-    <rect x="48" y="46" width="8" height="7" rx="1.5" fill="#ff9a24"/>
-    <path d="M50 46v-2a2 2 0 0 1 4 0v2" fill="none" stroke="#ff9a24" stroke-width="1.7"/>
-  </svg>
-</a>
+<a class="sp-admin-mascot" href="/admin/index.html" aria-label="Acesso administrativo" title="Acesso administrativo"><img src="/assets/spartan-admin-mascot.webp" alt=""></a>
 
 <script src="/app.js?v=spartan-home-2026-11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -155,7 +139,7 @@ const liveChannel=client.channel('funcional-spartan-site-live')
 .on('postgres_changes',{event:'*',schema:'public',table:'classes'},()=>location.reload())
 .on('postgres_changes',{event:'*',schema:'public',table:'pricing_rules'},()=>location.reload())
 .on('postgres_changes',{event:'*',schema:'public',table:'funcional_announcements'},()=>location.reload())
-.subscribe();const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));try{const {data,error}=await client.from('funcional_site_settings').select('settings').eq('id',1).maybeSingle();if(!error&&data?.settings){const s=data.settings,root=document.documentElement;if(s.primary_color)root.style.setProperty('--orange',s.primary_color);if(s.secondary_color)root.style.setProperty('--bg',s.secondary_color);if(s.hero_title){const el=document.querySelector('.hero h1');el.textContent=s.hero_title;el.style.whiteSpace='pre-line';}if(s.hero_text)document.querySelector('.hero-copy>p').textContent=s.hero_text;if(s.logo_url)document.querySelectorAll('.brand-image').forEach(el=>el.src=s.logo_url);if(s.hero_video_url){const frame=document.querySelector('.media-frame'),v=document.querySelector('[data-hero-video]');if(s.hero_media_type==='gif'||/\\.gif(?:[?#]|$)/i.test(s.hero_video_url)){frame.classList.add('media-gif');const img=document.createElement('img');img.src=s.hero_video_url;img.alt='Animação Funcional Spartan';img.style.cssText='display:block;width:100%;aspect-ratio:4/4.6;max-height:580px;object-fit:cover;background:#111';v.replaceWith(img);}else{v.src=s.hero_video_url;v.querySelector('source')?.remove();v.load();}}if(s.schedule_title)document.querySelector('#horarios .section-head .eyebrow').textContent=s.schedule_title;}}catch(e){console.warn('Configuração visual indisponível',e);}
+.subscribe();const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));try{const {data,error}=await client.from('funcional_site_settings').select('settings').eq('id',1).maybeSingle();if(!error&&data?.settings){const s=data.settings;}}catch(e){console.warn('Configuração visual indisponível',e);}
 try{const {data,error}=await client.from('classes').select('id,class_date,starts_at,ends_at,location,status').gte('class_date',new Date().toISOString().slice(0,10)).eq('status','scheduled').order('class_date').order('starts_at').limit(1);const box=document.getElementById('publicSchedule');if(error)throw error;if(!data?.length){box.innerHTML='<div class="schedule-empty">Nenhuma aula futura publicada no momento. <a href="https://wa.me/5531987374386" target="_blank" rel="noopener">Consulte a equipe pelo WhatsApp ↗</a></div>';}else{box.innerHTML=data.map(c=>'<article class="schedule-card"><div class="schedule-date"><span>'+new Date(c.class_date+'T12:00:00').toLocaleDateString('pt-BR',{weekday:'short'}).replace('.','')+'</span><strong>'+new Date(c.class_date+'T12:00:00').getDate().toString().padStart(2,'0')+'</strong></div><div class="schedule-detail"><strong>'+safe(String(c.starts_at).slice(0,5))+(c.ends_at?' — '+safe(String(c.ends_at).slice(0,5)):'')+'</strong><span>'+safe(c.location||'Local a confirmar')+'</span></div><span class="schedule-status">AULA AGENDADA</span></article>').join('');}}catch(e){console.warn('Agenda indisponível',e);document.getElementById('publicSchedule').innerHTML='<div class="schedule-empty">Consulte os próximos horários diretamente com a equipe. <a href="https://wa.me/5531987374386" target="_blank" rel="noopener">Falar pelo WhatsApp ↗</a></div>';}
 try{const {data,error}=await client.from('pricing_rules').select('enrollment_type,monthly_amount_cents,active').eq('active',true);if(error)throw error;const plans={};(data||[]).forEach(p=>plans[p.enrollment_type]=Number(p.monthly_amount_cents));const format=v=>(v/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});const cards=document.querySelectorAll('.plan-card');if(plans.school_staff){cards[0].querySelector('.price').innerHTML=format(plans.school_staff)+' <small>/ mês</small>';cards[0].dataset.plan='Spartan Colaborador';}if(plans.external){cards[1].querySelector('.price').innerHTML=format(plans.external)+' <small>/ mês</small>';cards[1].dataset.plan='Spartan Essencial';}const select=document.getElementById('registrationPlan');if(select){select.innerHTML='<option value="">Selecione seu plano</option>'+(plans.school_staff?'<option value="Spartan Colaborador - '+format(plans.school_staff)+'">Spartan Colaborador - '+format(plans.school_staff)+'/mês</option>':'')+(plans.external?'<option value="Spartan Essencial - '+format(plans.external)+'">Spartan Essencial - '+format(plans.external)+'/mês</option>':'')+'<option value="Quero fazer aula experimental">Quero fazer aula experimental</option>';}}catch(e){console.warn('Planos usando valores de referência do site',e);}
 })();
