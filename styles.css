@@ -642,3 +642,94 @@ label{font-size:15px!important;line-height:1.5}
  .sp-home .mobile-menu,.sp-home .menu-backdrop{display:none!important}
 }
 @media(prefers-reduced-motion:reduce){.sp-home *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* Final visual lock: match approved Spartan mockup precisely */
+.sp-home .sp-guide{gap:4px}
+.sp-home .sp-guide a{flex-direction:column;justify-content:center;gap:3px;min-width:92px;min-height:58px;padding:7px 12px;font-size:14px}
+.sp-home .sp-guide a span{display:grid;place-items:center;height:22px;font-size:0}
+.sp-home .sp-guide a span svg{display:block;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-home .sp-guide a.active span svg{stroke:#ff8a22}
+.sp-home .sp-hero-shell{grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:24px;padding:22px}
+.sp-home .sp-hero-video{aspect-ratio:16/10;max-height:560px}
+.sp-home .sp-hero-video img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.sp-home .sp-hero-copy h1{font-size:clamp(50px,5.5vw,82px);line-height:.94}
+.sp-home .sp-hero-copy>p{font-size:15px;line-height:1.55;letter-spacing:1.5px;color:#eee;font-weight:800}
+.sp-home .sp-dot{color:#ff7900;padding:0 4px}
+.sp-home .sp-button{min-height:66px;border-radius:32px;padding:10px 22px;font-size:18px}
+.sp-home .sp-button-primary{background:linear-gradient(110deg,#ff6200,#ff3d00);color:#fff;box-shadow:0 0 22px #ff650055}
+.sp-home .sp-button-outline{border-color:#ff7900;background:#080808;color:#fff}
+.sp-home .sp-button-icon{border-right:1px solid #ffffff66}
+.sp-home .sp-button-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sp-home .sp-next-grid{grid-template-columns:1fr 1fr;gap:16px}
+.sp-home .sp-next-info{display:grid;grid-template-columns:82px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;column-gap:14px;min-height:132px}
+.sp-home .sp-next-info .sp-section-kicker,.sp-home .sp-next-info h2{grid-column:2}
+.sp-home .sp-next-info h2{margin:2px 0 8px}
+.sp-home .sp-schedule-list{grid-column:1/-1;display:flex;align-items:center;gap:14px}
+.sp-home .sp-calendar-icon{grid-column:1;grid-row:1/3;display:grid;place-items:center;width:70px;height:70px;color:#ff8500}
+.sp-home .sp-calendar-icon svg{width:64px;height:64px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.sp-home .sp-schedule-list .schedule-card{display:flex;align-items:center;gap:14px;width:100%}
+.sp-home .sp-schedule-list .schedule-detail strong{font-size:18px}
+.sp-home .sp-schedule-list .schedule-detail span{font-size:13px}
+.sp-home .sp-whatsapp-group{border-radius:48px;background:linear-gradient(110deg,#062b12,#0a160d);padding:18px 24px}
+.sp-home .sp-whatsapp-symbol{border:0;width:64px;height:64px}
+.sp-home .sp-whatsapp-symbol svg{width:58px;height:58px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.sp-home .sp-whatsapp-group small{color:#fff}
+.sp-home .sp-plan-grid{gap:18px}
+.sp-home .sp-plan-card{align-items:center;text-align:center;min-height:250px;padding:20px 18px}
+.sp-home .sp-plan-card .sp-plan-icon{width:50px;height:50px;margin-bottom:9px}
+.sp-home .sp-plan-card .sp-plan-icon svg{width:38px;height:38px;fill:none;stroke:#ff8a22;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sp-home .sp-plan-card h3{font-size:23px}
+.sp-home .sp-plan-card p{min-height:36px;font-size:14px}
+.sp-home .sp-plan-card .price{font-size:clamp(30px,3vw,43px)}
+.sp-home .sp-plan-card .sp-plan-link{max-width:220px;min-height:40px}
+.sp-home .sp-plan-card.sp-trial-card .sp-trial-price{font-size:34px}
+.sp-home .sp-admin-mascot{width:58px;height:44px;right:14px;bottom:14px;padding:0;border:0;border-radius:8px;background:transparent;box-shadow:none;opacity:1;overflow:hidden}
+.sp-home .sp-admin-mascot img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:900px){
+ .sp-home .sp-hero-shell{grid-template-columns:1fr 1fr}
+ .sp-home .sp-next-info{grid-template-columns:70px minmax(0,1fr)}
+ .sp-home .sp-calendar-icon{width:60px;height:60px}
+ .sp-home .sp-calendar-icon svg{width:56px;height:56px}
+}
+@media(max-width:680px){
+ .sp-home .sp-top-inner{display:flex;min-height:68px;justify-content:space-between;flex-wrap:nowrap;padding:6px 0}
+ .sp-home .sp-guide{display:none!important}
+ .sp-home .sp-menu-toggle{display:flex!important;flex:none}
+ .sp-home .sp-hero{padding:12px 0 17px}
+ .sp-home .sp-hero-shell{display:flex;flex-direction:column;gap:12px;padding:10px;border-radius:18px}
+ .sp-home .sp-hero-art{width:100%;order:0}
+ .sp-home .sp-hero-video{aspect-ratio:16/10;max-height:none;border-radius:13px}
+ .sp-home .sp-hero-copy{width:100%;order:1;text-align:center;padding:4px 7px 7px}
+ .sp-home .sp-hero-copy .eyebrow{justify-content:center}
+ .sp-home .sp-hero-copy h1{font-size:clamp(39px,10.8vw,53px);line-height:.96;margin:10px 0}
+ .sp-home .sp-hero-copy>p{font-size:12px;letter-spacing:.9px;line-height:1.5}
+ .sp-home .sp-hero-actions{margin-top:15px;gap:9px}
+ .sp-home .sp-button{min-height:54px;border-radius:28px;font-size:14px;padding:8px 14px}
+ .sp-home .sp-button-icon{flex-basis:36px;width:36px;height:36px}
+ .sp-home .sp-button-icon svg{width:26px;height:26px}
+ .sp-home .sp-next-grid{grid-template-columns:1fr;gap:10px}
+ .sp-home .sp-next-info{display:grid;grid-template-columns:58px minmax(0,1fr);min-height:unset;padding:14px;border-radius:15px}
+ .sp-home .sp-next-info .sp-section-kicker,.sp-home .sp-next-info h2{grid-column:2}
+ .sp-home .sp-next-info h2{font-size:22px}
+ .sp-home .sp-schedule-list{grid-column:1/-1;gap:10px}
+ .sp-home .sp-calendar-icon{width:50px;height:50px}
+ .sp-home .sp-calendar-icon svg{width:48px;height:48px}
+ .sp-home .sp-schedule-list .schedule-detail strong{font-size:14px}
+ .sp-home .sp-schedule-list .schedule-detail span{font-size:11px}
+ .sp-home .sp-whatsapp-group{min-height:78px;border-radius:40px;padding:10px 15px}
+ .sp-home .sp-whatsapp-symbol{width:48px;height:48px}
+ .sp-home .sp-whatsapp-symbol svg{width:46px;height:46px}
+ .sp-home .sp-whatsapp-group strong{font-size:15px}
+ .sp-home .sp-plan-grid{grid-template-columns:1fr;gap:10px}
+ .sp-home .sp-plan-card{display:grid;grid-template-columns:48px minmax(0,1fr) auto;grid-template-rows:auto auto auto;column-gap:10px;align-items:center;min-height:unset;padding:12px 13px;text-align:left}
+ .sp-home .sp-plan-card .sp-plan-icon{grid-column:1;grid-row:1/4;width:44px;height:44px;margin:0}
+ .sp-home .sp-plan-card>small{grid-column:2;grid-row:1;text-align:left}
+ .sp-home .sp-plan-card h3{grid-column:2;grid-row:2;text-align:left;font-size:18px}
+ .sp-home .sp-plan-card p{grid-column:2;grid-row:3;min-height:unset;margin:3px 0 0;text-align:left;font-size:11px}
+ .sp-home .sp-plan-card .price,.sp-home .sp-plan-card .sp-trial-price{grid-column:3;grid-row:1/3;margin:0;font-size:21px;white-space:nowrap}
+ .sp-home .sp-plan-card .price small{font-size:9px}
+ .sp-home .sp-plan-card .sp-plan-link{grid-column:3;grid-row:3;width:auto;min-width:98px;min-height:31px;margin:3px 0 0;padding:5px 7px;font-size:8px}
+ .sp-home .sp-plan-card .sp-plan-icon svg{width:33px;height:33px}
+ .sp-home .sp-admin-mascot{width:45px;height:34px;right:8px;bottom:8px}
+}
