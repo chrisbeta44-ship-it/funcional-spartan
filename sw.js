@@ -1,10 +1,12 @@
-const CACHE_NAME = 'funcional-spartan-shell-v21-v22-v23-v24-v25-v28-v29-v30-v31-v32-v33-v34-v37-v38-v39-v40-v41';
+const CACHE_NAME = 'funcional-spartan-shell-v42';
 const APP_SHELL = [
   '/',
   '/admin/index.html',
   '/aluno/index.html',
   '/cadastro/index.html',
   '/styles.css',
+  '/back-button.js',
+  '/assets/spartan-chibi-group.webp',
   '/assets/file_00000000e6ec820ebe3595590444cd78.png'
 ];
 
