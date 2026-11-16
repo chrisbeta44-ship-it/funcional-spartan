@@ -1143,3 +1143,46 @@ label{font-size:15px!important;line-height:1.5}
  .sp-home .sp-poster-plans{width:94%}
  .sp-home .sp-poster-plans .sp-plan-card{min-height:142px}
 }
+
+
+/* Botões com mais presença, área de toque e melhor aproveitamento do espaço */
+.sp-home .sp-poster-actions{width:94%;max-width:1240px;gap:22px;margin:22px auto 28px}
+.sp-home .sp-poster-button{min-height:104px;grid-template-columns:96px 1fr 62px;padding:12px 26px;border-width:4px;border-radius:80px;font-size:clamp(25px,3.1vw,42px);font-weight:950;letter-spacing:.2px;box-shadow:0 0 20px #ff690044,inset 0 0 12px #ffad3322;transition:transform .18s ease,box-shadow .18s ease}
+.sp-home .sp-poster-button:hover{transform:translateY(-2px);box-shadow:0 0 30px #ff790088,inset 0 0 16px #ffad3340}
+.sp-home .sp-poster-person{display:flex;align-items:center;justify-content:center;min-height:64px}
+.sp-home .sp-poster-person svg{width:58px;height:58px}
+.sp-home .sp-poster-button>b{font-size:1.25em}
+.sp-home .sp-poster-info{width:94%;max-width:1300px;gap:20px}
+.sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{min-height:150px;padding:20px 26px}
+.sp-home .sp-poster-whatsapp{display:grid;grid-template-columns:76px 1fr 44px;align-items:center;gap:16px;border-width:3px;box-shadow:0 0 22px #00d74744,inset 0 0 18px #00ff5522}
+.sp-home .sp-poster-whatsapp-icon{display:grid;place-items:center;width:72px;height:72px;font-size:0;border:3px solid #fff;border-radius:50%;background:#00a82d}
+.sp-home .sp-poster-whatsapp-icon svg{width:52px;height:52px}
+.sp-home .sp-poster-whatsapp strong{font-size:clamp(20px,2.1vw,30px);line-height:1.12;font-weight:950}
+.sp-home .sp-poster-whatsapp>b{font-size:40px}
+.sp-home .sp-poster-plans .sp-plan-link{min-height:42px;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;font-size:clamp(11px,1.1vw,14px);font-weight:900;border:1px solid #ff8a00;border-radius:24px;background:#1a0b03;color:#ffb05a}
+@media(max-width:700px){
+ .sp-home .sp-poster-actions{width:94%;gap:13px;margin:17px auto 20px}
+ .sp-home .sp-poster-button{min-height:76px;grid-template-columns:60px 1fr 34px;padding:8px 14px;border-width:3px;border-radius:48px;font-size:clamp(19px,5.1vw,24px);box-shadow:0 0 18px #ff650066,inset 0 0 10px #ffb44a22}
+ .sp-home .sp-poster-person{min-height:48px}
+ .sp-home .sp-poster-person svg{width:44px;height:44px}
+ .sp-home .sp-poster-button>b{font-size:26px}
+ .sp-home .sp-poster-info{width:94%;gap:9px;margin-bottom:15px}
+ .sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{min-height:142px;padding:12px 9px;border-radius:19px}
+ .sp-home .sp-poster-whatsapp{grid-template-columns:42px 1fr 22px;gap:7px;border-width:2px}
+ .sp-home .sp-poster-whatsapp-icon{width:40px;height:40px;border-width:2px}
+ .sp-home .sp-poster-whatsapp-icon svg{width:29px;height:29px}
+ .sp-home .sp-poster-whatsapp strong{font-size:clamp(11px,3vw,15px);line-height:1.16}
+ .sp-home .sp-poster-whatsapp>b{font-size:23px}
+ .sp-home .sp-poster-plans .sp-plan-link{width:100%;min-height:34px;padding:7px 3px;font-size:clamp(8px,2.1vw,11px);white-space:nowrap}
+ .sp-home .sp-poster-admin-link{min-height:64px}
+}
+@media(max-width:370px){
+ .sp-home .sp-poster-button{min-height:70px;grid-template-columns:52px 1fr 29px;padding:7px 10px;font-size:18px}
+ .sp-home .sp-poster-person svg{width:40px;height:40px}
+ .sp-home .sp-poster-info{width:95%;gap:7px}
+ .sp-home .sp-poster-whatsapp{grid-template-columns:35px 1fr 18px;gap:5px}
+ .sp-home .sp-poster-whatsapp-icon{width:34px;height:34px}
+ .sp-home .sp-poster-whatsapp-icon svg{width:25px;height:25px}
+ .sp-home .sp-poster-whatsapp strong{font-size:10px}
+ .sp-home .sp-poster-whatsapp>b{font-size:20px}
+}
