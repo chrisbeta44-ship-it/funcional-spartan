@@ -1002,3 +1002,13 @@ label{font-size:15px!important;line-height:1.5}
  .sp-poster-info{width:95%}
  .sp-poster-plans{width:95%}
 }
+
+/* Ajustes finais da referência: imagem inteira, sem cortes ou bordas laterais */
+.sp-poster-stage{height:clamp(220px,47vw,490px)}
+.sp-poster-characters{object-fit:contain;object-position:center top}
+.sp-poster-person svg{display:block;width:100%;height:100%;fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.sp-poster-calendar svg{display:block;width:100%;height:100%;fill:none;stroke:#ff7900;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.sp-poster-whatsapp-icon svg{display:block;width:100%;height:100%;fill:none;stroke:#fff;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-poster-plans .sp-plan-icon svg{display:block;width:100%;height:100%;max-width:48px;max-height:48px;margin:auto;fill:none;stroke:#ff8a00;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-poster-lock svg{display:block;width:100%;height:100%;max-width:48px;max-height:48px;fill:none;stroke:#ff7900;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:700px){.sp-poster-stage{height:clamp(190px,58vw,340px)}}
