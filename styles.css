@@ -1073,3 +1073,73 @@ label{font-size:15px!important;line-height:1.5}
  .sp-home .sp-menu-toggle{flex-basis:35px;width:35px;height:40px}
  .sp-home .sp-poster-stage{aspect-ratio:1.24/1}
 }
+
+
+/* Layout final alinhado à referência desktop + mobile */
+.sp-home,.sp-home body{background:#030303}
+.sp-home .sp-poster-home{width:100%;max-width:1500px;margin:0 auto;padding:0 18px 34px;background:radial-gradient(ellipse at 50% 15%,#351407 0%,#090503 55%,#020202 100%)}
+.sp-home .sp-top-inner{max-width:1500px}
+.sp-home .sp-poster-hero{width:100%;margin:0 auto;padding:0}
+.sp-home .sp-poster-stage{height:clamp(390px,39vw,590px);max-height:590px;aspect-ratio:auto;position:relative;overflow:hidden;display:block;background:#080402;border-radius:0 0 26px 26px}
+.sp-home .sp-poster-characters{position:absolute;inset:0 auto 0 0;width:68%;height:100%;object-fit:cover;object-position:center 24%;display:block}
+.sp-home .sp-poster-stage:after{content:"";position:absolute;z-index:1;inset:0 30% 0 48%;background:linear-gradient(90deg,transparent,#080402 78%);pointer-events:none}
+.sp-home .sp-poster-copy{position:absolute;z-index:2;left:auto;right:2.5%;top:0;bottom:0;width:32%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;padding:24px 1.5%}
+.sp-home .sp-poster-copy h1{font-size:clamp(40px,5.4vw,78px);line-height:.91;letter-spacing:-1.5px}
+.sp-home .sp-poster-copy h1 em{margin-top:8px}
+.sp-home .sp-poster-copy p{font-size:clamp(11px,1.35vw,18px);line-height:1.65;letter-spacing:clamp(1px,.18vw,3px);margin-top:18px}
+.sp-home .sp-poster-actions{width:88%;max-width:1120px;grid-template-columns:1fr 1fr;gap:18px;margin:18px auto 22px}
+.sp-home .sp-poster-button{grid-template-columns:82px 1fr 52px;min-height:82px;font-size:clamp(20px,2.8vw,38px);padding:8px 18px}
+.sp-home .sp-poster-info{width:92%;max-width:1240px;grid-template-columns:1.05fr .95fr;gap:24px;margin:0 auto 20px}
+.sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{min-height:128px;padding:16px 22px;border-radius:28px}
+.sp-home .sp-poster-plans{width:92%;max-width:1240px;margin:0 auto 20px;padding:16px 20px 22px}
+.sp-home .sp-poster-plans .sp-plan-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.sp-home .sp-poster-plans .sp-plan-card{min-height:190px;padding:16px 12px}
+.sp-home .sp-poster-admin-link{width:min(55%,650px)}
+@media(max-width:700px){
+ .sp-home .sp-top{border-radius:0 0 22px 22px}
+ .sp-home .sp-top-inner{min-height:76px;padding:5px 12px;gap:8px}
+ .sp-home .sp-brand{flex:1 1 auto;gap:7px;font-size:clamp(14px,4vw,18px)}
+ .sp-home .sp-brand .brand-image{width:52px;height:52px;flex:0 0 52px}
+ .sp-home .sp-guide{display:none!important}
+ .sp-home .sp-menu-toggle{flex:0 0 48px;width:48px;height:48px;border-radius:15px;gap:6px}
+ .sp-home .sp-menu-toggle span{width:27px;height:3px}
+ .sp-home .sp-poster-home{padding:0 0 18px}
+ .sp-home .sp-poster-stage{height:auto;aspect-ratio:1.18/1;max-height:470px;min-height:320px;border-radius:0}
+ .sp-home .sp-poster-characters{inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+ .sp-home .sp-poster-stage:after{inset:48% 0 0;background:linear-gradient(180deg,transparent 0%,#050302a8 50%,#050302f5 100%)}
+ .sp-home .sp-poster-copy{left:2%;right:2%;top:auto;bottom:8px;width:auto;display:block;text-align:center;padding:0 1vw}
+ .sp-home .sp-poster-copy h1{font-size:clamp(29px,8.5vw,46px);line-height:.92;letter-spacing:-.7px}
+ .sp-home .sp-poster-copy h1 em{margin-top:3px}
+ .sp-home .sp-poster-copy p{font-size:clamp(7px,2vw,10px);line-height:1.4;letter-spacing:.7px;margin-top:6px}
+ .sp-home .sp-poster-actions{width:90%;grid-template-columns:1fr;gap:10px;margin:14px auto 16px}
+ .sp-home .sp-poster-button{grid-template-columns:48px 1fr 28px;min-height:62px;padding:5px 10px;border-width:3px;font-size:clamp(16px,4.5vw,21px)}
+ .sp-home .sp-poster-person{font-size:30px;padding-right:6px}
+ .sp-home .sp-poster-info{width:92%;grid-template-columns:1fr 1fr;gap:8px;margin:0 auto 12px}
+ .sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{min-height:120px;padding:10px 8px;gap:7px;border-radius:18px}
+ .sp-home .sp-poster-calendar{font-size:34px}
+ .sp-home .sp-poster-schedule h2{font-size:clamp(11px,3vw,15px)}
+ .sp-home .sp-poster-schedule .sp-schedule-list{font-size:clamp(9px,2.4vw,12px)}
+ .sp-home .sp-poster-whatsapp-icon{font-size:34px}
+ .sp-home .sp-poster-whatsapp strong{font-size:clamp(9px,2.4vw,12px)}
+ .sp-home .sp-poster-whatsapp>b{font-size:20px}
+ .sp-home .sp-poster-plans{width:92%;padding:11px 8px 13px;border-radius:19px;margin:0 auto 12px}
+ .sp-home .sp-poster-section-title{gap:7px;margin-bottom:9px}
+ .sp-home .sp-poster-section-title h2{font-size:clamp(14px,3.7vw,19px)}
+ .sp-home .sp-poster-plans .sp-plan-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .sp-home .sp-poster-plans .sp-plan-card{min-height:150px;padding:9px 4px;border-width:2px;border-radius:15px}
+ .sp-home .sp-poster-plans .sp-plan-icon{font-size:24px}
+ .sp-home .sp-poster-plans .sp-plan-card h3{font-size:clamp(8px,2.25vw,11px);margin-bottom:4px}
+ .sp-home .sp-poster-plans .sp-plan-card p{font-size:clamp(7px,1.9vw,9px);margin:4px 0 7px}
+ .sp-home .sp-poster-plans .sp-plan-card .price{font-size:clamp(14px,3.8vw,20px)}
+ .sp-home .sp-poster-plans .sp-trial-price{font-size:clamp(10px,2.8vw,14px);padding:5px 7px}
+ .sp-home .sp-poster-admin{padding:5px 0 12px}
+ .sp-home .sp-poster-admin-link{width:74%;min-height:70px;padding:8px 8px 8px 70px}
+ .sp-home .sp-poster-admin-link img{width:76px;height:76px}
+}
+@media(max-width:370px){
+ .sp-home .sp-poster-stage{min-height:285px;aspect-ratio:1.12/1}
+ .sp-home .sp-poster-info{width:94%}
+ .sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{padding:8px 5px}
+ .sp-home .sp-poster-plans{width:94%}
+ .sp-home .sp-poster-plans .sp-plan-card{min-height:142px}
+}
