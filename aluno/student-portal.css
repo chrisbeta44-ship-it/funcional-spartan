@@ -42,7 +42,7 @@ body:has(.portal){margin:0;padding-top:78px;background:radial-gradient(ellipse a
 .student-whatsapp-cta{display:flex;align-items:center;gap:13px;width:100%;box-sizing:border-box;min-height:68px;margin:0 0 18px;padding:13px 17px;border:1px solid #00c853;border-radius:15px;background:linear-gradient(110deg,#087d32,#075321);box-shadow:0 0 18px #00c85322;color:#fff;text-decoration:none;font-size:clamp(15px,3.5vw,19px);font-weight:950}
 .student-whatsapp-cta .whatsapp-mark{font-size:31px}
 .student-whatsapp-cta b{margin-left:auto;font-size:25px}
-#memberView>.panel[data-portal-section="home"],#memberAttendancePanel,#rankingPanel{display:none!important}
+#memberView>.panel[data-portal-section="home"]{display:none!important}
 #memberView.profile-open #memberProfilePanel{display:block!important}
 .student-back-button{min-height:45px;margin:0 0 12px;padding:9px 13px;border:1px solid #8b4a20;border-radius:11px;background:#17110c;color:#ffb36b;font-size:15px;font-weight:850}
 .profile-editor{grid-template-columns:1fr!important;gap:12px!important}
@@ -131,3 +131,8 @@ body:has(.portal){margin:0;padding-top:78px;background:radial-gradient(ellipse a
  .evolution-metric-card small{font-size:11px}
 }
 @media(max-width:360px){.student-app-brand{font-size:12px}.student-app-brand img{width:27px}.student-app-area{font-size:9px}.portal-tabs .btn{font-size:8.5px!important}.portal-tabs .nav-icon svg{width:19px!important;height:19px!important}.portal-dashboard-welcome .welcome-icon{width:58px!important;height:58px!important;flex-basis:58px!important}.student-whatsapp-cta{font-size:13px}}
+
+/* Home sem controles secundários; edição de foto permanece em Meus Dados */
+.portal-dashboard-welcome .welcome-photo-actions{display:none!important}
+#memberAttendancePanel,#rankingPanel{margin-top:14px}
+#rankingPanel h3{font-size:20px!important}
