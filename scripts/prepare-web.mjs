@@ -6,6 +6,7 @@ const output = new URL('../www/', import.meta.url);
 const entries = [
   'index.html',
   'styles.css',
+  'spartan-theme.css',
   'app.js',
   'assets',
   'admin',
@@ -22,7 +23,7 @@ await mkdir(output, { recursive: true });
 for (const entry of entries) {
   const source = new URL('../' + entry, import.meta.url);
   if (!existsSync(source)) {
-    if (['index.html', 'styles.css', 'app.js'].includes(entry)) {
+    if (['index.html', 'styles.css', 'spartan-theme.css', 'app.js'].includes(entry)) {
       throw new Error('Arquivo essencial ausente: ' + entry);
     }
     continue;
