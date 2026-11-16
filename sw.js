@@ -5,6 +5,7 @@ const APP_SHELL = [
   '/aluno/index.html',
   '/cadastro/index.html',
   '/styles.css?v=spartan-complete-20261116',
+  '/spartan-theme.css?v=spartan-complete-20261116',
   '/back-button.js',
   '/assets/spartan-team.webp',
   '/assets/spartan-chibi-group.webp',
