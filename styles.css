@@ -1729,3 +1729,96 @@ label{font-size:15px!important;line-height:1.5}
 }
 .menu-close{color:#ff922e!important;background:#1b1009!important;border:1px solid #663716!important;border-radius:12px!important;width:48px!important;height:48px!important}
 .menu-open .menu-backdrop{opacity:1!important;visibility:visible!important}
+
+
+/* Revisão final mobile estreito + contraste do selo GRÁTIS em todas as telas */
+.sp-home .sp-poster-plans .sp-trial-price,
+.sp-home .sp-poster-plans .sp-plan-card .sp-trial-price{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  background:linear-gradient(180deg,#ffb21a 0%,#ff7900 100%)!important;
+  color:#160800!important;-webkit-text-fill-color:#160800!important;
+  opacity:1!important;filter:none!important;mix-blend-mode:normal!important;
+  font-weight:1000!important;text-shadow:none!important;
+  box-shadow:0 0 14px rgba(255,135,0,.35),inset 0 1px 0 rgba(255,255,255,.24)!important;
+  border:1px solid #ffb13b!important
+}
+.sp-home .sp-poster-plans .sp-trial-card .sp-trial-price{
+  color:#160800!important;-webkit-text-fill-color:#160800!important
+}
+@media(max-width:700px){
+ .sp-home .sp-poster-stage{aspect-ratio:1.24/1!important;min-height:0!important;max-height:none!important}
+ .sp-home .sp-poster-copy{bottom:10px!important}
+ .sp-home .sp-poster-actions{width:88%!important;gap:10px!important;margin:14px auto 16px!important}
+ .sp-home .sp-poster-button{
+   min-height:58px!important;grid-template-columns:52px minmax(0,1fr) 30px!important;
+   padding:5px 12px!important;font-size:clamp(16px,4.1vw,20px)!important
+ }
+ .sp-home .sp-poster-person svg{width:36px!important;height:36px!important}
+ .sp-home .sp-poster-button>b{font-size:24px!important}
+}
+@media(max-width:520px){
+ .sp-home .sp-poster-info{
+   width:92%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+   gap:8px!important
+ }
+ .sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{
+   min-height:126px!important;border-radius:20px!important
+ }
+ .sp-home .sp-poster-schedule{
+   grid-template-columns:34px minmax(0,1fr)!important;
+   gap:6px!important;padding:10px 7px!important
+ }
+ .sp-home .sp-poster-calendar svg{width:32px!important;height:32px!important}
+ .sp-home .sp-poster-schedule h2{font-size:clamp(10px,2.9vw,13px)!important}
+ .sp-home #publicSchedule{font-size:clamp(9px,2.55vw,11px)!important;line-height:1.2!important}
+ .sp-home #publicSchedule small{font-size:clamp(8px,2.2vw,9px)!important}
+ .sp-home .sp-poster-whatsapp{
+   grid-template-columns:34px minmax(0,1fr) 16px!important;
+   gap:4px!important;padding:9px 6px!important
+ }
+ .sp-home .sp-poster-whatsapp-icon svg{width:34px!important;height:34px!important}
+ .sp-home .sp-poster-whatsapp strong{font-size:clamp(8px,2.35vw,10px)!important}
+ .sp-home .sp-poster-whatsapp>b{font-size:19px!important}
+ .sp-home .sp-poster-plans{width:92%!important;padding:11px 6px 12px!important}
+ .sp-home .sp-poster-plans .sp-plan-grid{grid-template-columns:1fr!important;gap:9px!important}
+ .sp-home .sp-poster-plans .sp-plan-card{
+   display:grid!important;grid-template-columns:48px minmax(0,1fr) auto!important;
+   grid-template-rows:auto auto auto!important;align-items:center!important;
+   min-height:100px!important;padding:10px 11px!important;gap:2px 9px!important;
+   border-radius:18px!important;text-align:left!important
+ }
+ .sp-home .sp-poster-plans .sp-plan-icon{
+   grid-column:1!important;grid-row:1/4!important;
+   width:43px!important;height:43px!important;flex:none!important;margin:0!important
+ }
+ .sp-home .sp-poster-plans .sp-plan-icon svg{width:31px!important;height:31px!important}
+ .sp-home .sp-poster-plans .sp-plan-card h3{
+   grid-column:2!important;grid-row:1!important;min-height:0!important;
+   margin:0!important;text-align:left!important;font-size:clamp(11px,3vw,13px)!important
+ }
+ .sp-home .sp-poster-plans .sp-plan-card p{
+   grid-column:2!important;grid-row:2!important;min-height:0!important;
+   margin:2px 0!important;text-align:left!important;font-size:clamp(9px,2.5vw,11px)!important
+ }
+ .sp-home .sp-poster-plans .sp-plan-card .price,
+ .sp-home .sp-poster-plans .sp-plan-card .sp-trial-price{
+   grid-column:3!important;grid-row:1/3!important;align-self:center!important;
+   margin:0!important;font-size:clamp(13px,3.8vw,17px)!important;
+   min-height:27px!important;white-space:nowrap!important
+ }
+ .sp-home .sp-poster-plans .sp-plan-card .price small{font-size:8px!important}
+ .sp-home .sp-poster-plans .sp-plan-card .sp-plan-link{
+   grid-column:2/4!important;grid-row:3!important;width:100%!important;
+   min-height:29px!important;margin:4px 0 0!important;padding:5px 8px!important;
+   font-size:8px!important;border-radius:24px!important
+ }
+ .sp-home .sp-poster-admin{display:none!important}
+ .sp-home .sp-poster-admin-link{display:none!important}
+}
+@media(max-width:370px){
+ .sp-home .sp-poster-stage{aspect-ratio:1.16/1!important}
+ .sp-home .sp-poster-info{width:94%!important;gap:6px!important}
+ .sp-home .sp-poster-schedule,.sp-home .sp-poster-whatsapp{min-height:118px!important}
+ .sp-home .sp-poster-plans .sp-plan-card{grid-template-columns:42px minmax(0,1fr) auto!important;padding:9px 8px!important}
+ .sp-home .sp-poster-plans .sp-plan-icon{width:39px!important;height:39px!important}
+}
