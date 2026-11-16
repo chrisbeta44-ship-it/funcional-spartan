@@ -458,3 +458,187 @@ label{font-size:15px!important;line-height:1.5}
 }
 .admin-secret svg {width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
 .admin-secret:hover,.admin-secret:focus-visible {opacity:1;color:#ff8a28}
+
+
+/* =========================================================
+   NOVA HOME FUNCIONAL SPARTAN — desktop + mobile
+   ========================================================= */
+.sp-home{background:#070707;color:#fff;padding-bottom:0!important}
+.sp-home .bottom-nav,.sp-home .student-pocket-section,.sp-home .admin-secret{display:none!important}
+.sp-home .top.sp-top{position:sticky;top:0;z-index:80;background:rgba(5,5,5,.96);border-bottom:1px solid #4b2a17;box-shadow:0 8px 28px #0009;backdrop-filter:blur(18px)}
+.sp-top-inner{min-height:86px;display:flex;align-items:center;gap:28px}
+.sp-brand{flex:0 0 auto;gap:10px;font:900 24px 'Barlow Condensed',sans-serif;letter-spacing:.4px;white-space:nowrap}
+.sp-brand .brand-image{width:54px;height:54px;object-fit:contain;border-radius:12px}
+.sp-brand span b{color:#ff7800}
+.sp-guide{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-left:auto}
+.sp-guide a{display:flex;align-items:center;gap:8px;min-height:48px;padding:10px 16px;border:1px solid transparent;border-radius:12px;color:#eee;font-size:14px;font-weight:850;white-space:nowrap;transition:.2s}
+.sp-guide a span{font-size:20px;color:#ff8a22}
+.sp-guide a:hover,.sp-guide a.active{background:linear-gradient(120deg,#351807,#160e09);border-color:#804016;color:#ff9a36;box-shadow:0 0 20px #ff650022}
+.sp-menu-toggle{display:none!important}
+.sp-home .mobile-menu{z-index:101!important}
+.sp-hero{position:relative;overflow:hidden;padding:42px 0 36px;background:radial-gradient(ellipse at 20% 35%,#67280855,transparent 48%),radial-gradient(ellipse at 80% 10%,#a43c0928,transparent 42%),#070707}
+.sp-hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(115deg,transparent 0 130px,#ff6b0010 131px 133px,transparent 134px 260px);opacity:.45}
+.sp-hero-shell{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);gap:34px;align-items:center;padding:28px;border:1px solid #6b381c;border-radius:28px;background:linear-gradient(115deg,#17100cdd,#090909f2 60%);box-shadow:0 22px 70px #000a,0 0 45px #ff6b0017}
+.sp-hero-art{min-width:0}
+.sp-hero-video{position:relative;overflow:hidden;aspect-ratio:1/1.03;max-height:610px;border:1px solid #82451e;border-radius:22px;background:#090909;box-shadow:0 0 35px #ff6b002b}
+.sp-hero-video video,.sp-hero-video img{display:block;width:100%;height:100%;object-fit:cover}
+.sp-hero-video .media-label{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;gap:8px;padding:14px 17px;background:linear-gradient(#050505dd,transparent);font-size:11px;font-weight:900;letter-spacing:1.6px}
+.sp-hero-video .media-label span{color:#ff9a3b}
+.sp-hero-video .media-bottom{position:absolute;bottom:0;left:0;right:0;z-index:2;display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 10px;background:linear-gradient(transparent,#050505e8);font-size:10px;font-weight:900;letter-spacing:2px}
+.sp-hero-video .media-bottom i{width:5px;height:5px;border-radius:50%;background:#ff7900}
+.sp-hero-copy{min-width:0;padding:12px 8px}
+.sp-hero-copy .eyebrow{display:flex;align-items:center;gap:10px;color:#ff922f;font-size:12px;font-weight:900;letter-spacing:2.7px}
+.sp-eyebrow-line{width:30px;height:2px;background:#ff7900;box-shadow:0 0 10px #ff7900}
+.sp-hero-copy h1{margin:18px 0 16px;font:900 clamp(46px,5.2vw,76px)/.96 'Barlow Condensed',sans-serif;letter-spacing:-1px}
+.sp-hero-copy h1 em{color:#ff7600;font-style:normal;text-shadow:0 5px 24px #ff650044}
+.sp-hero-copy>p{max-width:540px;margin:0;color:#c7c0bb;font-size:18px;line-height:1.65}
+.sp-hero-actions{display:grid;gap:12px;margin-top:28px}
+.sp-button{display:flex;align-items:center;gap:14px;min-height:68px;padding:13px 20px;border:2px solid #ff7900;border-radius:15px;font-size:18px;font-weight:950;letter-spacing:.3px;transition:transform .2s,box-shadow .2s,background .2s}
+.sp-button:hover{transform:translateY(-2px);box-shadow:0 8px 28px #ff650044}
+.sp-button b{margin-left:auto;font-size:27px}
+.sp-button-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-right:1px solid #ffffff55;font-size:27px}
+.sp-button-primary{background:linear-gradient(110deg,#ff6500,#ff9828);color:#140b05;box-shadow:0 8px 25px #ff650033}
+.sp-button-outline{background:#0d0b09;color:#fff}
+.sp-next-section{padding:18px 0 26px;background:linear-gradient(180deg,#0b0908,#090909)}
+.sp-next-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.sp-next-info,.sp-whatsapp-group{min-height:144px;border:1px solid #74401f;border-radius:19px;background:linear-gradient(115deg,#21130b,#100d0b);box-shadow:0 10px 30px #0007}
+.sp-next-info{padding:18px 22px}
+.sp-section-kicker,.sp-plan-card>small,.sp-bottom-cta small{color:#ff912e;font-size:10px;font-weight:950;letter-spacing:2.2px}
+.sp-next-info h2{margin:4px 0 10px;font:900 25px 'Barlow Condensed',sans-serif;color:#ff8a22}
+.sp-schedule-list{min-height:44px}
+.sp-schedule-list .schedule-loading,.sp-schedule-list .schedule-empty{color:#ddd;font-size:14px;line-height:1.45}
+.sp-schedule-list .schedule-empty a{color:#ff9a36;font-weight:800}
+.sp-schedule-list .schedule-card{display:flex;align-items:center;gap:13px;border:0;background:transparent;padding:0;box-shadow:none}
+.sp-schedule-list .schedule-date{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;width:48px;height:48px;border:1px solid #ff7900;border-radius:11px;background:#2b160b;color:#ff982f}
+.sp-schedule-list .schedule-date span{font-size:9px;font-weight:900;text-transform:uppercase}
+.sp-schedule-list .schedule-date strong{font-size:22px;line-height:1}
+.sp-schedule-list .schedule-detail{display:flex;flex-direction:column;gap:4px;min-width:0}
+.sp-schedule-list .schedule-detail strong{color:#fff;font-size:17px}
+.sp-schedule-list .schedule-detail span{color:#c5bcb6;font-size:12px}
+.sp-schedule-list .schedule-status{display:none}
+.sp-whatsapp-group{display:flex;align-items:center;gap:16px;padding:18px 22px;border-color:#16c84b;background:linear-gradient(110deg,#06200e,#071109);box-shadow:0 0 25px #00d33a18}
+.sp-whatsapp-symbol{display:grid;place-items:center;flex:none;width:62px;height:62px;border:2px solid #21d653;border-radius:50%;color:#39e66c;font-size:34px;font-weight:900}
+.sp-whatsapp-group small{display:block;margin-bottom:5px;color:#79f39a;font-size:10px;font-weight:900;letter-spacing:1.5px}
+.sp-whatsapp-group strong{font-size:clamp(15px,1.8vw,22px);line-height:1.2}
+.sp-whatsapp-group>b{margin-left:auto;color:#43e76f;font-size:30px}
+.sp-plans-section{padding:32px 0 38px;background:radial-gradient(ellipse at 50% 0,#4d210d40,transparent 60%),#080808}
+.sp-section-title{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:22px;text-align:center}
+.sp-section-title>span{width:min(140px,15vw);height:2px;background:linear-gradient(90deg,transparent,#ff7900)}
+.sp-section-title>span:last-child{transform:rotate(180deg)}
+.sp-section-title small{color:#ff912e;font-size:10px;font-weight:900;letter-spacing:2px}
+.sp-section-title h2{margin:3px 0 0;font:900 32px 'Barlow Condensed',sans-serif}
+.sp-plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sp-plan-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:245px;padding:20px;border:1px solid #87441b;border-radius:18px;background:linear-gradient(145deg,#23150d,#100d0b 70%);box-shadow:0 12px 30px #0008}
+.sp-plan-card.sp-plan-featured{border:2px solid #ff7900;box-shadow:0 0 26px #ff650026,0 12px 30px #0008}
+.sp-plan-icon{display:grid;place-items:center;width:44px;height:44px;margin-bottom:10px;border:1px solid #ff7900;border-radius:12px;color:#ff982d;font-size:27px}
+.sp-plan-card h3{margin:0;color:#fff;font:900 22px/1.05 'Barlow Condensed',sans-serif}
+.sp-plan-card p{min-height:34px;margin:8px 0;color:#c8c0bb;font-size:13px;line-height:1.4}
+.sp-plan-card .price{margin:8px 0 14px;color:#ff8a00;font-size:clamp(27px,3vw,38px);font-weight:950;line-height:1}
+.sp-plan-card .price small{color:#ddd;font-size:12px;font-weight:600}
+.sp-plan-card .sp-plan-link{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;margin-top:auto;padding:9px 12px;border:1px solid #a95520;border-radius:10px;color:#ffad65;font-size:11px;font-weight:950;letter-spacing:.6px;text-align:center}
+.sp-plan-card .sp-plan-link:hover{background:#ff7100;color:#120b06}
+.sp-trial-price{margin:5px 0 12px;color:#ff9800;font-size:30px;font-weight:1000}
+.sp-plan-note{margin:16px 0 0;color:#aaa;font-size:12px;text-align:center}
+.sp-bottom-cta{padding:25px 0 32px;border-top:1px solid #2a1a11;background:linear-gradient(110deg,#120c08,#080808)}
+.sp-bottom-cta-inner{display:flex;align-items:center;gap:18px}
+.sp-footer-mark{width:58px;height:58px;object-fit:contain}
+.sp-bottom-cta-inner>div{min-width:0}
+.sp-bottom-cta h2{margin:3px 0;font:900 27px 'Barlow Condensed',sans-serif}
+.sp-bottom-cta p{margin:0;color:#bcb4ad;font-size:13px}
+.sp-contact-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-left:auto;padding:12px 18px;border:1px solid #23d653;border-radius:12px;color:#d9ffe4;background:#08200f;font-size:12px;font-weight:950;white-space:nowrap}
+.sp-footer{padding:19px 0 22px;border-top:1px solid #25201d;background:#050505}
+.sp-footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.sp-footer-inner>span,.sp-footer-inner>a:last-child{color:#89837e;font-size:11px}
+.sp-footer-inner>a:last-child{color:#ff9233}
+.sp-admin-mascot{position:fixed;right:13px;bottom:13px;z-index:70;display:grid;place-items:center;width:48px;height:48px;padding:3px;border:1px solid #8c4a20;border-radius:50%;background:linear-gradient(145deg,#2b170b,#080808);box-shadow:0 4px 18px #000c,0 0 15px #ff70002a;opacity:.82;transition:opacity .2s,transform .2s}
+.sp-admin-mascot svg{display:block;width:100%;height:100%}
+.sp-admin-mascot:hover,.sp-admin-mascot:focus-visible{opacity:1;transform:scale(1.08);outline:2px solid #ff8a22;outline-offset:3px}
+@media(max-width:900px){
+ .sp-top-inner{gap:12px}
+ .sp-brand{font-size:21px}
+ .sp-guide a{padding:9px 10px;font-size:12px}
+ .sp-hero-shell{grid-template-columns:1fr 1fr;gap:22px;padding:20px}
+ .sp-hero-copy h1{font-size:clamp(42px,6vw,58px)}
+ .sp-button{min-height:60px;font-size:15px;padding:10px 13px}
+ .sp-plan-card{padding:15px}
+}
+@media(max-width:680px){
+ .sp-home .top.sp-top{position:sticky}
+ .sp-top-inner{min-height:unset;display:grid;grid-template-columns:1fr auto;gap:0;padding-top:8px}
+ .sp-brand{font-size:20px;min-height:56px}
+ .sp-brand .brand-image{width:45px;height:45px}
+ .sp-menu-toggle{display:flex!important;grid-column:2;grid-row:1;width:42px;height:42px;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:9px;border:1px solid #70401f;border-radius:10px;background:#160e09}
+ .sp-menu-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:#ff8a28}
+ .sp-guide{grid-column:1/-1;grid-row:2;width:100%;justify-content:flex-start;gap:5px;margin:0;padding:3px 0 9px;overflow-x:auto;scrollbar-width:none}
+ .sp-guide::-webkit-scrollbar{display:none}
+ .sp-guide a{flex:1 0 auto;justify-content:center;min-height:37px;padding:7px 10px;border-radius:9px;font-size:11px}
+ .sp-guide a span{font-size:15px}
+ .sp-hero{padding:14px 0 18px}
+ .sp-hero-shell{grid-template-columns:1fr;gap:14px;padding:12px;border-radius:19px}
+ .sp-hero-video{aspect-ratio:16/10;max-height:360px;border-radius:14px}
+ .sp-hero-video .media-label{padding:9px 10px;font-size:8px;letter-spacing:1px}
+ .sp-hero-video .media-bottom{padding:8px;font-size:8px;letter-spacing:1px;gap:8px}
+ .sp-hero-copy{padding:4px 7px 8px;text-align:center}
+ .sp-hero-copy .eyebrow{justify-content:center;font-size:9px;letter-spacing:1.7px}
+ .sp-eyebrow-line{width:20px}
+ .sp-hero-copy h1{margin:9px 0;font-size:clamp(38px,10vw,52px);line-height:.98}
+ .sp-hero-copy>p{font-size:14px;line-height:1.5;margin:auto;max-width:440px}
+ .sp-hero-actions{gap:9px;margin-top:15px}
+ .sp-button{min-height:54px;padding:8px 12px;border-radius:12px;font-size:14px}
+ .sp-button-icon{width:34px;height:34px;flex-basis:34px;font-size:23px}
+ .sp-button b{font-size:22px}
+ .sp-next-section{padding:10px 0 16px}
+ .sp-next-grid{grid-template-columns:1fr;gap:10px}
+ .sp-next-info{min-height:unset;padding:13px 14px;border-radius:14px}
+ .sp-next-info h2{font-size:22px}
+ .sp-schedule-list .schedule-date{width:43px;height:43px}
+ .sp-schedule-list .schedule-detail strong{font-size:15px}
+ .sp-schedule-list .schedule-detail span{font-size:11px}
+ .sp-whatsapp-group{min-height:82px;padding:12px 14px;border-radius:14px;gap:12px}
+ .sp-whatsapp-symbol{width:48px;height:48px;font-size:28px}
+ .sp-whatsapp-group small{font-size:9px}
+ .sp-whatsapp-group strong{font-size:16px}
+ .sp-whatsapp-group>b{font-size:25px}
+ .sp-plans-section{padding:22px 0 25px}
+ .sp-section-title{gap:9px;margin-bottom:14px}
+ .sp-section-title h2{font-size:26px}
+ .sp-section-title small{font-size:8px;letter-spacing:1.3px}
+ .sp-section-title>span{width:10vw}
+ .sp-plan-grid{grid-template-columns:1fr;gap:10px}
+ .sp-plan-card{display:grid;grid-template-columns:46px minmax(0,1fr) auto;grid-template-rows:auto auto auto;column-gap:11px;align-items:center;min-height:unset;padding:12px;border-radius:14px}
+ .sp-plan-icon{grid-column:1;grid-row:1/4;width:42px;height:42px;margin:0;font-size:23px}
+ .sp-plan-card>small{grid-column:2;grid-row:1;font-size:8px;letter-spacing:1.3px}
+ .sp-plan-card h3{grid-column:2;grid-row:2;font-size:19px}
+ .sp-plan-card p{grid-column:2;grid-row:3;min-height:unset;margin:3px 0 0;font-size:11px}
+ .sp-plan-card .price,.sp-trial-price{grid-column:3;grid-row:1/3;margin:0;font-size:23px;white-space:nowrap}
+ .sp-plan-card .price small{font-size:9px}
+ .sp-plan-card .sp-plan-link{grid-column:3;grid-row:3;width:auto;min-width:105px;min-height:32px;margin:4px 0 0;padding:6px 8px;font-size:8px}
+ .sp-trial-card .sp-trial-price{font-size:20px}
+ .sp-plan-note{font-size:10px;line-height:1.4}
+ .sp-bottom-cta{padding:17px 0}
+ .sp-bottom-cta-inner{display:grid;grid-template-columns:46px 1fr;gap:10px}
+ .sp-footer-mark{width:44px;height:44px}
+ .sp-bottom-cta h2{font-size:22px}
+ .sp-bottom-cta p{font-size:11px;line-height:1.4}
+ .sp-contact-button{grid-column:1/-1;width:100%;min-height:43px;margin:2px 0 0;font-size:11px}
+ .sp-footer-inner{flex-wrap:wrap;gap:10px}
+ .sp-footer-inner .sp-brand{font-size:17px}
+ .sp-footer-inner .sp-brand .brand-image{width:35px;height:35px}
+ .sp-footer-inner>span{order:3;width:100%;font-size:9px}
+ .sp-footer-inner>a:last-child{font-size:10px}
+ .sp-admin-mascot{right:9px;bottom:9px;width:40px;height:40px}
+}
+@media(max-width:380px){
+ .sp-brand{font-size:17px}
+ .sp-brand .brand-image{width:39px;height:39px}
+ .sp-guide a{font-size:10px;padding-inline:8px}
+ .sp-plan-card{grid-template-columns:39px minmax(0,1fr) auto;column-gap:8px}
+ .sp-plan-icon{width:36px;height:36px}
+ .sp-plan-card h3{font-size:17px}
+ .sp-plan-card .price,.sp-trial-price{font-size:19px}
+ .sp-plan-card .sp-plan-link{min-width:94px;font-size:7px}
+}
+@media(min-width:681px){
+ .sp-home .mobile-menu,.sp-home .menu-backdrop{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){.sp-home *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
