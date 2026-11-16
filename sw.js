@@ -1,10 +1,10 @@
-const CACHE_NAME = 'funcional-spartan-shell-v53';
+const CACHE_NAME = 'funcional-spartan-shell-v54';
 const APP_SHELL = [
   '/',
   '/admin/index.html',
   '/aluno/index.html',
   '/cadastro/index.html',
-  '/styles.css?v=spartan-mobile-fix-20261116d',
+  '/styles.css?v=fluid-buttons-20261116e',
   '/back-button.js',
   '/assets/spartan-team.webp',
   '/assets/spartan-chibi-group.webp',
