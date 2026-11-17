@@ -435,7 +435,7 @@ async function loadClassConfirmations(studentId){
   const day=date.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'}).replace('.','');
   const start=String(c.starts_at||'').slice(0,5),end=c.ends_at?' – '+String(c.ends_at).slice(0,5):'';
   const confirmed=['going','confirmed'].includes(record?.status),classEnd=String(c.ends_at||c.starts_at||'').slice(0,5),past=c.class_date<today||(c.class_date===today&&classEnd&&classEnd<=nowTime);
-  const state=confirmed?'<span class="schedule-status is-confirmed">✓ Presença confirmada</span>':past?'<span class="schedule-status">Aula realizada</span>':'';
+  const state=confirmed?'<span class="schedule-status is-confirmed">✓ Presença confirmada</span>':record?.status==='cancelled'?'<span class="schedule-status">Presença cancelada</span>':past?'<span class="schedule-status">Aula realizada</span>':'';
   const action=past?'':confirmed?'<div class="schedule-attendance-actions"><button type="button" class="btn schedule-cancel-attendance" data-cancel-class-id="'+c.id+'">Cancelar presença</button></div>':'<button type="button" class="btn spartan-confirm-attendance" data-class-id="'+c.id+'">Confirmar presença</button>';
   return '<article class="schedule-class-item"><span class="schedule-date-icon">▦</span><div class="schedule-class-info"><strong>'+day.charAt(0).toUpperCase()+day.slice(1)+' – '+start+end+'</strong><span>'+escapeHtml(c.location||'Local a confirmar')+'</span>'+state+'</div><div class="schedule-class-action">'+action+'</div></article>';
  }).join('');
@@ -459,8 +459,8 @@ document.getElementById('classConfirmList').addEventListener('click',async e=>{
   if(!user){cancelButton.disabled=false;cancelButton.textContent='Cancelar presença';return;}
   const {data:student}=await sb.from('students').select('id').eq('auth_user_id',user.id).maybeSingle();
   if(!student){cancelButton.disabled=false;cancelButton.textContent='Cancelar presença';return;}
-  const result=await sb.from('class_attendance_confirmations').delete().eq('class_id',cancelButton.dataset.cancelClassId).eq('student_id',student.id);
-  if(result.error){cancelButton.disabled=false;cancelButton.textContent='Cancelar presença';alert('Não foi possível cancelar: '+result.error.message);return;}
+  const result=await sb.from('class_attendance_confirmations').update({status:'cancelled',updated_at:new Date().toISOString()}).eq('class_id',cancelButton.dataset.cancelClassId).eq('student_id',student.id).select('id').maybeSingle();
+  if(result.error||!result.data){cancelButton.disabled=false;cancelButton.textContent='Cancelar presença';alert('Não foi possível cancelar sua presença.'+(result.error?' Detalhe: '+result.error.message:' A confirmação não foi localizada.'));return;}
   await loadClassConfirmations(student.id);return;
  }
  const monthButton=e.target.closest('button[data-month-shift]');
