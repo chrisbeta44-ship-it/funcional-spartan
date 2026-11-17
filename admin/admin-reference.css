@@ -243,3 +243,23 @@ body:has(.admin-wrap){padding-top:78px!important;background:radial-gradient(elli
  .admin-nav-more>summary{min-height:48px;font-size:14px}
  .admin-nav-secondary .admin-tab{min-height:49px!important}
 }
+
+
+/* Edição simplificada: ações frequentes visíveis, ajustes avançados recolhidos */
+.admin-price-editor{display:grid;gap:12px;margin:0 0 18px;padding:18px;border:1px solid #875020;border-radius:14px;background:linear-gradient(130deg,#211307,#0b0b0b);box-shadow:0 0 16px #ff79001a}
+.admin-price-editor>strong{font-size:18px;color:#ffb45a}
+.admin-price-editor>p{margin:0}
+.admin-price-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.admin-price-fields label{display:block;color:#f4e5d6;font-size:12px;font-weight:800}
+.admin-price-fields .field{margin:7px 0 0}
+.admin-price-fields .btn{min-width:135px}
+.admin-advanced-settings{margin:12px 0;border:1px solid #67401f;border-radius:12px;background:#100c09;overflow:hidden}
+.admin-advanced-settings>summary{display:flex;align-items:center;gap:10px;padding:14px 16px;color:#ffb45a;font-size:14px;font-weight:900;cursor:pointer;list-style:none}
+.admin-advanced-settings>summary::-webkit-details-marker{display:none}
+.admin-advanced-settings>summary:after{content:"＋";margin-left:auto;color:#ff8a28;font-size:18px}
+.admin-advanced-settings[open]>summary:after{content:"−"}
+.admin-advanced-settings>summary small{margin-left:auto;color:#999;font-size:10px;font-weight:600}
+.admin-advanced-settings[open]>summary small{margin-left:0}
+.admin-advanced-settings>section,.admin-advanced-settings>div{padding:12px 15px 16px}
+.admin-advanced-settings .card{margin:0!important}
+@media(max-width:760px){.admin-price-fields{grid-template-columns:1fr}.admin-price-fields .btn{width:100%}.admin-price-editor{padding:14px}.admin-advanced-settings>summary{padding:13px;font-size:13px}}
