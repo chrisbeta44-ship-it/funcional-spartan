@@ -399,3 +399,70 @@ body:has(.portal){padding-top:68px!important;background:#050505!important;color:
  .student-home-greeting h1{font-size:clamp(20px,5.7vw,26px)!important}
  .schedule-attendance-actions{gap:7px}
 }
+
+
+/* v71 — início com imagem em destaque, seguindo a referência visual */
+.student-home-hero{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:stretch!important;
+ gap:0!important;
+ min-height:0!important;
+ padding:12px!important;
+ overflow:hidden!important;
+}
+.student-home-art{
+ width:100%!important;
+ height:auto!important;
+ min-height:0!important;
+ max-height:none!important;
+ aspect-ratio:4/3!important;
+ overflow:hidden!important;
+ border-radius:14px!important;
+}
+.student-home-art img{
+ display:block!important;
+ width:100%!important;
+ height:100%!important;
+ object-fit:cover!important;
+ object-position:center 35%!important;
+ transform:none!important;
+}
+.student-home-greeting{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ text-align:center!important;
+ gap:10px!important;
+ padding:16px 8px 8px!important;
+}
+.student-home-greeting h1{
+ margin:0!important;
+ font-size:clamp(28px,7vw,38px)!important;
+ line-height:1.1!important;
+ text-align:center!important;
+}
+.student-home-greeting p{
+ max-width:340px!important;
+ margin:0 auto!important;
+ font-size:17px!important;
+ line-height:1.35!important;
+ text-align:center!important;
+}
+.student-home-greeting .student-status-pill{align-self:center!important}
+.student-home-greeting .student-my-data{
+ width:100%!important;
+ max-width:100%!important;
+ min-height:62px!important;
+ justify-content:center!important;
+ border-radius:999px!important;
+ font-size:20px!important;
+}
+@media(max-width:560px){
+ .student-home-hero{padding:10px!important;border-radius:22px!important}
+ .student-home-art{aspect-ratio:4/3!important}
+ .student-home-greeting{padding:14px 6px 6px!important}
+ .student-home-greeting h1{font-size:clamp(27px,7.4vw,34px)!important}
+ .student-home-greeting p{font-size:16px!important}
+ .student-home-greeting .student-my-data{min-height:58px!important;font-size:18px!important}
+}
