@@ -428,15 +428,15 @@ async function loadClassConfirmations(studentId){
  if(error){box.innerHTML='<div class="schedule-empty">Não foi possível carregar as aulas deste mês.</div>';return;}
  const {data:mine,error:mineError}=await sb.from('class_attendance_confirmations').select('id,class_id,status').eq('student_id',studentId);
  if(mineError){box.innerHTML='<div class="schedule-empty">Não foi possível consultar suas confirmações.</div>';return;}
- const rows=classes||[],today=iso(new Date()),records=mine||[];
+ const now=new Date(),today=iso(now),nowTime=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0'),records=mine||[];
  const nav='<div class="spartan-month-picker"><button type="button" data-month-shift="-1" aria-label="Mês anterior">‹</button><strong>'+monthLabel.charAt(0).toUpperCase()+monthLabel.slice(1)+'</strong><button type="button" data-month-shift="1" aria-label="Próximo mês">›</button></div>';
  const cards=rows.map(c=>{
   const date=new Date(c.class_date+'T12:00:00'),record=records.find(x=>x.class_id===c.id);
   const day=date.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'}).replace('.','');
   const start=String(c.starts_at||'').slice(0,5),end=c.ends_at?' – '+String(c.ends_at).slice(0,5):'';
-  const confirmed=['going','confirmed'].includes(record?.status),past=c.class_date<today;
+  const confirmed=['going','confirmed'].includes(record?.status),classEnd=String(c.ends_at||c.starts_at||'').slice(0,5),past=c.class_date<today||(c.class_date===today&&classEnd&&classEnd<=nowTime);
   const state=confirmed?'<span class="schedule-status is-confirmed">✓ Presença confirmada</span>':past?'<span class="schedule-status">Aula realizada</span>':'';
-  const action=confirmed?'<div class="schedule-attendance-actions"><span class="schedule-status is-confirmed">✓ Presença confirmada</span><button type="button" class="btn schedule-cancel-attendance" data-cancel-class-id="'+c.id+'">Cancelar presença</button></div>':past?'<span class="schedule-status">Encerrada</span>':'<button type="button" class="btn spartan-confirm-attendance" data-class-id="'+c.id+'">Confirmar presença</button>';
+  const action=past?'':confirmed?'<div class="schedule-attendance-actions"><button type="button" class="btn schedule-cancel-attendance" data-cancel-class-id="'+c.id+'">Cancelar presença</button></div>':'<button type="button" class="btn spartan-confirm-attendance" data-class-id="'+c.id+'">Confirmar presença</button>';
   return '<article class="schedule-class-item"><span class="schedule-date-icon">▦</span><div class="schedule-class-info"><strong>'+day.charAt(0).toUpperCase()+day.slice(1)+' – '+start+end+'</strong><span>'+escapeHtml(c.location||'Local a confirmar')+'</span>'+state+'</div><div class="schedule-class-action">'+action+'</div></article>';
  }).join('');
  box.innerHTML=nav+(cards||'<div class="schedule-empty">Nenhuma aula cadastrada para este mês.</div>');
