@@ -748,3 +748,22 @@ body:not(.sp-home) .exercise-demo-dialog{border:1px solid #78441f;border-radius:
  .sp-home .sp-poster-plans .sp-plan-card p{font-size:8.8px!important}
  .sp-home .sp-poster-plans .sp-plan-card .price{font-size:15px!important}
 }
+
+/* v63 — correções finais de legibilidade no mobile */
+@media(max-width:760px){
+ .sp-home.menu-open .mobile-menu{display:flex!important;visibility:visible!important;z-index:1001!important;background:linear-gradient(155deg,#21140c 0%,#100b08 72%)!important;color:#fff!important}
+ .sp-home.menu-open .menu-backdrop{display:block!important;visibility:visible!important;opacity:1!important;background:rgba(0,0,0,.30)!important}
+ .sp-home .mobile-menu a{color:#fff!important;font-size:16px!important;min-height:62px!important;border-bottom:1px solid #624022!important}
+ .sp-home .mobile-menu a.menu-cta{color:#170900!important;background:linear-gradient(110deg,#ff9a16,#f04b00)!important}
+ .sp-home .mobile-menu a.menu-student{color:#fff!important;border:1px solid #ff7900!important}
+ .sp-home .menu-close{color:#ffad55!important}
+ .sp-home .sp-poster-plans .sp-plan-grid{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+ .sp-home .sp-poster-plans .sp-plan-card{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:9px!important;width:100%!important;min-height:0!important;height:auto!important;padding:20px 18px!important;border-radius:18px!important}
+ .sp-home .sp-poster-plans .sp-plan-card .sp-plan-icon{width:52px!important;height:52px!important;flex:0 0 52px!important;margin:0 auto!important}
+ .sp-home .sp-poster-plans .sp-plan-card h3{font-size:clamp(19px,5vw,24px)!important;line-height:1.12!important;min-height:0!important;margin:0!important}
+ .sp-home .sp-poster-plans .sp-plan-card p{font-size:16px!important;line-height:1.35!important;min-height:0!important;margin:0!important}
+ .sp-home .sp-poster-plans .sp-plan-card .price{font-size:clamp(27px,7vw,34px)!important;line-height:1.1!important;margin:2px 0!important;padding:0!important}
+ .sp-home .sp-poster-plans .sp-plan-card .price small{font-size:14px!important}
+ .sp-home .sp-poster-plans .sp-plan-card .sp-trial-price{font-size:24px!important;min-height:42px!important;padding:8px 18px!important}
+ .sp-home .sp-poster-plans .sp-plan-card .sp-plan-link{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-height:52px!important;margin:7px 0 0!important;padding:14px 18px!important;border-radius:12px!important;font-size:16px!important;font-weight:900!important;line-height:1.2!important;white-space:normal!important;text-align:center!important;color:#170900!important;background:linear-gradient(110deg,#ffad18,#ff5b00)!important;border:1px solid #ffb64a!important;box-shadow:0 0 18px rgba(255,111,0,.24)!important}
+}
