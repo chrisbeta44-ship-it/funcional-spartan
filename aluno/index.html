@@ -428,7 +428,7 @@ async function loadClassConfirmations(studentId){
  if(error){box.innerHTML='<div class="schedule-empty">Não foi possível carregar as aulas deste mês.</div>';return;}
  const {data:mine,error:mineError}=await sb.from('class_attendance_confirmations').select('id,class_id,status').eq('student_id',studentId);
  if(mineError){box.innerHTML='<div class="schedule-empty">Não foi possível consultar suas confirmações.</div>';return;}
- const now=new Date(),today=iso(now),nowTime=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0'),records=mine||[];
+ const rows=classes||[],now=new Date(),today=iso(now),nowTime=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0'),records=mine||[];
  const nav='<div class="spartan-month-picker"><button type="button" data-month-shift="-1" aria-label="Mês anterior">‹</button><strong>'+monthLabel.charAt(0).toUpperCase()+monthLabel.slice(1)+'</strong><button type="button" data-month-shift="1" aria-label="Próximo mês">›</button></div>';
  const cards=rows.map(c=>{
   const date=new Date(c.class_date+'T12:00:00'),record=records.find(x=>x.class_id===c.id);
