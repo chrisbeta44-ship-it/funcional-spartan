@@ -192,3 +192,31 @@ body:has(.admin-wrap){padding-top:78px!important;background:radial-gradient(elli
  .admin-student-profile-dialog .profile-actions button{flex:1 1 42%}
 }
 @media(max-width:390px){.admin-top .brand-image{width:42px!important}.admin-top .brand span{font-size:13px!important}.admin-top .brand span b{font-size:16px!important}.admin-menu-toggle{width:40px;height:42px}.admin-user-badge>img{width:38px;height:38px}.admin-wrap{padding-left:9px!important;padding-right:9px!important}.admin-home-banner h1{font-size:28px!important}.admin-home-emblem{width:60px;height:60px;font-size:38px}.admin-wrap .students td{font-size:11px!important}}
+
+/* Ajustes finais de encaixe e tabelas no celular */
+.admin-wrap{padding-left:18px!important}
+@media(max-width:1050px){.admin-wrap{padding-left:18px!important}}
+@media(max-width:760px){
+ #financeRows td:nth-child(1):before{content:"ALUNO"}
+ #financeRows td:nth-child(2):before{content:"MENSALIDADE"}
+ #financeRows td:nth-child(3):before{content:"TOTAL PAGO"}
+ #financeRows td:nth-child(4):before{content:"INÍCIO"}
+ #financeRows td:nth-child(5):before{content:"PRÓXIMO VENCIMENTO"}
+ #financeRows td:nth-child(6):before{content:"SITUAÇÃO"}
+ #paymentHistoryRows td:nth-child(1):before{content:"ALUNO"}
+ #paymentHistoryRows td:nth-child(2):before{content:"DATA DO PAGAMENTO"}
+ #paymentHistoryRows td:nth-child(3):before{content:"MÊS DE REFERÊNCIA"}
+ #paymentHistoryRows td:nth-child(4):before{content:"VALOR"}
+ #paymentHistoryRows td:nth-child(5):before{content:"FORMA"}
+ #paymentHistoryRows td:nth-child(6):before{content:"SITUAÇÃO"}
+ #paymentHistoryRows td:nth-child(7):before{content:"AÇÃO"}
+ #employeeRows td:nth-child(1):before{content:"FUNCIONÁRIO"}
+ #employeeRows td:nth-child(2):before{content:"CPF"}
+ #employeeRows td:nth-child(3):before{content:"NASCIMENTO"}
+ #employeeRows td:nth-child(4):before{content:"VALIDAÇÃO"}
+ #employeeRows td:nth-child(5):before{content:"AÇÕES"}
+ #adminClassList table td:nth-child(1):before{content:"ALUNO"}
+ #adminClassList table td:nth-child(2):before{content:"FREQUÊNCIA"}
+ #adminClassList table td:nth-child(3):before{content:"REGISTRO"}
+ #adminClassList table td:nth-child(4):before{content:"AÇÃO"}
+}
