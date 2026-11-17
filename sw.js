@@ -1,8 +1,8 @@
-const CACHE_NAME = 'funcional-spartan-shell-v67';
+const CACHE_NAME = 'funcional-spartan-shell-v68';
 const APP_SHELL = [
   '/',
   '/admin/index.html',
-  '/admin/admin-reference.css?v=spartan-admin-v67',
+  '/admin/admin-reference.css?v=spartan-admin-v68',
   '/aluno/index.html',
   '/cadastro/index.html',
   '/styles.css?v=spartan-mobile-3col-v62',
