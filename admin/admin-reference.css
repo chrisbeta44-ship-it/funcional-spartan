@@ -222,3 +222,8 @@ body:has(.admin-wrap){padding-top:78px!important;background:radial-gradient(elli
 }
 
 @media(max-width:760px){.admin-wrap .students tr[hidden]{display:none!important}}
+
+.admin-home-emblem svg{width:94px;height:94px;filter:drop-shadow(0 0 9px #ff790077)}
+.kpi-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.admin-quick-action>span svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.admin-quick-action.primary>span svg{width:39px;height:39px}
