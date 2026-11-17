@@ -466,3 +466,31 @@ body:has(.portal){padding-top:68px!important;background:#050505!important;color:
  .student-home-greeting p{font-size:16px!important}
  .student-home-greeting .student-my-data{min-height:58px!important;font-size:18px!important}
 }
+
+
+/* v72 — dashboard contínuo conforme referência aprovada */
+body:has(.portal){padding-top:88px!important;background:#070707!important}
+.student-app-header{height:88px!important;min-height:88px!important;padding:7px 14px!important;gap:10px!important;background:radial-gradient(ellipse at 78% 55%,#9b390b33,transparent 34%),linear-gradient(110deg,#080808 0%,#120a06 58%,#080808 100%)!important;border:0!important;box-shadow:none!important}
+.student-app-brand{max-width:calc(100% - 62px)!important}
+.student-app-brand img{width:min(260px,100%)!important;height:70px!important;object-fit:contain!important;object-position:left center!important}
+.student-profile-shortcut{flex:0 0 54px!important;width:54px!important;height:54px!important;border:2px solid #ff7818!important;border-radius:50%!important;background:#17100b url('../assets/spartan-admin-mascot.webp') center/cover no-repeat!important;box-shadow:0 0 14px #ff650044!important}
+.student-profile-shortcut #topStudentAvatar[hidden]{display:none!important}
+.student-profile-shortcut #topProfileIcon{display:none!important}
+body:has(#memberView:not(.hidden)) .portal{width:100%!important;max-width:none!important;margin:0!important;padding:0 0 calc(112px + env(safe-area-inset-bottom,0px))!important}
+#memberView .student-home-hero{display:flex!important;flex-direction:column!important;gap:0!important;width:100%!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+#memberView .student-home-art{width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:4/3!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:hidden!important;background:#080808!important}
+#memberView .student-home-art img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 35%!important}
+#memberView .student-home-greeting{display:flex!important;flex-direction:column!important;align-items:center!important;gap:11px!important;margin:0!important;padding:16px 22px 20px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;text-align:center!important}
+#memberView .student-home-greeting h1{margin:0!important;font-size:clamp(30px,8vw,42px)!important;line-height:1.08!important;text-align:center!important}
+#memberView .student-home-greeting p{max-width:440px!important;margin:0 auto!important;color:#fff!important;font-size:clamp(16px,4.2vw,20px)!important;line-height:1.35!important;text-align:center!important}
+#memberView .student-home-greeting .student-status-pill{align-self:center!important;margin-top:4px!important;padding:9px 16px!important;border-radius:30px!important;font-size:14px!important}
+#memberView .student-home-greeting .student-my-data{width:100%!important;max-width:100%!important;min-height:64px!important;margin-top:8px!important;border:0!important;border-radius:999px!important;background:linear-gradient(105deg,#ff9d00,#ff4c00)!important;color:#fff!important;font-size:clamp(19px,5vw,23px)!important;font-weight:950!important;box-shadow:0 8px 28px #ff650033!important}
+#memberView .student-home-greeting .student-my-data svg{width:25px!important;height:25px!important;stroke:currentColor!important;fill:none!important;stroke-width:2.5!important}
+#memberView .student-home-next{width:100%!important;margin:0!important;padding:20px 22px 24px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+#memberView .student-card-heading{gap:14px!important;margin:0 0 10px!important}
+#memberView .student-large-icon{width:54px!important;height:54px!important;flex:0 0 54px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#ff8a00!important;font-size:39px!important}
+#memberView .student-card-heading h2{margin:0!important;color:#ff941b!important;font-size:clamp(24px,6vw,31px)!important;font-weight:900!important}
+#memberView .next-class-summary{padding:8px 0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+#memberView .student-whatsapp-cta,#memberView .portal-dashboard-grid{display:none!important}
+#memberView .portal-tabs{width:calc(100vw - 18px)!important;max-width:620px!important;border:1.5px solid #a6531c!important;border-radius:20px!important;background:rgba(7,7,7,.97)!important;box-shadow:0 0 18px #ff650055,0 8px 24px #000c!important}
+@media(max-width:560px){body:has(.portal){padding-top:76px!important}.student-app-header{height:76px!important;min-height:76px!important;padding:6px 12px!important}.student-app-brand img{width:min(230px,100%)!important;height:60px!important}.student-profile-shortcut{flex-basis:48px!important;width:48px!important;height:48px!important}#memberView .student-home-art{aspect-ratio:4/3!important}#memberView .student-home-greeting{padding:14px 18px 18px!important;gap:10px!important}#memberView .student-home-greeting h1{font-size:clamp(29px,8vw,36px)!important}#memberView .student-home-greeting p{font-size:16px!important}#memberView .student-home-greeting .student-my-data{min-height:60px!important;font-size:19px!important}#memberView .student-home-next{padding:16px 20px 22px!important}#memberView .student-large-icon{width:48px!important;height:48px!important;flex-basis:48px!important}#memberView .student-card-heading h2{font-size:25px!important}}
