@@ -370,3 +370,32 @@ body:has(.portal){padding-top:68px!important;background:#050505!important;color:
  #classConfirmList .schedule-class-action .btn{min-width:150px!important}
  .spartan-payment-panel .payment-quick-actions .btn{min-height:54px!important;font-size:14px!important}
 }
+
+
+/* v70 — correções de navegação, presença e imagem inicial */
+#paymentHistoryPanel[data-portal-section="payment"]{scroll-margin-top:85px}
+.student-home-hero{
+ grid-template-columns:minmax(0,1.18fr) minmax(0,.92fr)!important;
+ min-height:210px!important;
+}
+.student-home-art{height:194px!important;min-height:194px!important}
+.student-home-art img{
+ width:100%!important;height:100%!important;
+ object-fit:contain!important;object-position:center bottom!important;
+ transform:scale(1.13);transform-origin:center bottom;
+}
+.student-home-greeting{padding-left:3px!important}
+.schedule-attendance-actions{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.schedule-cancel-attendance{
+ min-height:36px!important;padding:7px 14px!important;
+ border:1px solid #a94b36!important;border-radius:22px!important;
+ background:#1a0b09!important;color:#ffb5a7!important;
+ font-size:13px!important;font-weight:800!important;
+}
+@media(max-width:560px){
+ .student-home-hero{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)!important;min-height:190px!important}
+ .student-home-art{height:176px!important;min-height:176px!important}
+ .student-home-art img{transform:scale(1.16)}
+ .student-home-greeting h1{font-size:clamp(20px,5.7vw,26px)!important}
+ .schedule-attendance-actions{gap:7px}
+}
