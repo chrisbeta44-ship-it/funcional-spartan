@@ -1,4 +1,4 @@
-const CACHE_NAME = 'funcional-spartan-shell-v68';
+const CACHE_NAME = 'funcional-spartan-shell-v69';
 const APP_SHELL = [
   '/',
   '/admin/index.html',
@@ -8,7 +8,7 @@ const APP_SHELL = [
   '/styles.css?v=spartan-mobile-3col-v62',
   '/spartan-theme.css?v=spartan-mobile-3col-v62',
   '/aluno/student-portal.css?v=student-portal-v63',
-  '/aluno/student-portal-reference.css?v=student-portal-v64',
+  '/aluno/student-portal-reference.css?v=student-portal-v65',
   '/back-button.js',
   '/assets/spartan-team.webp',
   '/assets/spartan-chibi-group.webp',
