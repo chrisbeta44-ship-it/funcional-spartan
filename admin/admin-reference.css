@@ -227,3 +227,19 @@ body:has(.admin-wrap){padding-top:78px!important;background:radial-gradient(elli
 .kpi-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .admin-quick-action>span svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .admin-quick-action.primary>span svg{width:39px;height:39px}
+
+
+/* Navegação simplificada: ações diárias em destaque, demais recursos agrupados */
+.admin-nav-primary{display:grid;gap:5px}
+.admin-nav-more{margin-top:14px;padding-top:12px;border-top:1px solid #4e2c18}
+.admin-nav-more>summary{display:flex;align-items:center;gap:9px;padding:12px 11px;border:1px solid #56351f;border-radius:10px;background:#130e0a;color:#ffb45a;font-size:13px;font-weight:900;cursor:pointer;list-style:none}
+.admin-nav-more>summary::-webkit-details-marker{display:none}
+.admin-nav-more>summary>span{display:grid;place-items:center;width:23px;height:23px;border-radius:6px;background:#3a1c0a;color:#ff9a25;font-size:17px}
+.admin-nav-more>summary small{display:block;margin-left:auto;color:#aaa;font-size:10px;font-weight:600}
+.admin-nav-more[open]>summary{border-color:#a6531c;background:#211309}
+.admin-nav-secondary{display:grid;gap:3px;padding:8px 0 0 8px}
+.admin-nav-secondary .admin-tab{min-height:46px!important;font-size:13px!important}
+@media(max-width:760px){
+ .admin-nav-more>summary{min-height:48px;font-size:14px}
+ .admin-nav-secondary .admin-tab{min-height:49px!important}
+}
