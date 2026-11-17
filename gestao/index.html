@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Spartan Gestão — sistema próprio da Academia Spartan.">
+<title>Spartan Gestão | Academia Spartan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#080808;--panel:#121212;--panel2:#181818;--line:#302820;--orange:#ff6900;--orange2:#ff9200;--text:#f7f7f7;--muted:#9c9c9c;--green:#43c477;--red:#ff7866;--yellow:#f3c45d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.hidden{display:none!important}.muted{color:var(--muted)}.small{font-size:12px}.app{min-height:100vh}.login-wrap{min-height:100vh;display:grid;place-items:center;padding:22px;background:radial-gradient(ellipse at 50% 0%,#58260e66,transparent 55%),#080808}.login-card{width:min(100%,420px);padding:30px;border:1px solid #56351f;border-radius:18px;background:linear-gradient(145deg,#191919,#0c0c0c);box-shadow:0 24px 70px #0009}.brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}.brand-mark{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#111;font:900 28px 'Barlow Condensed'}.brand strong{display:block;font:900 27px 'Barlow Condensed';letter-spacing:.6px}.brand small{color:#ff9b50;font-size:10px;font-weight:800;letter-spacing:2px}.login-card h1{font:900 38px 'Barlow Condensed';margin:0 0 6px}.field{width:100%;min-width:0;padding:12px 13px;border:1px solid #424242;border-radius:9px;background:#090909;color:#fff;outline:none}.field:focus{border-color:var(--orange);box-shadow:0 0 0 3px #ff690022}.field-label{display:block;margin:14px 0 7px;color:#cfcfcf;font-size:12px;font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 15px;border:1px solid transparent;border-radius:9px;background:linear-gradient(110deg,var(--orange),var(--orange2));color:#111;font-weight:900;font-size:12px}.btn:disabled{opacity:.55;cursor:wait}.btn.block{width:100%;margin-top:18px}.btn.secondary{background:#1b1713;border-color:#57351f;color:#ff9a4d}.btn.ghost{background:transparent;border-color:#454545;color:#ddd}.btn.danger{background:#351713;border-color:#74352a;color:#ffab9c}.message{padding:11px 13px;border-radius:8px;background:#171717;border:1px solid #333;color:#ddd;font-size:12px;line-height:1.5;margin-top:14px}.message.error{background:#2a1411;border-color:#733b30;color:#ffb4a5}.message.success{background:#10251a;border-color:#245b39;color:#a6edbd}
+.layout{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;padding:22px 15px;border-right:1px solid var(--line);background:#0b0b0b;display:flex;flex-direction:column}.side-brand{padding:0 8px 24px;border-bottom:1px solid #29221c}.side-nav{display:grid;gap:6px;padding-top:20px}.nav-btn{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid transparent;border-radius:9px;background:transparent;color:#c6c6c6;text-align:left;font-size:13px;font-weight:700}.nav-btn span{width:22px;text-align:center;color:#ff9448;font-size:16px}.nav-btn.active{background:#24170f;border-color:#56351f;color:#fff}.side-bottom{margin-top:auto;padding:14px 8px 0;border-top:1px solid #29221c}.side-bottom .muted{font-size:11px;line-height:1.5}.main{min-width:0;padding:26px clamp(16px,3vw,38px) 50px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}.topbar h1{margin:0;font:900 clamp(30px,4vw,42px) 'Barlow Condensed';letter-spacing:.4px}.topbar p{margin:4px 0 0;color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:10px}.user-chip{padding:9px 12px;border:1px solid #38302a;border-radius:9px;color:#ddd;font-size:11px}.page{display:none}.page.active{display:block}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 16px}.section-head h2{margin:0;font:800 25px 'Barlow Condensed'}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:18px 0 25px}.kpi{padding:17px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#191919,#101010)}.kpi small{display:block;color:#aaa;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.kpi strong{display:block;margin-top:8px;font:900 31px 'Barlow Condensed';color:#ff984c}.kpi p{margin:4px 0 0;color:#888;font-size:10px}.panel{padding:18px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(145deg,#171717,#101010);margin-bottom:16px}.panel h3{margin:0 0 12px;font:800 20px 'Barlow Condensed'}.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.form-grid .full{grid-column:1/-1}.table-wrap{overflow:auto;border:1px solid #302820;border-radius:10px}.data-table{width:100%;border-collapse:collapse;min-width:680px}.data-table th,.data-table td{padding:12px 13px;border-bottom:1px solid #2c2722;text-align:left;font-size:12px;vertical-align:middle}.data-table th{color:#ff9a4d;font-size:10px;text-transform:uppercase;letter-spacing:.7px;background:#17120f}.data-table tr:last-child td{border-bottom:0}.data-table td strong{font-size:12px}.badge{display:inline-block;padding:5px 8px;border-radius:30px;background:#292929;color:#ddd;font-size:10px;font-weight:800}.badge.active,.badge.paid{background:#123321;color:#9be5b5}.badge.pending,.badge.past_due{background:#382b12;color:#f4d17e}.badge.suspended,.badge.cancelled,.badge.overdue{background:#3b1b17;color:#ffab9b}.row-actions{display:flex;gap:6px;flex-wrap:wrap}.mini{padding:7px 9px;font-size:10px}.searchbar{display:flex;gap:9px;margin-bottom:13px}.searchbar .field{max-width:360px}.empty{padding:24px;text-align:center;color:#999;font-size:12px}.modal{width:min(620px,calc(100% - 24px));max-height:90vh;overflow:auto;padding:0;border:1px solid #644021;border-radius:15px;background:#111;color:#fff;box-shadow:0 30px 90px #000c}.modal::backdrop{background:#000b;backdrop-filter:blur(4px)}.modal-head{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;border-bottom:1px solid #302820}.modal-head h2{margin:0;font:800 24px 'Barlow Condensed'}.modal-body{padding:18px 20px}.modal-foot{display:flex;justify-content:flex-end;gap:9px;padding:15px 20px;border-top:1px solid #302820}.notice{padding:13px;border:1px solid #5b3b20;border-radius:10px;background:#21160e;color:#e7c4a5;font-size:12px;line-height:1.6}.device-state{display:flex;align-items:center;gap:8px;color:#f4d17e;font-size:12px;font-weight:800}.dot{width:8px;height:8px;border-radius:50%;background:#e4b94e;box-shadow:0 0 10px #e4b94e77}.mobile-head{display:none}
+@media(max-width:950px){.layout{grid-template-columns:205px minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.layout{display:block}.sidebar{position:fixed;z-index:20;left:0;right:0;bottom:0;top:auto;height:auto;padding:7px 8px calc(7px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid #47301f;background:#0b0b0bf5;backdrop-filter:blur(15px)}.side-brand,.side-bottom{display:none}.side-nav{display:flex;justify-content:space-around;gap:3px;padding:0}.nav-btn{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;justify-content:center;padding:7px 3px;font-size:9px}.nav-btn span{font-size:17px}.main{padding:18px 13px 105px}.topbar{margin-bottom:20px}.topbar h1{font-size:34px}.top-actions .user-chip{display:none}.kpis{gap:8px;margin:13px 0 20px}.kpi{padding:12px}.kpi strong{font-size:26px}.panel{padding:13px}.grid-2,.grid-3,.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.section-head{align-items:flex-start}.section-head .btn{padding:10px;font-size:10px}.searchbar{flex-wrap:wrap}.searchbar .field{max-width:none;flex:1}.modal-body{padding:14px}.top-actions .btn{padding:9px 10px}.notice{font-size:11px}}
+</style>
+</head>
+<body>
+<div id="loginView" class="login-wrap">
+  <form id="loginForm" class="login-card">
+    <div class="brand"><div class="brand-mark">S</div><div><strong>SPARTAN GESTÃO</strong><small>ACADEMIA SPARTAN</small></div></div>
+    <h1>ACESSO ADMINISTRATIVO</h1>
+    <p class="muted small">Entre com a conta de administrador já utilizada na Funcional Spartan.</p>
+    <label class="field-label" for="loginEmail">E-mail</label><input class="field" id="loginEmail" type="email" autocomplete="username" required>
+    <label class="field-label" for="loginPassword">Senha</label><input class="field" id="loginPassword" type="password" autocomplete="current-password" required>
+    <button class="btn block" id="loginButton">Entrar no sistema</button>
+    <div id="loginMessage" class="message hidden" role="status"></div>
+  </form>
+</div>
+<div id="appView" class="layout hidden">
+  <aside class="sidebar">
+    <div class="side-brand"><div class="brand"><div class="brand-mark">S</div><div><strong>SPARTAN GESTÃO</strong><small>ACADEMIA SPARTAN</small></div></div></div>
+    <nav class="side-nav" aria-label="Menu principal">
+      <button class="nav-btn active" data-page="overview"><span>⌂</span>Visão geral</button>
+      <button class="nav-btn" data-page="members"><span>♙</span>Alunos</button>
+      <button class="nav-btn" data-page="plans"><span>▤</span>Planos</button>
+      <button class="nav-btn" data-page="memberships"><span>▣</span>Matrículas</button>
+      <button class="nav-btn" data-page="finance"><span>R$</span>Financeiro</button>
+      <button class="nav-btn" data-page="access"><span>⇥</span>Catraca</button>
+    </nav>
+    <div class="side-bottom"><div class="muted">Sistema próprio da Academia Spartan.<br>Dados administrativos protegidos por autenticação e RLS.</div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><h1 id="pageTitle">VISÃO GERAL</h1><p id="pageSubtitle">Acompanhe a operação da Academia Spartan.</p></div><div class="top-actions"><span class="user-chip" id="userEmail"></span><button class="btn secondary" id="refreshButton">↻ Atualizar</button><button class="btn ghost" id="logoutButton">Sair</button></div></header>
+    <section class="page active" id="page-overview">
+      <div class="notice">Bem-vindo ao início do Spartan Gestão. Os módulos de alunos, planos e matrículas já estão conectados ao banco de dados. Financeiro e catraca serão ativados nas próximas etapas.</div>
+      <div class="kpis">
+        <div class="kpi"><small>Alunos cadastrados</small><strong id="kpiMembers">—</strong><p>Cadastros da Academia Spartan</p></div>
+        <div class="kpi"><small>Alunos ativos</small><strong id="kpiActive">—</strong><p>Matrículas em situação ativa</p></div>
+        <div class="kpi"><small>Planos ativos</small><strong id="kpiPlans">—</strong><p>Planos disponíveis para matrícula</p></div>
+        <div class="kpi"><small>Mensalidades em aberto</small><strong id="kpiOpen">—</strong><p>Cobranças pendentes ou vencidas</p></div>
+      </div>
+      <div class="grid-2">
+        <div class="panel"><h3>Últimos alunos cadastrados</h3><div id="recentMembers" class="small muted">Carregando...</div></div>
+        <div class="panel"><h3>Próximas etapas</h3><div class="small muted" style="line-height:2">✓ Base de dados isolada da Funcional Spartan<br>✓ Controle de acesso administrativo<br>✓ Cadastro de alunos e planos<br>○ Financeiro e geração de cobranças<br>○ Importação dos dados do Next Fit<br>○ Integração com catraca TUPÃ CP2</div></div>
+      </div>
+    </section>
+    <section class="page" id="page-members">
+      <div class="section-head"><h2>ALUNOS</h2><button class="btn" id="newMemberButton">＋ Novo aluno</button></div>
+      <div class="searchbar"><input class="field" id="memberSearch" placeholder="Buscar por nome, telefone ou e-mail"><select class="field" id="memberStatusFilter" style="max-width:180px"><option value="all">Todos os status</option><option value="active">Ativos</option><option value="pending">Pendentes</option><option value="suspended">Suspensos</option><option value="cancelled">Cancelados</option></select></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>Aluno</th><th>Contato</th><th>Status</th><th>Cadastro</th><th>Ações</th></tr></thead><tbody id="memberRows"><tr><td colspan="5" class="empty">Carregando alunos...</td></tr></tbody></table></div>
+    </section>
+    <section class="page" id="page-plans">
+      <div class="section-head"><h2>PLANOS E VALORES</h2><button class="btn" id="newPlanButton">＋ Novo plano</button></div>
+      <div class="notice" style="margin-bottom:15px">Cadastre os planos comerciais da academia. Alterar o preço de um plano não altera o valor histórico de matrículas já realizadas.</div>
+      <div class="grid-3" id="planCards"><div class="empty">Carregando planos...</div></div>
+    </section>
+    <section class="page" id="page-memberships">
+      <div class="section-head"><h2>MATRÍCULAS</h2><button class="btn" id="newMembershipButton">＋ Nova matrícula</button></div>
+      <div class="table-wrap"><table class="data-table"><thead><tr><th>Aluno</th><th>Plano</th><th>Valor</th><th>Início</th><th>Vencimento</th><th>Status</th></tr></thead><tbody id="membershipRows"><tr><td colspan="6" class="empty">Carregando matrículas...</td></tr></tbody></table></div>
+    </section>
+    <section class="page" id="page-finance">
+      <div class="section-head"><h2>FINANCEIRO</h2></div>
+      <div class="notice">A estrutura do banco para cobranças e pagamentos já está preparada. Nesta primeira entrega, o financeiro ainda não permite emitir PIX, confirmar recebimentos ou gerar cobranças automáticas. Essas funções serão implementadas na próxima etapa, com histórico e conferência para evitar baixas duplicadas.</div>
+      <div class="kpis"><div class="kpi"><small>Cobranças cadastradas</small><strong id="invoiceCount">0</strong></div><div class="kpi"><small>Pagamentos registrados</small><strong id="paymentCount">0</strong></div></div>
+    </section>
+    <section class="page" id="page-access">
+      <div class="section-head"><h2>CONTROLE DE ACESSO</h2></div>
+      <div class="notice" style="margin-bottom:15px"><div class="device-state"><span class="dot"></span> Integração com a TUPÃ CP2 aguardando homologação</div><p>Esta etapa cadastra o equipamento e guarda seus parâmetros de rede. Ainda não envia comandos à catraca. Não coloque senhas ou chaves privadas neste formulário.</p></div>
+      <div class="panel">
+        <h3>Equipamento da academia</h3>
+        <form id="deviceForm" class="form-grid">
+          <div><label class="field-label" for="deviceLabel">Nome do equipamento</label><input class="field" id="deviceLabel" value="Catraca principal"></div>
+          <div><label class="field-label" for="deviceModel">Modelo</label><input class="field" id="deviceModel" value="TUPÃ CP2" required></div>
+          <div><label class="field-label" for="deviceSerial">Número de série</label><input class="field" id="deviceSerial" class="field"></div>
+          <div><label class="field-label" for="deviceConnection">Tipo de conexão</label><select class="field" id="deviceConnection"><option value="tcp_ip">Rede TCP/IP</option><option value="local_agent">Agente local no computador</option><option value="serial">Serial</option><option value="usb">USB</option><option value="cloud_api">API em nuvem</option></select></div>
+          <div><label class="field-label" for="deviceIp">Endereço IP</label><input class="field" id="deviceIp" placeholder="Ex.: 192.168.1.100"></div>
+          <div><label class="field-label" for="devicePort">Porta</label><input class="field" id="devicePort" type="number" min="1" max="65535" placeholder="Porta informada pelo fabricante"></div>
+          <div class="full"><label class="field-label" for="deviceProtocol">Protocolo / software de comunicação (se souber)</label><input class="field" id="deviceProtocol" placeholder="Será confirmado com a Proveu"></div>
+          <div class="full"><button class="btn" type="submit" id="saveDeviceButton">Salvar equipamento</button> <span id="deviceMessage" class="muted small"></span></div>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<dialog class="modal" id="memberModal">
+  <form id="memberForm">
+    <div class="modal-head"><h2 id="memberModalTitle">NOVO ALUNO</h2><button type="button" class="btn ghost mini" data-close="memberModal">Fechar</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="memberId">
+      <div class="form-grid">
+        <div class="full"><label class="field-label" for="memberName">Nome completo *</label><input class="field" id="memberName" required maxlength="140"></div>
+        <div><label class="field-label" for="memberPhone">Telefone / WhatsApp</label><input class="field" id="memberPhone" inputmode="tel" maxlength="25"></div>
+        <div><label class="field-label" for="memberEmail">E-mail</label><input class="field" id="memberEmail" type="email" maxlength="180"></div>
+        <div><label class="field-label" for="memberBirth">Data de nascimento</label><input class="field" id="memberBirth" type="date"></div>
+        <div><label class="field-label" for="memberStatus">Status</label><select class="field" id="memberStatus"><option value="active">Ativo</option><option value="pending">Pendente</option><option value="suspended">Suspenso</option><option value="cancelled">Cancelado</option></select></div>
+        <div class="full"><label class="field-label" for="memberNotes">Observações internas</label><textarea class="field" id="memberNotes" rows="3" maxlength="2000"></textarea></div>
+      </div>
+      <div id="memberMessage" class="message hidden"></div>
+    </div>
+    <div class="modal-foot"><button type="button" class="btn ghost" data-close="memberModal">Cancelar</button><button class="btn" type="submit" id="saveMemberButton">Salvar aluno</button></div>
+  </form>
+</dialog>
+
+<dialog class="modal" id="planModal">
+  <form id="planForm">
+    <div class="modal-head"><h2 id="planModalTitle">NOVO PLANO</h2><button type="button" class="btn ghost mini" data-close="planModal">Fechar</button></div>
+    <div class="modal-body">
+      <input type="hidden" id="planId">
+      <div class="form-grid">
+        <div class="full"><label class="field-label" for="planName">Nome do plano *</label><input class="field" id="planName" required maxlength="100"></div>
+        <div><label class="field-label" for="planPrice">Valor (R$) *</label><input class="field" id="planPrice" type="number" min="1" step="0.01" required></div>
+        <div><label class="field-label" for="planInterval">Periodicidade</label><select class="field" id="planInterval"><option value="monthly">Mensal</option><option value="quarterly">Trimestral</option><option value="semiannual">Semestral</option><option value="annual">Anual</option><option value="custom">Personalizado</option></select></div>
+        <div><label class="field-label" for="planDays">Duração em dias (opcional)</label><input class="field" id="planDays" type="number" min="1"></div>
+        <div><label class="field-label" for="planActive">Disponibilidade</label><select class="field" id="planActive"><option value="true">Ativo</option><option value="false">Inativo</option></select></div>
+        <div class="full"><label class="field-label" for="planDescription">Descrição</label><textarea class="field" id="planDescription" rows="3"></textarea></div>
+      </div>
+      <div id="planMessage" class="message hidden"></div>
+    </div>
+    <div class="modal-foot"><button type="button" class="btn ghost" data-close="planModal">Cancelar</button><button class="btn" type="submit" id="savePlanButton">Salvar plano</button></div>
+  </form>
+</dialog>
+
+<dialog class="modal" id="membershipModal">
+  <form id="membershipForm">
+    <div class="modal-head"><h2>NOVA MATRÍCULA</h2><button type="button" class="btn ghost mini" data-close="membershipModal">Fechar</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="full"><label class="field-label" for="membershipMember">Aluno *</label><select class="field" id="membershipMember" required></select></div>
+        <div class="full"><label class="field-label" for="membershipPlan">Plano *</label><select class="field" id="membershipPlan" required></select></div>
+        <div><label class="field-label" for="membershipStart">Início *</label><input class="field" id="membershipStart" type="date" required></div>
+        <div><label class="field-label" for="membershipDueDay">Dia de vencimento</label><input class="field" id="membershipDueDay" type="number" min="1" max="31" value="10"></div>
+      </div>
+      <div class="message">O valor da matrícula será salvo como fotografia do preço atual do plano. Alterações futuras no plano não mudam este contrato.</div>
+      <div id="membershipMessage" class="message hidden"></div>
+    </div>
+    <div class="modal-foot"><button type="button" class="btn ghost" data-close="membershipModal">Cancelar</button><button class="btn" type="submit" id="saveMembershipButton">Criar matrícula</button></div>
+  </form>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(() => {
+  const SUPABASE_URL = 'https://jdbpfrmjbwhtxrtcxjur.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_49p9HbBO99ZQPh28tN3d0g_pmXPIWH0';
+  const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const $ = id => document.getElementById(id);
+  let members = [], plans = [], memberships = [], invoices = [], payments = [], deviceId = null;
+  const pageInfo = {
+    overview:['VISÃO GERAL','Acompanhe a operação da Academia Spartan.'],
+    members:['ALUNOS','Cadastros e situação dos alunos.'],
+    plans:['PLANOS','Preços e modalidades da academia.'],
+    memberships:['MATRÍCULAS','Planos vinculados a cada aluno.'],
+    finance:['FINANCEIRO','Cobranças e recebimentos.'],
+    access:['CONTROLE DE ACESSO','Equipamento e integração da catraca.']
+  };
+  function esc(v){return String(v ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function money(cents){return (Number(cents||0)/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
+  function dateBR(v){return v ? new Date(v+'T12:00:00').toLocaleDateString('pt-BR') : '—';}
+  function msg(el,text,error=false){el.textContent=text;el.classList.remove('hidden','error','success');el.classList.add(error?'error':'success');}
+  function showLoginMessage(text,error=false){msg($('loginMessage'),text,error);}
+  function setBusy(button,busy,label){button.disabled=busy;if(label)button.textContent=busy?'Salvando...':label;}
+  async function verifyAdmin(){
+    const {data:{session}} = await sb.auth.getSession();
+    if(!session){$('loginView').classList.remove('hidden');$('appView').classList.add('hidden');return false;}
+    const {data,error}=await sb.rpc('is_funcional_spartan_admin');
+    if(error || data !== true){await sb.auth.signOut();$('loginView').classList.remove('hidden');$('appView').classList.add('hidden');showLoginMessage('Acesso restrito. Entre com uma conta de administrador autorizada.',true);return false;}
+    $('loginView').classList.add('hidden');$('appView').classList.remove('hidden');$('userEmail').textContent=session.user.email||'Administrador';
+    await loadAll();return true;
+  }
+  function navigate(page){
+    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));
+    $('pageTitle').textContent=pageInfo[page][0];$('pageSubtitle').textContent=pageInfo[page][1];
+  }
+  document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));
+  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.close).close()));
+  $('loginForm').addEventListener('submit',async e=>{
+    e.preventDefault();const button=$('loginButton');setBusy(button,true,'Entrar no sistema');$('loginMessage').classList.add('hidden');
+    const {error}=await sb.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});
+    setBusy(button,false,'Entrar no sistema');if(error){showLoginMessage('Não foi possível entrar: '+error.message,true);return;}await verifyAdmin();
+  });
+  $('logoutButton').addEventListener('click',async()=>{await sb.auth.signOut();$('appView').classList.add('hidden');$('loginView').classList.remove('hidden');});
+  $('refreshButton').addEventListener('click',loadAll);
+  async function loadAll(){
+    const [m,p,s,i,pa,d] = await Promise.all([
+      sb.from('gym_members').select('*').order('created_at',{ascending:false}),
+      sb.from('gym_plans').select('*').order('active',{ascending:false}).order('name'),
+      sb.from('gym_memberships').select('*').order('created_at',{ascending:false}),
+      sb.from('gym_invoices').select('id,status,amount_cents,due_date').order('due_date',{ascending:false}).limit(300),
+      sb.from('gym_payments').select('id,status,amount_cents').limit(500),
+      sb.from('gym_access_devices').select('*').order('created_at',{ascending:false}).limit(1)
+    ]);
+    const errors=[m,p,s,i,pa,d].filter(x=>x.error);
+    if(errors.length){console.error(errors);alert('Alguns dados não puderam ser carregados. Confira as permissões e a conexão.');}
+    members=m.data||[];plans=p.data||[];memberships=s.data||[];invoices=i.data||[];payments=pa.data||[];
+    if(d.data?.length){deviceId=d.data[0].id;fillDevice(d.data[0]);}
+    renderAll();
+  }
+  function renderAll(){renderOverview();renderMembers();renderPlans();renderMemberships();$('invoiceCount').textContent=invoices.length;$('paymentCount').textContent=payments.length;}
+  function renderOverview(){
+    $('kpiMembers').textContent=members.length;$('kpiActive').textContent=members.filter(m=>m.status==='active').length;
+    $('kpiPlans').textContent=plans.filter(p=>p.active).length;$('kpiOpen').textContent=invoices.filter(i=>['pending','overdue'].includes(i.status)).length;
+    const recent=members.slice(0,5);$('recentMembers').innerHTML=recent.length?recent.map(m=>'<div style="display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #29231e"><strong>'+esc(m.full_name)+'</strong><span class="muted">'+dateBR(m.created_at?.slice(0,10))+'</span></div>').join(''):'Nenhum aluno cadastrado ainda.';
+  }
+  function renderMembers(){
+    const term=$('memberSearch').value.trim().toLocaleLowerCase('pt-BR'),status=$('memberStatusFilter').value;
+    const rows=members.filter(m=>(status==='all'||m.status===status)&&(!term||[m.full_name,m.phone,m.email].some(v=>String(v||'').toLocaleLowerCase('pt-BR').includes(term))));
+    $('memberRows').innerHTML=rows.length?rows.map(m=>'<tr><td><strong>'+esc(m.full_name)+'</strong><div class="muted">'+esc(m.email||'Sem e-mail')+'</div></td><td>'+esc(m.phone||'—')+'</td><td><span class="badge '+m.status+'">'+statusLabel(m.status)+'</span></td><td>'+dateBR(String(m.created_at||'').slice(0,10))+'</td><td><div class="row-actions"><button class="btn secondary mini" data-edit-member="'+m.id+'">Editar</button><button class="btn ghost mini" data-toggle-member="'+m.id+'">'+(m.status==='active'?'Suspender':'Ativar')+'</button></div></td></tr>').join(''):'<tr><td colspan="5" class="empty">Nenhum aluno encontrado.</td></tr>';
+  }
+  function statusLabel(s){return ({active:'Ativo',pending:'Pendente',suspended:'Suspenso',cancelled:'Cancelado',past_due:'Em atraso',paused:'Pausada',expired:'Expirada',paid:'Pago',overdue:'Vencido'})[s]||s;}
+  $('memberSearch').addEventListener('input',renderMembers);$('memberStatusFilter').addEventListener('change',renderMembers);
+  $('newMemberButton').addEventListener('click',()=>openMember());
+  function openMember(m=null){
+    $('memberForm').reset();$('memberId').value=m?.id||'';$('memberName').value=m?.full_name||'';$('memberPhone').value=m?.phone||'';$('memberEmail').value=m?.email||'';$('memberBirth').value=m?.birth_date||'';$('memberStatus').value=m?.status||'active';$('memberNotes').value=m?.notes||'';
+    $('memberModalTitle').textContent=m?'EDITAR ALUNO':'NOVO ALUNO';$('memberMessage').classList.add('hidden');$('memberModal').showModal();
+  }
+  $('memberRows').addEventListener('click',async e=>{
+    const edit=e.target.closest('[data-edit-member]'),toggle=e.target.closest('[data-toggle-member]');
+    if(edit){const m=members.find(x=>x.id===edit.dataset.editMember);if(m)openMember(m);}
+    if(toggle){const m=members.find(x=>x.id===toggle.dataset.toggleMember);if(!m)return;const next=m.status==='active'?'suspended':'active';const {error}=await sb.from('gym_members').update({status:next}).eq('id',m.id);if(error)alert('Não foi possível atualizar: '+error.message);else await loadAll();}
+  });
+  $('memberForm').addEventListener('submit',async e=>{
+    e.preventDefault();const b=$('saveMemberButton');setBusy(b,true,'Salvar aluno');
+    const id=$('memberId').value||undefined;
+    const payload={full_name:$('memberName').value.trim(),phone:$('memberPhone').value.trim()||null,email:$('memberEmail').value.trim()||null,birth_date:$('memberBirth').value||null,status:$('memberStatus').value,notes:$('memberNotes').value.trim()||null};
+    if(id)payload.id=id;
+    const {error}=await sb.from('gym_members').upsert(payload).select('id').single();
+    setBusy(b,false,'Salvar aluno');
+    if(error){msg($('memberMessage'),'Não foi possível salvar: '+error.message,true);return;}
+    $('memberModal').close();await loadAll();
+  });
+  $('newPlanButton').addEventListener('click',()=>openPlan());
+  function openPlan(p=null){
+    $('planForm').reset();$('planId').value=p?.id||'';$('planName').value=p?.name||'';$('planPrice').value=p?(p.price_cents/100).toFixed(2):'';$('planInterval').value=p?.billing_interval||'monthly';$('planDays').value=p?.duration_days||'';$('planActive').value=String(p?.active??true);$('planDescription').value=p?.description||'';$('planModalTitle').textContent=p?'EDITAR PLANO':'NOVO PLANO';$('planMessage').classList.add('hidden');$('planModal').showModal();
+  }
+  function renderPlans(){
+    $('planCards').innerHTML=plans.length?plans.map(p=>'<article class="panel"><div style="display:flex;justify-content:space-between;gap:8px"><h3>'+esc(p.name)+'</h3><span class="badge '+(p.active?'active':'cancelled')+'">'+(p.active?'Ativo':'Inativo')+'</span></div><div style="font:900 30px Barlow Condensed;color:#ff984c">'+money(p.price_cents)+'</div><div class="muted small">'+intervalLabel(p.billing_interval)+(p.duration_days?' · '+p.duration_days+' dias':'')+'</div><p class="muted small">'+esc(p.description||'Sem descrição')+'</p><button class="btn secondary mini" data-edit-plan="'+p.id+'">Editar plano</button></article>').join(''):'<div class="empty">Nenhum plano cadastrado. Clique em “Novo plano” para começar.</div>';
+  }
+  function intervalLabel(v){return ({monthly:'Mensal',quarterly:'Trimestral',semiannual:'Semestral',annual:'Anual',custom:'Personalizado'})[v]||v;}
+  $('planCards').addEventListener('click',e=>{const b=e.target.closest('[data-edit-plan]');if(b){const p=plans.find(x=>x.id===b.dataset.editPlan);if(p)openPlan(p);}});
+  $('planForm').addEventListener('submit',async e=>{
+    e.preventDefault();const b=$('savePlanButton');setBusy(b,true,'Salvar plano');const id=$('planId').value||undefined;
+    const payload={name:$('planName').value.trim(),price_cents:Math.round(Number($('planPrice').value)*100),billing_interval:$('planInterval').value,duration_days:$('planDays').value?Number($('planDays').value):null,active:$('planActive').value==='true',description:$('planDescription').value.trim()||null};if(id)payload.id=id;
+    const {error}=await sb.from('gym_plans').upsert(payload);setBusy(b,false,'Salvar plano');if(error){msg($('planMessage'),'Não foi possível salvar: '+error.message,true);return;}$('planModal').close();await loadAll();
+  });
+  $('newMembershipButton').addEventListener('click',()=>{
+    $('membershipForm').reset();$('membershipStart').value=new Date().toISOString().slice(0,10);
+    $('membershipMember').innerHTML='<option value="">Selecione um aluno</option>'+members.filter(m=>m.status==='active').map(m=>'<option value="'+m.id+'">'+esc(m.full_name)+'</option>').join('');
+    $('membershipPlan').innerHTML='<option value="">Selecione um plano</option>'+plans.filter(p=>p.active).map(p=>'<option value="'+p.id+'">'+esc(p.name)+' · '+money(p.price_cents)+'</option>').join('');
+    $('membershipModal').showModal();
+  });
+  $('membershipForm').addEventListener('submit',async e=>{
+    e.preventDefault();const b=$('saveMembershipButton');setBusy(b,true,'Criar matrícula');
+    const plan=plans.find(p=>p.id===$('membershipPlan').value),member=members.find(m=>m.id===$('membershipMember').value);
+    if(!plan||!member){setBusy(b,false,'Criar matrícula');return;}
+    const start=$('membershipStart').value;
+    const duration=plan.duration_days||(plan.billing_interval==='quarterly'?90:plan.billing_interval==='semiannual'?180:plan.billing_interval==='annual'?365:30);
+    const end=new Date(start+'T12:00:00');end.setDate(end.getDate()+duration);
+    const {error}=await sb.from('gym_memberships').insert({member_id:member.id,plan_id:plan.id,plan_name_snapshot:plan.name,price_cents:plan.price_cents,start_date:start,end_date:end.toISOString().slice(0,10),due_day:Number($('membershipDueDay').value)||null,status:'active'});
+    setBusy(b,false,'Criar matrícula');if(error){alert('Não foi possível criar a matrícula: '+error.message);return;}$('membershipModal').close();await loadAll();
+  });
+  function renderMemberships(){
+    $('membershipRows').innerHTML=memberships.length?memberships.map(s=>{const m=members.find(x=>x.id===s.member_id);return '<tr><td><strong>'+esc(m?.full_name||'Aluno não encontrado')+'</strong></td><td>'+esc(s.plan_name_snapshot)+'</td><td>'+money(s.price_cents)+'</td><td>'+dateBR(s.start_date)+'</td><td>'+dateBR(s.end_date)+'</td><td><span class="badge '+s.status+'">'+statusLabel(s.status)+'</span></td></tr>';}).join(''):'<tr><td colspan="6" class="empty">Nenhuma matrícula cadastrada.</td></tr>';
+  }
+  $('deviceForm').addEventListener('submit',async e=>{
+    e.preventDefault();const b=$('saveDeviceButton');setBusy(b,true,'Salvar equipamento');
+    const payload={label:$('deviceLabel').value.trim()||'Catraca principal',manufacturer:'Proveu',model:$('deviceModel').value.trim(),serial_number:$('deviceSerial').value.trim()||null,connection_type:$('deviceConnection').value,ip_address:$('deviceIp').value.trim()||null,port:$('devicePort').value?Number($('devicePort').value):null,protocol:$('deviceProtocol').value.trim()||null,active:false};
+    if(deviceId)payload.id=deviceId;
+    const {data,error}=await sb.from('gym_access_devices').upsert(payload).select('id').single();
+    setBusy(b,false,'Salvar equipamento');if(error){$('deviceMessage').textContent='Erro: '+error.message;return;}deviceId=data.id;$('deviceMessage').textContent='Equipamento salvo. Comunicação ainda não ativada.'; 
+  });
+  function fillDevice(d){$('deviceLabel').value=d.label||'';$('deviceModel').value=d.model||'TUPÃ CP2';$('deviceSerial').value=d.serial_number||'';$('deviceConnection').value=d.connection_type||'tcp_ip';$('deviceIp').value=d.ip_address||'';$('devicePort').value=d.port||'';$('deviceProtocol').value=d.protocol||'';}
+  sb.auth.onAuthStateChange((event)=>{if(event==='SIGNED_OUT'){$('appView').classList.add('hidden');$('loginView').classList.remove('hidden');}});
+  verifyAdmin();
+})();
+</script>
+</body>
+</html>
