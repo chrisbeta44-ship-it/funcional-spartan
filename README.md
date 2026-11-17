@@ -20,3 +20,16 @@ Conecte este repositório ao Cloudflare Pages. Configure a raiz do projeto como 
 5. Garantir que as operações administrativas sejam protegidas por autenticação e RLS.
 
 **Segurança:** não publicar senha de administrador, chave `service_role` ou credenciais privadas no frontend.
+
+## Spartan Gestão
+
+A rota `/gestao/` inicia o painel administrativo da Academia Spartan. Ela utiliza autenticação Supabase e tabelas `gym_*` isoladas das tabelas do projeto Funcional Spartan.
+
+Módulos da primeira etapa:
+- Painel inicial com indicadores.
+- Cadastro e edição de alunos.
+- Cadastro e edição de planos.
+- Matrículas vinculadas a planos.
+- Cadastro técnico da catraca TUPÃ CP2 (sem comunicação ativa nesta etapa).
+
+A integração física da catraca depende da confirmação do protocolo/SDK e de testes com o equipamento real. Não armazenar senhas de dispositivos no frontend.
