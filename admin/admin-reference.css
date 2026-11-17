@@ -220,3 +220,5 @@ body:has(.admin-wrap){padding-top:78px!important;background:radial-gradient(elli
  #adminClassList table td:nth-child(3):before{content:"REGISTRO"}
  #adminClassList table td:nth-child(4):before{content:"AÇÃO"}
 }
+
+@media(max-width:760px){.admin-wrap .students tr[hidden]{display:none!important}}
