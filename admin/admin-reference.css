@@ -263,3 +263,24 @@ body:has(.admin-wrap){padding-top:78px!important;background:radial-gradient(elli
 .admin-advanced-settings>section,.admin-advanced-settings>div{padding:12px 15px 16px}
 .admin-advanced-settings .card{margin:0!important}
 @media(max-width:760px){.admin-price-fields{grid-template-columns:1fr}.admin-price-fields .btn{width:100%}.admin-price-editor{padding:14px}.admin-advanced-settings>summary{padding:13px;font-size:13px}}
+
+
+/* Central simples para editar todos os módulos existentes */
+.admin-edit-hub{margin:18px 0 24px;padding:20px;border:1px solid #71401f;border-radius:15px;background:linear-gradient(145deg,#1b120c,#0b0b0b);box-shadow:0 12px 28px #0005}
+.admin-edit-hub-head small{color:#ff9a4a;font-size:10px;font-weight:900;letter-spacing:1.5px}
+.admin-edit-hub-head h2{margin:5px 0;font-size:23px}
+.admin-edit-hub-head p{margin:0;color:#bbb;font-size:13px;line-height:1.5}
+.admin-edit-hub-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:17px}
+.admin-edit-hub-grid button{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:76px;padding:13px;border:1px solid #4b3425;border-radius:10px;background:#12100e;color:#fff;text-align:left;cursor:pointer}
+.admin-edit-hub-grid button:after{content:"Abrir →";color:#ff9a4a;font-size:11px;font-weight:900}
+.admin-edit-hub-grid button b{font-size:14px;color:#ffb36a}
+.admin-edit-hub-grid button small{color:#bbb;font-size:11px;line-height:1.4}
+.admin-edit-hub-grid button:hover,.admin-edit-hub-grid button:focus-visible{border-color:#ff7900;background:#21150d;outline:2px solid #ff790044}
+.admin-edit-hub-tip{margin:13px 0 0;padding:10px 12px;border-radius:8px;background:#20150d;color:#e7c6a7;font-size:12px;line-height:1.5}
+.admin-wrap .tab-pane .card label{display:block;margin:10px 0 5px;color:#f0d9c5;font-size:13px;font-weight:750}
+.admin-wrap .tab-pane .field::placeholder{color:#777;opacity:1}
+.admin-wrap input[type=checkbox]{width:19px;height:19px;accent-color:#ff7900;vertical-align:middle;cursor:pointer}
+.admin-wrap .toolbar label:has(input[type=checkbox]){display:inline-flex;align-items:center;gap:9px;margin:0;padding:10px 12px;border:1px solid #49311f;border-radius:9px;background:#15110e;color:#eee;font-size:13px}
+.admin-wrap .admin-advanced-settings>summary{min-height:48px}
+.admin-wrap .tab-pane .btn{min-height:43px}
+@media(max-width:650px){.admin-edit-hub{padding:15px}.admin-edit-hub-grid{grid-template-columns:1fr}.admin-edit-hub-grid button{min-height:68px}.admin-edit-hub-head h2{font-size:20px}}
