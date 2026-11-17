@@ -439,9 +439,8 @@ async function loadClassConfirmations(studentId){
  const {data:monthClasses,error:monthClassesError}=await sb.from('classes').select('id').gte('class_date',iso(monthStart)).lt('class_date',iso(monthEnd)).neq('status','cancelled');
  let count=0;
  if(!monthClassesError&&monthClasses?.length){
-  const ids=monthClasses.map(c=>c.id);
-  const {data:attendanceRows,error:attendanceError}=await sb.from('attendance').select('class_id').eq('student_id',studentId).in('class_id',ids);
-  if(!attendanceError)count=new Set((attendanceRows||[]).map(a=>a.class_id)).size;
+  const monthIds=new Set(monthClasses.map(c=>c.id));
+  count=new Set((mine||[]).filter(row=>monthIds.has(row.class_id)&&['going','confirmed'].includes(row.status)).map(row=>row.class_id)).size;
  }
  document.getElementById('attendanceInfo').textContent=count+' '+(count===1?'aula confirmada':'aulas confirmadas')+' neste mês.';
 }
