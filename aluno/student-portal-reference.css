@@ -68,3 +68,60 @@ body:has(.portal){padding-top:68px!important;background:#050505!important;color:
 @media(min-width:700px){.portal{max-width:480px!important}.portal-tabs{width:min(480px,calc(100vw - 24px))!important}}
 @media(max-width:560px){.student-app-header{height:66px!important;padding:0 13px!important}.student-app-brand img{width:165px!important;height:53px!important}.student-profile-shortcut{width:40px!important;height:40px!important}.portal{width:100%!important;padding:9px 12px calc(106px + env(safe-area-inset-bottom,0px))!important}.student-home-art{height:clamp(185px,57vw,235px)}.student-home-greeting{padding:0 15px 16px}.student-home-greeting h1{font-size:29px}.student-home-next{padding:13px!important}.next-class-summary{padding-left:59px}.portal-tabs{width:calc(100vw - 14px)!important;gap:2px!important;padding:5px 4px!important}.portal-tabs .btn{min-height:55px!important;font-size:clamp(9px,2.6vw,11px)!important;gap:3px!important}.portal-tabs .nav-icon{height:22px!important}.portal-tabs .nav-icon svg{width:22px!important;height:22px!important}.evolution-highlights{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.evolution-metric-card{min-height:100px;padding:10px 7px}.evolution-metric-card strong{font-size:20px}.profile-fields{grid-template-columns:1fr!important}.profile-email-field{grid-column:auto!important}}
 @media(max-width:360px){.student-app-brand img{width:145px!important}.portal-tabs .btn{font-size:9px!important}.portal-tabs .nav-icon svg{width:20px!important;height:20px!important}}
+
+
+/* v65 — telas dedicadas Agenda e Pagamentos conforme referência */
+#memberView [data-portal-section][hidden],
+#memberView #paymentHistoryPanel[hidden],
+#memberView #memberPixPanel[hidden]{display:none!important}
+.spartan-agenda-panel,.spartan-payment-panel{padding:18px!important}
+.spartan-agenda-panel .schedule-feature-heading,
+.spartan-payment-panel .payment-feature-heading{display:flex!important;align-items:center!important;gap:14px!important;margin:2px 0 18px!important}
+.spartan-agenda-panel .student-feature-heading>svg,
+.spartan-payment-panel .student-feature-heading>svg{width:62px!important;height:62px!important;flex:0 0 62px!important;color:#ff9000!important;stroke:#ff9000!important}
+.spartan-agenda-panel .student-feature-heading h2,
+.spartan-payment-panel .student-feature-heading h2{font-size:clamp(23px,6vw,29px)!important;line-height:1.05!important;margin:0 0 5px!important;color:#fff!important}
+.spartan-agenda-panel .student-feature-heading p,
+.spartan-payment-panel .student-feature-heading p{font-size:15px!important;line-height:1.35!important;margin:0!important;color:#eee!important}
+.spartan-next-class-card{padding:18px 16px;margin:8px 0 16px;border:1.5px solid #ff7a00;border-radius:17px;background:linear-gradient(145deg,#17100b,#080808);box-shadow:0 0 15px #ff790044,inset 0 0 15px #ff79000b}
+.spartan-next-class-title{display:flex;align-items:center;gap:12px;margin-bottom:13px;font-size:clamp(23px,6vw,30px);font-weight:950;color:#fff}
+.spartan-next-class-title span{font-size:40px;line-height:1;color:#ff9000}
+.spartan-agenda-line{display:flex;align-items:center;gap:13px;margin:10px 0;padding-left:12px;font-size:clamp(17px,4.6vw,21px);line-height:1.3;color:#fff}
+.spartan-agenda-line>span{width:34px;flex:0 0 34px;text-align:center;font-size:29px;color:#ff9000}
+.spartan-agenda-line strong{font-weight:850}
+.spartan-confirm-attendance,.spartan-attendance-confirmed{display:flex!important;align-items:center!important;justify-content:center!important;gap:11px!important;width:100%!important;min-height:65px!important;margin:18px 0 0!important;padding:13px!important;border:1px solid #5cff75!important;border-radius:18px!important;background:linear-gradient(110deg,#00a92f,#08751f)!important;color:#fff!important;font-size:clamp(17px,4.7vw,22px)!important;font-weight:950!important;box-shadow:0 0 17px #00d64277!important;text-align:center}
+.spartan-confirm-attendance span,.spartan-attendance-confirmed span{display:grid;place-items:center;width:34px;height:34px;border:3px solid #fff;border-radius:50%;font-size:24px;line-height:1}
+.spartan-attendance-confirmed{background:linear-gradient(110deg,#087b26,#064d19)!important}
+.spartan-no-class{font-size:17px;color:#eee;line-height:1.45}
+.spartan-month-attendance{display:flex;align-items:center;gap:15px;padding:16px;margin-top:16px;border:1.5px solid #ff7a00;border-radius:16px;background:linear-gradient(145deg,#17100b,#080808);box-shadow:0 0 14px #ff790033}
+.spartan-month-icon{display:grid;place-items:center;width:56px;height:56px;flex:0 0 56px;border-radius:50%;background:#291506;color:#ff9000;font-size:35px}
+.spartan-month-attendance strong{display:block;color:#ff9a24;font-size:15px;line-height:1.25}
+.spartan-month-attendance #attendanceInfo{margin-top:5px;color:#fff;font-size:20px;font-weight:900;line-height:1.25}
+.spartan-payment-panel .subscription-summary{display:flex!important;flex-direction:column!important;gap:13px!important;padding:18px!important;border:1.5px solid #00df4b!important;border-radius:17px!important;background:linear-gradient(110deg,#075d1e,#063d16)!important;box-shadow:0 0 17px #00c83f66!important}
+.spartan-payment-panel .subscription-paid-heading{display:flex;align-items:center;gap:16px}
+.spartan-payment-panel .subscription-check{display:grid;place-items:center;width:70px;height:70px;flex:0 0 70px;border:5px solid #fff;border-radius:50%;font-size:48px;font-weight:900;line-height:1;color:#fff}
+.spartan-payment-panel .subscription-paid-heading>div>strong{font-size:clamp(20px,5.5vw,27px);color:#fff}
+.spartan-payment-panel .subscription-amount{font-size:25px;font-weight:950;color:#fff}
+.spartan-payment-panel .subscription-amount small{font-size:14px;color:#e7ffe9}
+.spartan-payment-panel .subscription-meta{display:flex;justify-content:space-between;gap:10px;padding-top:10px;border-top:1px solid #ffffff44;font-size:17px;color:#fff}
+.spartan-payment-panel .subscription-meta strong{color:#fff;font-size:18px}
+.spartan-payment-panel .payment-status{align-self:flex-start;font-size:15px;padding:7px 13px}
+.spartan-payment-panel .payment-quick-actions{display:block!important;margin-top:17px!important}
+.spartan-payment-panel #viewPaymentHistoryButton{width:100%!important;min-height:76px!important;border:1px solid #ffb13c!important;border-radius:17px!important;background:linear-gradient(110deg,#ff9b00,#f45100)!important;color:#fff!important;font-size:clamp(17px,4.8vw,22px)!important;line-height:1.2!important;white-space:normal!important;box-shadow:0 0 17px #ff650055!important}
+#paymentHistoryPanel{margin-top:14px!important}
+#paymentHistoryPanel h2{font-size:24px!important}
+#paymentHistoryPanel .payment-history-item{padding:14px 2px!important}
+#paymentHistoryPanel .payment-history-item strong{font-size:17px!important}
+#paymentHistoryPanel .payment-history-item>b{font-size:19px!important;color:#ff9b2d!important}
+#paymentHistoryPanel .payment-history-item small{font-size:14px!important;color:#eee!important}
+@media(max-width:560px){
+ .spartan-agenda-panel,.spartan-payment-panel{padding:15px!important}
+ .spartan-agenda-panel .student-feature-heading>svg,.spartan-payment-panel .student-feature-heading>svg{width:53px!important;height:53px!important;flex-basis:53px!important}
+ .spartan-next-class-card{padding:15px 12px}
+ .spartan-agenda-line{padding-left:4px;gap:9px}
+ .spartan-month-attendance{padding:13px;gap:11px}
+ .spartan-month-attendance #attendanceInfo{font-size:18px}
+ .spartan-payment-panel .subscription-check{width:60px;height:60px;flex-basis:60px;font-size:40px}
+ .spartan-payment-panel .subscription-meta{font-size:15px}
+ .spartan-payment-panel .subscription-meta strong{font-size:16px}
+}
