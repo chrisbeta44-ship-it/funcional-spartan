@@ -1,4 +1,4 @@
-const CACHE_NAME = 'funcional-spartan-shell-v69';
+const CACHE_NAME = 'funcional-spartan-shell-v70';
 const APP_SHELL = [
   '/',
   '/admin/index.html',
@@ -37,8 +37,8 @@ self.addEventListener('fetch', event => {
   const url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
 
-  // Área do aluno: sempre buscar HTML novo; nunca servir uma tela de login/painel antiga do cache.
-  if (request.mode === 'navigate' && (url.pathname === '/aluno' || url.pathname === '/aluno/' || url.pathname === '/aluno/index.html')) {
+  // Áreas autenticadas: sempre buscar HTML novo; nunca servir telas de login/painel antigas do cache.
+  if (request.mode === 'navigate' && (url.pathname === '/aluno' || url.pathname === '/aluno/' || url.pathname === '/aluno/index.html' || url.pathname === '/gestao' || url.pathname === '/gestao/' || url.pathname === '/gestao/index.html' || url.pathname === '/admin' || url.pathname === '/admin/' || url.pathname === '/admin/index.html')) {
     event.respondWith(fetch(new Request(request, {cache: 'no-store'})));
     return;
   }
