@@ -10,6 +10,7 @@ const entries = [
   'app.js',
   'assets',
   'admin',
+  'gestao',
   'aluno',
   'cadastro',
   'manifest.webmanifest',
